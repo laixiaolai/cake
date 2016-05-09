@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>注册</title>
+    <link rel="stylesheet" href="css/m_lib.css" />
+    <style type="text/css">
+.input {outline: none;font-size:.32rem;height:.80rem;line-height:.80rem;border: none;background:transparent;width:100%;}
+.inputdiv {background:rgba(0,0,0,.5); padding:.12rem .2rem; margin:.4rem .2rem 0;}
+.btnlog {background:#eacb20;color:#fff;border:1px solid #979797;text-align:center;height:.8rem;line-height:.8rem;font-size:.4rem;padding:.16rem;margin:.2rem;cursor:pointer;}
+    </style>
+</head>
+<body class="bg0">
+    <img src="imgs/girl1.jpg" style="width:100%; position:absolute; left:0px; top:0px; z-index:-1;" />
+    <div style="text-align:center;padding:1rem 0 .4rem;">
+        <img id="dgaoimg" src="imgs/dgao2.png" style="height:100px;" />
+    </div>
+    <ul style="width:84%; margin:auto;padding-top:10px;">
+        <li class="inputdiv">
+            <img class="l mt8" src="imgs/accout.png" style="height:.56rem;" />
+            <div class="cell pl10"><input type="text" placeholder="输入手机号码" class="input wh" /></div>
+        </li>
+        <li class="inputdiv">
+            <img class="l mt8 mr2 ml2" src="imgs/pwd.png" style="height:.52rem;" />
+            <div class="cell pl10"><input type="password" placeholder="输入6-10位密码" class="input wh" /></div>
+        </li>
+        <li class="inputdiv">
+            <img class="l mt8 mr2 ml2" src="imgs/pwd.png" style="height:.52rem;" />
+            <div class="cell pl10"><input type="password" placeholder="确认密码" class="input wh" /></div>
+        </li>
+        <li class="inputdiv">
+            <img class="l mt14 ml2" src="imgs/mesg.png" style="height:.36rem;" />
+            <div class="cell pl10"><input type="text" placeholder="请输入短信验证码" class="input wh" /></div>
+        </li>
+        <li class="tr" style="padding:.16rem .24rem;">
+            <a class="wh f16 tdn" href="#">发送验证码</a>
+        </li>
+        <li class="btnlog br40 pct80" style="margin:.6rem auto .2rem" onclick="checkforms();">确认注册</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,86 @@
+﻿body {
+    padding:0px; margin:0px; background:#fff;
+}
+*{
+    font-family:Droid Sans Fallback;
+}
+.contentTab {
+    width: 100%;
+    cursor: pointer;
+}
+
+.nvBarDiv {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background: #B29873;
+}
+
+.nvBarDiv td {
+    width: 25%;
+    text-align: center;
+    padding: 15px 0px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nvBarDiv td:hover {
+    background: #8E7A5C;
+}
+
+.nvBarDiv a {
+    text-decoration: none;
+    text-align: center;
+    outline: none;
+    color: #000;
+    display: block;
+}
+
+.nvBarDiv a img {
+    height: 18px;
+}
+
+.nvBarDiv a span {
+    font-family: 黑体;
+}
+
+
+.menBan{
+    background:#000;
+    opacity:0.5;
+    position:fixed;
+    top:0px;
+    left:0px;
+    z-index:2;
+    width:100%;
+    height:100%;
+}
+.vipDiv{
+    background:#fff;
+    position:fixed;
+    z-index:3;
+    padding:10px;
+    width:250px;
+    text-align:center;
+}
+.vipImg{
+    height:100px;
+    margin-top:10px;
+}
+.vipTxt{
+    font-size:20px;
+    font-family:黑体;
+}
+.btnGouw{
+    border:1px solid #000;
+    padding:10px;
+    margin-top:30px;
+    cursor:pointer;
+}
+.btnGouhy{
+    background:#000;
+    color:#fff;
+    padding:10px;
+    margin:20px 0px;
+    cursor:pointer;
+}

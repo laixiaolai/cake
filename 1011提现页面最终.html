@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>我的收益</title>
+    <link href="css/common.css" rel="stylesheet" />
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        function showTX() {
+            $(".menBan").show();
+            $(".vipDiv").css({
+                left: ($(window).width() - 320) / 2
+            }).show();
+        }
+        function gototx() {
+            $(".menBan").hide();
+            $(".vipDiv").hide();
+        }
+    </script>
+</head>
+<body>
+    <div style="margin-top:30px; text-align:center;">
+        <img src="imgs/cook1.png" style="width:200px;" /><br /><br /><br />
+        <span style="font-size:16px;">余额</span><br /><br />
+        <span style="font-size:32px;">9122.00</span>
+        <span style="font-size:10px;">元</span>
+    </div>
+
+    <div style="padding:50px;">
+        <div style="font-size:12px;">请填写您的支付宝账号，确认无误。申请提现后，我们会于48小时内将您的账户余额转入您的支付宝。</div>
+        <div onclick="showTX()" style="margin-top:20px; background:#B29873; text-align:center;padding:10px; color:#fff; font-size:16px; cursor:pointer;">申请提现</div>
+    </div>
+
+    <div class="menBan" style="display:none;"></div>
+    <div class="vipDiv" style="bottom:0px; width:300px; display:none;">
+        <div style="margin:10px 0px; padding:10px 0px; background:#E8E8E8;">
+            转账账户
+            <input type="text" style="border:none; outline:none; background:#E8E8E8; font-size:16px;" placeholder="支付宝账号/手机号码" />
+        </div>
+        <div style="margin:10px 0px; padding:10px 0px; background:#E8E8E8;">
+            提现金额
+            <input type="text" style="border:none; outline:none; background:#E8E8E8; font-size:16px;" placeholder="本次可提现5.44元" />
+        </div>
+        <div class="btnGouhy" onclick="gototx()">立即提现</div>
+    </div>
+</body>
+</html>

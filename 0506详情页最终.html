@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>商品详情</title>
+    <link href="css/common.css" rel="stylesheet" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/hammer.min.js"></script>
+
+    <style type="text/css">
+        body {
+            padding: 0px;
+            margin: 0px;
+            background: #fff;
+        }
+
+        .pointDiv {
+            position:absolute;
+            right:20px;
+            top:190px;
+        }
+
+            .pointDiv img {
+                margin: 5px 3px;
+                cursor: pointer;
+                height:10px;
+            }
+
+        .line {
+            height: 2px;
+            background: #979797;
+            margin: 10px 0px;
+        }
+        .gwBtn{
+            border:1px solid #000;
+            text-align:center;
+            padding:10px;
+            margin:10px 0px;
+            cursor:pointer;
+        }
+        .btnban{
+            border:1px solid #000; text-align:center; padding:5px;
+            cursor:pointer
+        }
+        .btnsel{
+            background:#000; color:#fff;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var hammertime, timeInterval;
+        $(function () {
+            $(".btnban").bind("click", function () {
+                if ($(this).hasClass("btnsel")) return;
+                $(".btnsel").removeClass("btnsel");
+                $(this).addClass("btnsel");
+            })
+            timeInterval = setInterval(imgShow, 10000);
+            hammertime = new Hammer($("#cakeImg")[0]);
+            hammertime.on("swipeleft", function (e) {
+                clearInterval(timeInterval);
+                imgShow();
+                timeInterval = setInterval(imgShow, 10000);
+            });
+            hammertime.on("swiperight", function (e) {
+                clearInterval(timeInterval);
+                imgShow(0);
+                timeInterval = setInterval(imgShow, 10000);
+            });
+        })
+
+        var imgs = ["uplaod/cake8.png", "uplaod/hp9.png", "uplaod/hp11.png"];
+        var index = 0;
+        function imgShow(num) {
+            if (num == 0) index--;
+            else index++;
+            if (index < 0) index = imgs.length - 1;
+            index = index % imgs.length;
+
+            $(".pointDiv img").each(function () {
+                $(this).attr("src", "imgs/point2.png");
+            })
+            $($(".pointDiv img")[index]).attr("src", "imgs/point1.png");
+            $("#cakeImg").attr("src", imgs[index]);
+            $(imgs[index]).fadeIn("slow");
+            $($(".imgChecked")[index]).attr("src", "imgs/ischeck.png");
+        }
+
+        function showGwWin() {
+            $(".menBan").show();
+            $(".vipDiv").css({
+                left: ($(window).width() - $(".vipDiv").width() - 20) / 2,
+                top: 100
+            }).show();
+        }
+
+        function gotogmhy() {
+            window.location = "购买会员.html";
+        }
+        function hidevp() {
+            $(".menBan,.vipDiv").hide();
+        }
+    </script>
+</head>
+<body>
+    <div class="menBan" style="display:none;"></div>
+    <div class="vipDiv" style="display:none;">
+        <div style="margin-top:30px;">
+            <spa style="font-size:16px;">商品成功加入购物车</spa>
+            <img src="imgs/car.png" style="height:16px;" />
+        </div>
+        <div style="margin-top:30px;">
+            <div class="gwBtn" onclick="hidevp()" style="background:#000; color:#fff;">去购物车</div>
+            <div class="gwBtn" onclick="hidevp()">继续购物</div>
+            <div class="gwBtn" onclick="gotogmhy()">购买会员享受会员价</div>
+        </div>
+    </div>
+
+    <div style="height:230px; overflow:hidden;">
+        <img id="cakeImg" src="uplaod/cake8.png" style="width:100%;" />
+        <img src="imgs/dgao1.png" style="position:absolute; right:50px; top:50px; height:80px;" />
+        <div class="pointDiv">
+            <img src="imgs/point1.png" />
+            <img src="imgs/point2.png" />
+            <img src="imgs/point2.png" />
+        </div>
+        <div style="height:40px;"></div>
+    </div>
+
+    <div style="margin:10px 20px;">
+        <div style="font-size:20px; font-weight:bold; font-family:黑体;">商品详情</div>
+        <div style="margin-top:10px;font-size:17px;">
+            <span style="font-family:黑体;">百香果慕斯</span>
+            <span>Passion Fruit Mousse</span>
+        </div>
+        <div style="font-size:12px; font-family:黑体; margin-top:10px; color:#666;">
+            纯正百香果慕斯，甜中带酸，再搭配百香果果肉，
+            和乳脂奶油，跟之前同款类的相比，不会那么酸，
+            大众比较能接受<br />
+        </div>
+        <div style="margin-top:10px;">
+            <span style="color:#808080; font-size:14px;">会</span>
+            <span style="font-size:26px;">118</span>
+            <span style="color:#808080; font-size:14px;">/198</span>
+        </div>
+    </div>
+
+    <div style="padding-right:13px;">
+        <table style="width:100%;">
+            <tr>
+                <td></td>
+                <td style="width:70px; padding:5px;">
+                    <div class="btnban">
+                        <span style="font-size:16px; font-family:黑体;">1.0</span>
+                        <span style="font-size:12px;">磅</span>
+                    </div>
+                </td>
+                <td style="width:70px; padding:5px;">
+                    <div class="btnban btnsel">
+                        <span style="font-size:16px; font-family:黑体;">2.0</span>
+                        <span style="font-size:12px;">磅</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="padding:10px 20px;">
+        <div onclick="showGwWin()" style="background:#000;color:#fff;padding:10px; text-align:center;">加入购物车</div>
+    </div>
+
+    <div>
+        <img src="uplaod/cake16.png" style="width:100%;" />
+    </div>
+
+    <div style="padding:10px; font-size:14px; font-family:黑体;">
+        <div>温馨提示：</div>
+        <div style="margin-top:20px;">0-4℃保藏12个小时，5℃最佳食用</div>
+        <div class="line"></div>
+
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <img src="imgs/man.png" style="height:16px;" />
+                        <span>适合4-8人分享</span>
+                    </td>
+                    <td style="padding-left:15px;">
+                        <img src="imgs/time.png" style="height:16px;" />
+                        <span>需提前一天预订</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="imgs/dao.png" style="height:16px;" />
+                        <span>含5套餐具</span>
+                    </td>
+                    <td style="padding-left:15px;">
+                        <img src="imgs/pag.png" style="height:16px;" />
+                        <span>11:00-21:00配送</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="margin-top:30px;">基本信息Basic Information</div>
+        <div class="line"></div>
+        <div>口感：入口即化</div>
+        <div>
+            <span>甜度：</span>
+            <img src="imgs/xing1.png" style="height:14px;" />
+            <img src="imgs/xing1.png" style="height:14px;" />
+            <img src="imgs/xing1.png" style="height:14px;" />
+            <img src="imgs/xing1.png" style="height:14px;" />
+            <img src="imgs/xing2.png" style="height:14px;" />
+        </div>
+        <div>口味：百香果</div>
+        <div>适合节日：一般性</div>
+
+        <div class="line"></div>
+        <div>*如对上述食材有过敏经历者，请选择其他款蛋糕。</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>参与拼团</title>
+    <script src="js/jquery.min.js"></script>
+    <style type="text/css">
+        .item {
+            background: #fff;
+            margin-bottom: 10px;
+            font-family:黑体;
+            font-size:16px;
+        }
+
+        .check {
+            background: url(imgs/sj1.png) no-repeat;
+            background-size: 12px 12px;
+            height: 12px;
+            width: 12px;
+            cursor: pointer;
+        }
+
+        .checked {
+            background: url(imgs/sj2.png) no-repeat !important;
+            background-size: 12px 12px !important;
+        }
+        .ptdiv{
+            background:#ECECEC; border-bottom:1px solid #fff; font-size:14px;padding:10px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $(".check").bind("click", function () {
+                if ($(this).hasClass("checked")) {
+                    $(this).removeClass("checked");
+                    $(this).parent().parent().parent().parent().parent().parent().find(".itemlist").hide();
+                }
+                else {
+                    $(this).addClass("checked");
+                    $(this).parent().parent().parent().parent().parent().parent().find(".itemlist").show();
+                }
+            })
+
+            $(".ptdiv").bind("click", function () {
+                window.location = "12拼团最终.html";
+            })
+        })
+    </script>
+</head>
+<body style="padding:0px; margin:0px; background:#ECECEC;">
+    <div class="item">
+        <div style="padding:10px;">
+            <table style="width:100%;">
+                <tbody>
+                    <tr>
+                        <td>丰泽区（3）</td>
+                        <td style="width:20px;"><div class="check"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="itemlist" style="display:none;">
+            <div class="ptdiv">
+                <table style="margin:auto;">
+                    <tr>
+                        <td rowspan="3" style="width:100px;"><img src="imgs/dgaojh.png" style="width:80px;" /></td>
+                        <td style="font-size:16px;">丰泽区</td>
+                    </tr>
+                    <tr>
+                        <td>已有两人参团，现缺3人</td>
+                    </tr>
+                    <tr>
+                        <td>开团时间：2016-03-27</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="ptdiv">
+                <table style="margin:auto;">
+                    <tr>
+                        <td rowspan="3" style="width:100px;"><img src="imgs/dgaojh.png" style="width:80px;" /></td>
+                        <td style="font-size:16px;">丰泽区</td>
+                    </tr>
+                    <tr>
+                        <td>已有两人参团，现缺3人</td>
+                    </tr>
+                    <tr>
+                        <td>开团时间：2016-03-27</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div style="padding:10px;">
+            <table style="width:100%;">
+                <tbody>
+                    <tr>
+                        <td>新港区（4）</td>
+                        <td style="width:20px;"><div class="check"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="itemlist" style="display:none;">
+            <div class="ptdiv">
+                <table style="margin:auto;">
+                    <tr>
+                        <td rowspan="3" style="width:100px;"><img src="imgs/dgaojh.png" style="width:80px;" /></td>
+                        <td style="font-size:16px;">丰泽区</td>
+                    </tr>
+                    <tr>
+                        <td>已有两人参团，现缺3人</td>
+                    </tr>
+                    <tr>
+                        <td>开团时间：2016-03-27</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="ptdiv">
+                <table style="margin:auto;">
+                    <tr>
+                        <td rowspan="3" style="width:100px;"><img src="imgs/dgaojh.png" style="width:80px;" /></td>
+                        <td style="font-size:16px;">丰泽区</td>
+                    </tr>
+                    <tr>
+                        <td>已有两人参团，现缺3人</td>
+                    </tr>
+                    <tr>
+                        <td>开团时间：2016-03-27</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="item">
+        <div style="padding:10px;">
+            <table style="width:100%;">
+                <tbody>
+                    <tr>
+                        <td>保税区（2）</td>
+                        <td style="width:20px;"><div class="check"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="itemlist" style="display:none;">
+            <div class="ptdiv">
+                <table style="margin:auto;">
+                    <tr>
+                        <td rowspan="3" style="width:100px;"><img src="imgs/dgaojh.png" style="width:80px;" /></td>
+                        <td style="font-size:16px;">丰泽区</td>
+                    </tr>
+                    <tr>
+                        <td>已有两人参团，现缺3人</td>
+                    </tr>
+                    <tr>
+                        <td>开团时间：2016-03-27</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="ptdiv">
+                <table style="margin:auto;">
+                    <tr>
+                        <td rowspan="3" style="width:100px;"><img src="imgs/dgaojh.png" style="width:80px;" /></td>
+                        <td style="font-size:16px;">丰泽区</td>
+                    </tr>
+                    <tr>
+                        <td>已有两人参团，现缺3人</td>
+                    </tr>
+                    <tr>
+                        <td>开团时间：2016-03-27</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

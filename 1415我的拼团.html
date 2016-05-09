@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>我的拼团</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.tmpl.min.js"></script>
+
+    <style type="text/css">
+        body{
+            background:#ECECEC;
+            padding:0px;
+            margin:0px;
+        }
+        .topNv{
+            position:fixed;
+            top:0px;
+            background:#fff;
+            width:100%;
+        }
+        .topNv td{
+            text-align:center;
+            padding:10px;
+            border-bottom:2px solid #fff;
+            cursor:pointer;
+        }
+        .tdselect{
+            border-bottom:2px solid #000 !important;
+        }
+    </style>
+
+
+    <script id="cakeModel" type="text/x-jquery-tmpl">
+        {{tmpl(data) '#template'}}
+    </script>
+    <script id="template" type="text/x-jquery-tmpl">
+        <div style="padding:5px; margin:10px 0px; background:#fff;">
+            <table style="width:100%" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td style="width:10px; vertical-align:top; padding-top:15px;">
+                        <img src="imgs/timel.gif" style="height:25px;" />
+                    </td>
+                    <td style="vertical-align:top;">
+                        <div style="height:40px; padding:3px; background:url(imgs/line.png) repeat-x 0px 36px; background-size:6px 5px;">
+                            <table style="width:100%; margin-top:5px;">
+                                <tr>
+                                    <td>
+                                        <span style="font-size:16px; color:#9FA0A0; font-family:黑体;">活动结束时间</span>
+                                        <span style="font-size:16px; color:#000; font-family:黑体;">${time}</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <img src="imgs/timec.gif" style="height:12px; margin-left:50px; display:inherit; margin-top:-9px;" />
+                    </td>
+                    <td style="width:1px; vertical-align:bottom;">
+                        <div style="height:15px; margin-bottom:10px; background:#ccc;"></div>
+                    </td>
+                </tr>
+            </table>
+
+            <table style="width:100%; margin-top:20px;">
+                <tr>
+                    <td rowspan="4" style="text-align:center;">
+                        <img src="${img}" style="width:130px;" />
+                    </td>
+                    <td style="width:50%;">
+                        <span style="font-family:黑体; font-size:18px; color:#000;">${name}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size:16px; color:#000;">${enName}</td>
+                </tr>
+                <tr>
+                    <td style="font-size:16px; padding:10px 0px; font-family:黑体;">
+                        <a href="提交资料.html" style="color:#B29873; text-decoration:none;">${link}</a>
+                        ${pton}
+                        ${error}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            var cakeList = [];
+            cakeList.push({ img: "uplaod/cake1.png", name: "黑森林蛋糕", time: "3月25日", enName: "Black Forest", link: "拼团成功，填写订单>" });
+            cakeList.push({ img: "uplaod/cake2.png", name: "黑森林蛋糕", time: "3月25日", enName: "Black Forest", pton: "正在进行" });
+            cakeList.push({ img: "uplaod/cake3.png", name: "黑森林蛋糕", time: "3月25日", enName: "Black Forest", link: "拼团成功，填写订单>" });
+            cakeList.push({ img: "uplaod/cake4.png", name: "黑森林蛋糕", time: "3月25日", enName: "Black Forest", link: "拼团成功，填写订单>" });
+            cakeList.push({ img: "uplaod/cake5.png", name: "黑森林蛋糕", time: "3月25日", enName: "Black Forest", pton: "正在进行" });
+            cakeList.push({ img: "uplaod/cake6.png", name: "黑森林蛋糕", time: "3月25日", enName: "Black Forest", link: "拼团成功，填写订单>" });
+            cakeList.push({ img: "uplaod/cake7.png", name: "黑森林蛋糕", time: "3月25日", enName: "Black Forest", pton: "正在进行" });
+
+            var data = { data: cakeList }
+            $('#cakeModel').tmpl(data).appendTo('#MyPt');
+
+            cakeList = [];
+            cakeList.push({ img: "uplaod/cake8.png", name: "黑森林蛋糕", time: "3月25日", enName: "Black Forest", error: "拼团失败" });
+            cakeList.push({ img: "uplaod/cake9.png", name: "黑森林蛋糕", time: "3月25日", enName: "Black Forest", error: "拼团失败" });
+            cakeList.push({ img: "uplaod/cake10.png", name: "黑森林蛋糕", time: "3月25日", enName: "Black Forest", error: "拼团失败" });
+            cakeList.push({ img: "uplaod/cake11.png", name: "黑森林蛋糕", time: "3月25日", enName: "Black Forest", error: "拼团失败" });
+            cakeList.push({ img: "uplaod/cake12.png", name: "黑森林蛋糕", time: "3月25日", enName: "Black Forest", error: "拼团失败" });
+            cakeList.push({ img: "uplaod/cake13.png", name: "黑森林蛋糕", time: "3月25日", enName: "Black Forest", error: "拼团失败" });
+            data = { data: cakeList }
+            $('#cakeModel').tmpl(data).appendTo('#errorpt');
+        })
+
+        function checknv(tag, num) {
+            if ($(tag).hasClass("tdselect")) return;
+            $(".tdselect").removeClass("tdselect");
+            $(tag).addClass("tdselect");
+            
+            $("#MyPt").hide();
+            $("#sbpt").hide();
+            if (num == 0) $("#MyPt").show();
+            else $("#sbpt").show();
+        }
+    </script>
+</head>
+<body>
+    <div class="topNv">
+        <table style="width:100%;">
+            <tr>
+                <td onclick="checknv(this,0)" class="tdselect" style="width:50%;">我的拼团</td>
+                <td onclick="checknv(this,1)">拼团失败</td>
+            </tr>
+        </table>
+        <div style="height:10px; background:#ECECEC;"></div>
+    </div>
+    <div style="height:40px;"></div>
+
+    <div id="MyPt"></div>
+
+
+    <div id="sbpt" style="display:none; margin-top:15px;">
+        <div style="margin:10px; height:20px;font-size:12px; padding-left:25px; padding-top:3px; background:url(imgs/tip1.png) no-repeat; background-size:20px 20px;">
+            未满开团人数，拼团费已返还您的蛋糕账户余额
+        </div>
+        <div id="errorpt"></div>
+    </div>
+</body>
+</html>
