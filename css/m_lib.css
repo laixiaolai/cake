@@ -75,7 +75,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .pct75{width:75%;}
 .pct80{width:80%;}
 .pct90{width:90%;}
-.pct100{width:100%;max-width:640px}
+.pct100{width:100%;}
 /* height */
 .hauto{height:auto}
 .h14{height:.28rem;line-height:.28rem;}
@@ -212,6 +212,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .bbe{border-bottom:1px solid #eee;}
 .btdsc{border-top:1px dashed #ccc;}
 /*border-radius*/
+.br4{-webkit-border-radius:.08rem;-moz-border-radius:.08rem;-ms-border-radius:.08rem;border-radius:.08rem}
 .br5{-webkit-border-radius:.1rem;-moz-border-radius:.1rem;-ms-border-radius:.1rem;border-radius:.1rem}
 .br25{-webkit-border-radius:.5rem;-moz-border-radius:.5rem;-ms-border-radius:.5rem;border-radius:.5rem}
 .br40{-webkit-border-radius:.8rem;-moz-border-radius:.8rem;-ms-border-radius:.8rem;border-radius:.8rem}
@@ -227,6 +228,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .bg3{background-color:#333;}
 .bg5{background-color:#555;}
 .bgf0f7f6{background-color:#f0f7f6;}
+.bg13{background-color:#131313;}
 .bg0{background-color:#000;}
 /* safe color */
 .g0{color:#000;}
@@ -258,6 +260,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .fv{font-family:Verdana;}
 .fs{font-family:Simsun;}
 .fw{font-family:'Microsoft Yahei';}
+.fh{font-family:黑体;}
 /* font-style */
 .n{font-weight:normal; font-style:normal;}
 .b{font-weight:bold;}
@@ -389,3 +392,16 @@ to{margin-top:-5px}}
 .item{-webkit-box-flex: 1;-moz-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;width: 100%;text-align:center;}
 .item3{-webkit-box-flex:3;-moz-box-flex:3;-webkit-flex:3;-ms-flex:3;flex:3;}
 /* Core Styles*/
+.contentTab {width: 100%;cursor: pointer;}
+.nvBarDiv {position: fixed;bottom: 0px;width: 100%;background: #B29873;}
+.nvBarDiv td {width: 25%;text-align: center;padding: 15px 0px;font-size: 16px;cursor: pointer;}
+.nvBarDiv td:hover {background: #8E7A5C;}
+.nvBarDiv a {text-decoration: none;text-align: center;outline: none;color: #000;display: block;}
+.nvBarDiv a img {height: 18px;}
+.nvBarDiv a span {font-family: 黑体;}
+.menBan{background:#000;opacity:0.5;position:fixed;top:0px;left:0px;z-index:2;width:100%;height:100%;}
+.vipDiv{background:#fff;position:fixed;z-index:3;padding:10px;width:250px;text-align:center;}
+.vipImg{height:100px;margin-top:10px;}
+.vipTxt{font-size:20px;font-family:黑体;}
+.btnGouw{border:1px solid #000;padding:10px;margin-top:30px;cursor:pointer;}
+.btnGouhy{background:#000;color:#fff;padding:10px;margin:20px 0px;cursor:pointer;}
