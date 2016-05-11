@@ -10,23 +10,13 @@
     <link href="css/m_lib.css" rel="stylesheet" />
     <script src="js/jquery.min.js"></script>
     <script src="js/hammer.min.js"></script>
-
     <style type="text/css">
-        .hplist img{
-            width:100%;
-            margin-top:20px;
-        }
-        .pointDiv {
-            text-align: right;
-            padding-right: 20px;
-            margin-top: -50px;
-        }
-        .pointDiv img {
-            margin: 5px 3px;
-            cursor: pointer;
-            height:10px;
-            width:10px;
-        }
+        .hplist img{width:100%;margin-top:20px;}
+        .pointDiv {text-align: right;padding-right: 20px;margin-top: -50px;}
+        .pointDiv img {margin: 5px 3px;cursor: pointer;height:10px;width:10px;}
+        .bottom_bar {height: 1.2rem;background: #22292c;position: fixed;width: 100%;max-width: 12.8rem;line-height: .5rem;bottom: 0;}
+        .bottom_bar a {display: block;color: #bbb;font-size: .24rem;background: none;border: none;padding: .15rem 0 0;}
+        .bottom_bar i{display: block;width: 100%;height: .5rem;line-height: .5rem;}
     </style>
 
     <script type="text/javascript">
@@ -76,8 +66,9 @@
     </table>
     <table class="pct100 mt30" style="padding:0px 34px;">
         <tr>
-            <td style="width:50%; text-align:left;"><img style="height:60px;" src="imgs/cook.png" /></td>
-            <td style="text-align:right; padding-top:20px;"><img style="height:70px;" src="imgs/dgao2.png" /></td>
+            <td class="pct70 tl f14 pl10" style="color:rgba(255,255,255,.75);"><span class="db pt10">MATERIALE DELLA CASSA<br />Oro rosso 18 carati</span>
+            <span class="db pt10">CINTURINO<br />Pelle di alligatore nero</span></td>
+            <td class="tr pt20 pr10"><img style="height:100px;" src="imgs/dgao2.png" /></td>
         </tr>
     </table>
     <div style="color:#fff; padding:40px 34px 30px 34px; opacity:0.7;">
@@ -119,30 +110,38 @@
             <tr>
                 <td style="background: #8E7A5C">
                     <a href="#">
-                        <span>首页</span>
                         <img src="imgs/home.png" />
-                    </a>
-                </td>
-                <td>
-                    <a href="#">
-                        <span>购物车</span>
-                        <img src="imgs/car.png" />
+                        <span>首页</span>
                     </a>
                 </td>
                 <td>
                     <a href="09所有蛋糕最终.html">
-                        <span>所有蛋糕</span>
                         <img src="imgs/cake.png" />
+                        <span>我的收益</span>
+                    </a>
+                </td>
+                <td>
+                    <a href="#">
+                        <img src="imgs/car.png" />
+                        <span>购物车</span>
                     </a>
                 </td>
                 <td>
                     <a href="0708会员我的界面.html">
-                        <span>我的</span>
                         <img src="imgs/me.png" />
+                        <span>我的</span>
                     </a>
                 </td>
             </tr>
         </table>
+    </div>
+    <div class="box bottom_bar">
+        <div class="row">
+            <a class="item" href="/"><i><img src="imgs/home.png" /></i>首页</a>
+            <a class="item" href="09所有蛋糕最终.html"><i><img src="imgs/cake.png" /></i>我的收益</a>
+            <a class="item" href="#"><i><img src="imgs/car.png" /></i>购物车</a>
+            <a class="item" href="0708会员我的界面.html"><i><img src="imgs/me.png" /></i>我的</a>
+        </div>
     </div>
 </body>
 </html>
