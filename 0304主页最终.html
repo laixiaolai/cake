@@ -11,12 +11,28 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/hammer.min.js"></script>
     <style type="text/css">
-        .hplist img{width:100%;margin-top:20px;}
-        .pointDiv {text-align: right;padding-right: 20px;margin-top: -50px;}
-        .pointDiv img {margin: 5px 3px;cursor: pointer;height:10px;width:10px;}
-        .bottom_bar {height: 1.2rem;background: #22292c;position: fixed;width: 100%;max-width: 12.8rem;line-height: .5rem;bottom: 0;}
-        .bottom_bar a {display: block;color: #bbb;font-size: .24rem;background: none;border: none;padding: .15rem 0 0;}
+        .pointDiv {text-align: right;padding-right:.4rem;margin-top: -.6rem;margin-bottom:.6rem;}
+        .pointDiv img {margin: 5px 3px;cursor: pointer;height:.2rem;width:.2rem;}
+        .bottom_bar {height: 1.2rem;background: #b29873;position: fixed;width: 100%;line-height: .5rem;bottom: 0;}
+        .bottom_bar a {display: block;color:#131313;font-size: .24rem;background: none;border: none;padding: .15rem 0 0;}
         .bottom_bar i{display: block;width: 100%;height: .5rem;line-height: .5rem;}
+        body{
+background-color:#000;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#111111', endColorstr = '#5d5751');
+/*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+/*Element must have a height (not auto)*/
+/*All filters must be placed together*/
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr = '#111111', endColorstr = '#5d5751')";
+/*Element must have a height (not auto)*/
+/*All filters must be placed together*/
+background-image: -moz-linear-gradient(top, #111111, #5d5751);
+background-image: -ms-linear-gradient(top, #111111, #5d5751);
+background-image: -o-linear-gradient(top, #111111, #5d5751);
+background-image: -webkit-gradient(linear, center top, center bottom, from(#111111), to(#5d5751));
+background-image: -webkit-linear-gradient(top, #111111, #5d5751);
+background-image: linear-gradient(top, #111111, #5d5751);
+/*--IE9 DOES NOT SUPPORT CSS3 GRADIENT BACKGROUNDS--*/
+}
     </style>
 
     <script type="text/javascript">
@@ -57,29 +73,14 @@
         }
     </script>
 </head>
-<body class="bg0">
-    <table class="pct100 mt30" style="padding:0px 34px;">
-        <tr>
-            <td style="width:50%; text-align:left;"><img style="height:60px;" src="imgs/cook.png" /></td>
-            <td style="text-align:right; padding-top:20px;"><img style="height:70px;" src="imgs/dgao2.png" /></td>
-        </tr>
-    </table>
-    <table class="pct100 mt30" style="padding:0px 34px;">
+<body>
+    <table class="pct100 mt20" style="padding:0px 34px;">
         <tr>
             <td class="pct70 tl f14 pl10" style="color:rgba(255,255,255,.75);"><span class="db pt10">MATERIALE DELLA CASSA<br />Oro rosso 18 carati</span>
             <span class="db pt10">CINTURINO<br />Pelle di alligatore nero</span></td>
-            <td class="tr pt20 pr10"><img style="height:100px;" src="imgs/dgao2.png" /></td>
+            <td class="tr pt20 pr10"><img style="height:120px;" src="imgs/dgao2.png" /></td>
         </tr>
     </table>
-    <div style="color:#fff; padding:40px 34px 30px 34px; opacity:0.7;">
-        <span style="font-size:8px;">PENICE AND THE CAKE</span><br />
-        <span style="font-size:8px;">
-            In the medieval times when lives,people believe that the birth day is the most
-            dangerous times when the demon could easily invade human soul,only eating cake
-            counld expel the demon.Today is the twenty-one years old birthday of Penice,
-            he buy himself a piece of cake.
-        </span>
-    </div>
     
     <div class="hplist">
         <img id="cakeImg" src="uplaod/hp1.png" />
@@ -90,18 +91,18 @@
             <img src="imgs/point2.png" />
         </div>
 
-        <img src="uplaod/hp2.png" />
-        <img src="uplaod/hp3.png" />
-        <img src="uplaod/hp4.png" />
-        <img src="uplaod/hp5.png" />
-        <img src="uplaod/hp6.png" />
-        <img src="uplaod/hp7.png" />
-        <img src="uplaod/hp8.png" />
-        <img src="uplaod/hp9.png" />
-        <img src="uplaod/hp10.png" />
-        <img src="uplaod/hp11.png" />
-        <img src="uplaod/hp12.png" />
-        <img src="uplaod/hp13.png" />
+        <a class="db pct88 auto br10 bgwh p-pct3 mb15" href="#"><img src="uplaod/hp2.png" /></a>
+        <a class="db pct88 auto br10 bgwh p-pct3 mb15" href="#"><img src="uplaod/hp3.png" /></a>
+        <a class="db pct88 auto br10 bgwh p-pct3 mb15" href="#"><img src="uplaod/hp4.png" /></a>
+        <a class="db pct88 auto br10 bgwh p-pct3 mb15" href="#"><img src="uplaod/hp5.png" /></a>
+        <a class="db pct88 auto br10 bgwh p-pct3 mb15" href="#"><img src="uplaod/hp6.png" /></a>
+        <a class="db pct88 auto br10 bgwh p-pct3 mb15" href="#"><img src="uplaod/hp7.png" /></a>
+        <a class="db pct88 auto br10 bgwh p-pct3 mb15" href="#"><img src="uplaod/hp8.png" /></a>
+        <a class="db pct88 auto br10 bgwh p-pct3 mb15" href="#"><img src="uplaod/hp9.png" /></a>
+        <a class="db pct88 auto br10 bgwh p-pct3 mb15" href="#"><img src="uplaod/hp10.png" /></a>
+        <a class="db pct88 auto br10 bgwh p-pct3 mb15" href="#"><img src="uplaod/hp11.png" /></a>
+        <a class="db pct88 auto br10 bgwh p-pct3 mb15" href="#"><img src="uplaod/hp12.png" /></a>
+        <a class="db pct88 auto br10 bgwh p-pct3 mb15" href="#"><img src="uplaod/hp13.png" /></a>
     </div>
 
     <div style="height:50px;"></div>
@@ -137,10 +138,10 @@
     </div>
     <div class="box bottom_bar">
         <div class="row">
-            <a class="item" href="/"><i><img src="imgs/home.png" /></i>首页</a>
-            <a class="item" href="09所有蛋糕最终.html"><i><img src="imgs/cake.png" /></i>我的收益</a>
-            <a class="item" href="#"><i><img src="imgs/car.png" /></i>购物车</a>
-            <a class="item" href="0708会员我的界面.html"><i><img src="imgs/me.png" /></i>我的</a>
+            <a class="item" style="background: #8E7A5C" href="/"><i><img src="imgs/home.png" height="20" /></i>首页</a>
+            <a class="item" href="09所有蛋糕最终.html"><i><img src="imgs/cake.png" height="20" /></i>我的收益</a>
+            <a class="item" href="#"><i><img src="imgs/car.png" height="20" /></i>购物车</a>
+            <a class="item" href="0708会员我的界面.html"><i><img src="imgs/me.png" height="20" /></i>我的</a>
         </div>
     </div>
 </body>

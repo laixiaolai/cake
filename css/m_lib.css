@@ -74,6 +74,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .pct70{width:70%;}
 .pct75{width:75%;}
 .pct80{width:80%;}
+.pct88{width:88%;}
 .pct90{width:90%;}
 .pct100{width:100%;}
 /* height */
@@ -104,6 +105,8 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .lh40{line-height:.8rem;}
 .lh62{line-height:1.24rem;}
 /* margin */
+/* 块状元素水平居中 */
+.auto{margin:0 auto;}
 .m0{margin:0;}
 .ml1{margin-left:1px;}
 .ml2{margin-left:.04rem;}
@@ -192,6 +195,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .pb30{padding-bottom:30px;}
 .pt60{padding-top:1.2rem;}
 .pr112{padding-right:2.24rem;}
+.p-pct3{padding:3%;}
 /* border-color name rule: border(b)-position(l/r/t/b/d)-width(null/2)-style(null/sh)-color(first one letter/first two letter) |-> All colors are safe color*/
 .bdc{border:1px solid #ccc;}
 .blc{border-left:1px solid #ccc;}
@@ -214,6 +218,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 /*border-radius*/
 .br4{-webkit-border-radius:.08rem;-moz-border-radius:.08rem;-ms-border-radius:.08rem;border-radius:.08rem}
 .br5{-webkit-border-radius:.1rem;-moz-border-radius:.1rem;-ms-border-radius:.1rem;border-radius:.1rem}
+.br10{-webkit-border-radius:.2rem;-moz-border-radius:.2rem;-ms-border-radius:.2rem;border-radius:.2rem}
 .br25{-webkit-border-radius:.5rem;-moz-border-radius:.5rem;-ms-border-radius:.5rem;border-radius:.5rem}
 .br40{-webkit-border-radius:.8rem;-moz-border-radius:.8rem;-ms-border-radius:.8rem;border-radius:.8rem}
 .br-pct50{-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;border-radius:50%}
@@ -330,8 +335,6 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #
 .z{*zoom:1;}
 
 /* ------------------- multiply CSS ------------------ */
-/* 块状元素水平居中 */
-.auto{margin:0 auto;}
 /* 清除浮 动*/
 .fix{*zoom:1;}
 .fix::after{display:table; content:''; clear:both;}
