@@ -7,48 +7,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>商品详情</title>
-    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/m_lib.css" rel="stylesheet" />
     <script src="js/jquery.min.js"></script>
     <script src="js/hammer.min.js"></script>
-
     <style type="text/css">
-        body {
-            padding: 0px;
-            margin: 0px;
-            background: #fff;
-        }
-
-        .pointDiv {
-            position:absolute;
-            right:20px;
-            top:190px;
-        }
-
-            .pointDiv img {
-                margin: 5px 3px;
-                cursor: pointer;
-                height:10px;
-            }
-
-        .line {
-            height: 2px;
-            background: #979797;
-            margin: 10px 0px;
-        }
-        .gwBtn{
-            border:1px solid #000;
-            text-align:center;
-            padding:10px;
-            margin:10px 0px;
-            cursor:pointer;
-        }
-        .btnban{
-            border:1px solid #000; text-align:center; padding:5px;
-            cursor:pointer
-        }
-        .btnsel{
-            background:#000; color:#fff;
-        }
+.pointDiv{position:absolute;right:20px;bottom:10px;}
+.pointDiv img{margin: 5px 3px;cursor: pointer;height:15px;}
+.line {height: 2px;background: #979797;margin: 10px 0px;}
+.gwBtn{border:1px solid #000;text-align:center;padding:10px;margin:10px 0px;cursor:pointer;}
+.btnban{border:1px solid #4A4A4A; text-align:center; padding:5px;cursor:pointer}
+.btnsel{background:#4A4A4A; color:#fff;}
     </style>
 
     <script type="text/javascript">
@@ -106,11 +74,11 @@
         }
     </script>
 </head>
-<body>
-    <div class="menBan" style="display:none;"></div>
-    <div class="vipDiv" style="display:none;">
+<body class="bgwh">
+    <div class="menBan dn"></div>
+    <div class="vipDiv dn">
         <div style="margin-top:30px;">
-            <spa style="font-size:16px;">商品成功加入购物车</spa>
+            <span  class="f16">商品成功加入购物车</span>
             <img src="imgs/car.png" style="height:16px;" />
         </div>
         <div style="margin-top:30px;">
@@ -120,7 +88,7 @@
         </div>
     </div>
 
-    <div style="height:230px; overflow:hidden;">
+    <div class="rel ovh" style="min-height:250px;">
         <img id="cakeImg" src="uplaod/cake8.png" style="width:100%;" />
         <img src="imgs/dgao1.png" style="position:absolute; right:50px; top:50px; height:80px;" />
         <div class="pointDiv">
@@ -128,16 +96,14 @@
             <img src="imgs/point2.png" />
             <img src="imgs/point2.png" />
         </div>
-        <div style="height:40px;"></div>
     </div>
 
     <div style="margin:10px 20px;">
-        <div style="font-size:20px; font-weight:bold; font-family:黑体;">商品详情</div>
-        <div style="margin-top:10px;font-size:17px;">
-            <span style="font-family:黑体;">百香果慕斯</span>
-            <span>Passion Fruit Mousse</span>
+        <div class="f18 mt10 f24">
+            <span class="fh">百香果慕斯</span><br />
+            <span class="fw f20">Passion Fruit Mousse</span>
         </div>
-        <div style="font-size:12px; font-family:黑体; margin-top:10px; color:#666;">
+        <div class="f16 fh mt10 g6 lh24">
             纯正百香果慕斯，甜中带酸，再搭配百香果果肉，
             和乳脂奶油，跟之前同款类的相比，不会那么酸，
             大众比较能接受<br />
@@ -155,14 +121,14 @@
                 <td></td>
                 <td style="width:70px; padding:5px;">
                     <div class="btnban">
-                        <span style="font-size:16px; font-family:黑体;">1.0</span>
-                        <span style="font-size:12px;">磅</span>
+                        <span class="f16 fh">1.0</span>
+                        <span class="f12">磅</span>
                     </div>
                 </td>
                 <td style="width:70px; padding:5px;">
                     <div class="btnban btnsel">
-                        <span style="font-size:16px; font-family:黑体;">2.0</span>
-                        <span style="font-size:12px;">磅</span>
+                        <span class="f16 fh">2.0</span>
+                        <span class="f12">磅</span>
                     </div>
                 </td>
             </tr>
@@ -170,14 +136,14 @@
     </div>
 
     <div style="padding:10px 20px;">
-        <div onclick="showGwWin()" style="background:#000;color:#fff;padding:10px; text-align:center;">加入购物车</div>
+        <div onclick="showGwWin()" class="bg13 wh p10 tc f16 br4">加入购物车</div>
     </div>
 
     <div>
         <img src="uplaod/cake16.png" style="width:100%;" />
     </div>
 
-    <div style="padding:10px; font-size:14px; font-family:黑体;">
+    <div  class="p10 f14 fh">
         <div>温馨提示：</div>
         <div style="margin-top:20px;">0-4℃保藏12个小时，5℃最佳食用</div>
         <div class="line"></div>
