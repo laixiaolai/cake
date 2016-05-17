@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>付款</title>
+    <link href="css/m_lib.css" rel="stylesheet" />
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        function showTX() {
+            $(".menBan").show();
+            $(".vipDiv").css({
+                //left: ($(window).width() - 320) / 2
+            }).show();
+        }
+        function gototx() {
+            $(".menBan").hide();
+            $(".vipDiv").hide();
+        }
+    </script>
+</head>
+<body>
+    <div class="mt90 tc">
+        <div class="pct50 mb30 auto"><img src="imgs/cook1.png" /></div>
+        <p class="f20 fw mb10">合计支付</p>
+        <p class="f30 fw">9122.00元</p>
+    </div>
+
+    <div style="padding:1rem;">
+        <div onclick="showTX()" class="br5 f20 p10 wh tc bg1c">确认支付</div>
+    </div>
+
+    <div class="menBan dn"></div>
+    <div class="vipDiv dn" style="width:5.6rem;left:50%;margin-left:-3rem;top:50%;margin-top:-101px;">
+        <div class="mt10 mb10 auto pt10 pb10 pl10 bge8 br5 f16 tl">转账账户<input type="text" class="f16 pl10 bge8" placeholder="支付宝账号/手机号码" />
+        </div>
+        <div class="mt10 mb10 auto pt10 pb10 pl10 bge8 br5 f16 tl">提现金额<input type="text" class="f16 pl10 bge8" placeholder="本次可提现5.44元" />
+        </div>
+        <div class="btnGouhy f20 bg1c br5" onclick="gototx()">立即提现</div>
+    </div>
+</body>
+</html>
