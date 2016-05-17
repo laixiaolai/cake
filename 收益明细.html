@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>购物车</title>
+    <link href="css/m_lib.css" rel="stylesheet" />
+    <style>
+    body{background:#F5F5F5;}
+    </style>
+</head>
+<body>
+    <div class="box bg4a">
+        <div class="p5">
+          <span class="db wh">2016年<a class="tl wh pl5" href="#">04月</a></span>
+        </div>
+        <div class="row pt10 pb5 wh">
+          <div class="item pl10 wh lh24">销售收益<i class="db fw f14">1900.00</i></div>
+          <div class="item pl10 wh lh24 ble bre">一级收益<i class="db fw f14">1900.00</i></div>
+          <div class="item pl10 wh lh24">二级收益<i class="db fw f14">1900.00</i></div>
+        </div>
+    </div>
+    <div class="goods_info">
+            <ul id="proTabs" class="tabs tab"><li class="li on">销售收益</li><li class="li">一级收益</li><li class="li">二级收益</li></ul>
+            <div class="views mt42">
+                <div class="warp">
+                    <div class="pct100 li on">
+                        
+                    </div>
+                    <div class="li">
+                    
+                    </div>
+                    <div class="li">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script>
+        (function () {
+            $(function () {
+                var goods_info = new Swiper('.goods_info .views',{pagination: '.goods_info .tabs',mousewheelControl:true,simulateTouch:true});
+
+            });
+        }.call(this));
+        </script>
+</body>
+</html>
