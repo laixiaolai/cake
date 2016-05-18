@@ -436,16 +436,11 @@ to{margin-top:-5px}}
 }
 
 /*收益明细*/
-.tabs {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: wrap;align-content: space-between;text-align: center;color: #666;position: relative;overflow: hidden;}
-.tab {height: .6rem;line-height: .6rem;border-radius: .04rem;border: 1px solid #fff;background-color: #24D0B6;}
-.tabs li {-webkit-box-flex: 1;-moz-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;width: 25%;font-size: .28rem;color: #979797;border-bottom: .04rem solid #ddd;height: .9rem;line-height: .9rem;position: relative;overflow: hidden;}
-.tab li {display: inline-block;text-align: center;height: .6rem;line-height: .6rem;color: #fff;width: 50%;border: none;box-sizing: border-box;}
-.tabs li.on {color: #f60;border-bottom-color: #5cccb9;}
-.tab li.on {background: #fff;color: #24D0B6;}
-.warp .li {
-    float: left;
-    overflow: hidden;
-}
+.tabs {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: wrap;align-content: space-between;text-align: center;color: #000;position: relative;overflow: hidden;height: .6rem;line-height: .6rem;-webkit-border-radius: .08rem;border-radius: .08rem;border: 1px solid #4A4A4A;background-color: #FFF;width:80%;margin:.2rem auto}
+.tabs li {-webkit-box-flex: 1;-moz-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;width: 25%;font-size: .28rem;position: relative;overflow: hidden;text-align: center;height: .6rem;line-height: .6rem;border-right:1px solid #4A4A4A;box-sizing: border-box;}
+.tabs li:last-child{border:none}
+.tabs li.on {border-bottom-color: #5cccb9;background: #4A4A4A;color: #FFF;}
+.warp .li {float: left;overflow: hidden;}
 .listgc{border-top:1px solid #DDD8CE;border-bottom:1px solid #DDD8CE;background-color:#fff}
 .listgc dt,.listgc dd{margin:0;border-bottom:1px solid #DDD8CE;overflow:hidden;font-size:inherit;font-weight:400;position:relative}
 .listgc dt:last-child,.listgc dd:last-of-type{border-bottom:0}
