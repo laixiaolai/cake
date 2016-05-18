@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
+    <title>添加收货地址</title>
+    <meta charset="utf-8" />
+    <link href="css/m_lib.css" rel="stylesheet" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/cake.js"></script>
+    <style type="text/css">
+body{background:#F5F5F5;}
+.contentTab {width:100%;}
+td{padding:.16rem 0;}
+.addrDiv{margin-top:.4rem;border-top:1px solid #E5E5E5;background:#fff;}
+.item{border-bottom:1px solid #E5E5E5;padding:.2rem 0;}
+.pTxt{width:1.5rem;padding-left:.2rem;font-size:.32rem;color:#333;}
+.pname{padding-top:.24rem;vertical-align:top;}
+.name{font-size:.32rem;width:95%;border:none;}
+.bottomBorder{border-bottom:0px solid #E5E5E5;padding-bottom:.2rem;}
+.check{width:2rem;height:45px;padding-left:1.2rem;margin-top:.4rem;background:url(imgs/check1.png) no-repeat 12px 2px;cursor:pointer;}
+.checked{background:url(imgs/checked1.png) no-repeat 10px 10px;}
+.check1{width:100px;height:45px;padding-left:60px;margin:auto;background:url(imgs/check1.png) no-repeat 12px 2px;cursor:pointer;}
+.checked1{background:url(imgs/checked1.png) no-repeat 10px 0px;}
+.btnAdd{display:block;text-decoration:none;outline:none;color:#E41730;background:#fff;border:1px solid #E5E5E5;padding:.2rem;margin:auto;margin-top:1rem;width:80%;font-size:.4rem;text-align:center;}
+.btnOk{width:80px;color:#fff;font-size:32px;cursor:pointer;padding:0px;}
+.mapdiv{margin:auto;overflow:hidden;height:220px;width:220px;border-radius:10px;}
+.mapdiv img{height:220px;width:220px;}
+.selectDiv{background:#EEEEEE;width:100%;border:1px solid #979797;border-radius:5px;padding:3px 2px;}
+.btnSave{width:600px;font-size:32px;color:#fff;text-align:center;margin:auto;padding:20px;margin-top:50px;background:#69411D;border-radius:5px;cursor:pointer;}
+.addr{font-size:30px;width:90%;border:none;}
+        	
+    </style>
+    
+    <script type="text/javascript">
+        
+        function checkforms() {
+            if($.trim($("#tel_name").val()) == '') {
+                alert("联系人不能为空");
+                return false;
+            }
+            
+            if($.trim($("#tel").val()) == '') {
+                alert("手机号码不能为空");
+                return false;
+            }
+            
+            if($.trim($("#street").val()) == '') {
+                alert("门牌号不能为空");
+                return false;
+            }
+
+            //alert($("#area").val());
+            addAddress();
+        }
+    </script>
+</head>
+<body>
+
+<div class="addrDiv">
+    <div class="item">
+        <table class="contentTab">
+            <tr>
+                <td class="pTxt pname" rowspan="2">联系人:</td>
+                <td colspan="2" class="bottomBorder">
+                    <input class="name" type="text" autocomplete="off" placeholder="您的姓名" id="tel_name" value=""/>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="item">
+        <table class="contentTab">
+            <tr>
+                <td class="pTxt">手机号码:</td>
+                <td>
+                    <input class="name" type="text" autocomplete="off" placeholder="配送员联系您的电话" id="tel" value=""/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="item">
+        <table class="contentTab">
+            <tr>
+                <td class="pTxt" rowspan="2" style="padding-top:13px; vertical-align:top;">收货地址:</td>
+                <td class="pr5">
+                    <select class="selectDiv pTxt" name="province" id="province" ng-options="province.Name for province in Address" ng-model="address.province">
+                    </select>
+                </td>
+                <td class="pr5">
+                    <select class="selectDiv pTxt" name="city" id="city" ng-options="city.Name for city in address.province.City" ng-model="address.city">
+                    </select>
+                </td>
+                <td class="pr5">
+                    <select class="selectDiv pTxt" name="county" id="country" ng-options="district.Name for district in address.city.Region" ng-model="address.district">
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="item">
+        <table class="contentTab">
+            <tr>
+                <td class="pTxt">门牌号:</td>
+                <td>
+                    <input class="name" type="text" autocomplete="off" placeholder="楼座好，门牌号等信息" id="street" value=""/>
+                </td>
+            </tr>
+        </table>
+    </div>    
+</div>
+<a class="btnAdd br5"  onclick="checkforms()">保存</a>
+
+
+    
+<input type="hidden" id="addr_id" value="">
+<input type="hidden" id="returnurl" value="">
+<input type="hidden" id="area" name="area" value="">
+</body>
+
+<script src="js/area_picker.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+addressInit('province', 'city', 'country', '福建', '泉州市', '丰泽区');
+
+</script>
+ 
+    
+</html>

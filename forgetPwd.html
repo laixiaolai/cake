@@ -2,159 +2,52 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=750px, user-scalable=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0" />
     <title>忘记密码</title>
     <meta charset="utf-8" />
-    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/m_lib.css" rel="stylesheet" />
     <script src="js/jquery.min.js"></script>
     <script src="js/common.js"></script>
     <!--页头-->
     <style type="text/css">
-        body {
-            background: #F5F5F5;
-        }
-        .pageBack{
-            background:#6A5F58 url(../imgs/prev.png) no-repeat 20px 26px;
-            color:#fff;
-            font-size:36px;
-            text-align:center;
-            padding:26px 20px;
-            cursor:pointer;
-            display:none;
-        }
-        .headDiv {
-            padding: 20px;
-            border-bottom: 1px solid #C8C8C8;
-            background:#fff;
-        }
-        .contentTab {
-            width: 100%;
-        }
-        td{
-            text-align:center;
-        }
-        .stepName{
-            font-size:30px;
-            padding:0px 50px;
-        }
-        .nextStep{
-            background:url(imgs/next.png) no-repeat 0px 15px;
-            height:18px;
-            width:17px;
-        }
-        .enableStep {
-            color: #423030 !important;
-        }
-        .disableStep {
-            color: #7D7D7D;
-        }
-    </style >
+    body {background: #F3F3F3;}
+    .pageBack{background:#6A5F58 url(../imgs/prev.png) no-repeat .4rem .52rem;color:#fff;font-size:.72rem;text-align:center;padding:.52rem .4rem;cursor:pointer;display:none;}
+    .headDiv {padding:.4rem;border-bottom: 1px solid #C8C8C8;background:#fff;}
+    .contentTab {width: 100%;}
+    td{text-align:center;}
+    .stepName{font-size:.5rem;padding:0 1rem;}
+    .nextStep{background:url(imgs/next.png) no-repeat 0px 5px;height:.36rem;width:.34rem;}
+    .enableStep {color: #423030 !important;}
+    .disableStep {color: #7D7D7D;}
+    </style>
 
     <!--第1步-->
-    <style type="text/css" >
-        .telTip {
-            font-size: 30px;
-            padding: 30px 20px;
-            color: #797979;
-            border-bottom: 1px solid #C8C8C8;
-        }
-        .telContent {
-            background: #fff;
-            padding: 20px 30px;
-            border-bottom: 1px solid #C8C8C8;
-        }
-        .txtDiv {
-            padding:30px;
-            border-bottom: 1px solid #C8C8C8;
-        }
-        .inputTxt {
-            border: none;
-            font-size: 30px;
-            width: 100%;
-        }
-        .changeCode {
-            height: 50px;
-            font-size: 30px;
-            color: #69411D;
-            border: 1px solid #69411D;
-            border-radius: 5px;
-            text-align: center;
-            padding-top: 11px;
-            cursor: pointer;
-        }
-        .codeTd {
-            padding-top: 10px;
-            width: 188px;
-        }
-        .codeTd img{
-            cursor:pointer;
-        }
-        .btnTd {
-            padding: 0px 10px;
-            width: 180px;
-        }
-        .btnNextStep {
-            margin: auto;
-            margin-top: 30px;
-            width: 570px;
-            height: 60px;
-            font-size: 30px;
-            color: #543111;
-            border: 1px solid #543111;
-            border-radius: 5px;
-            text-align: center;
-            padding-top: 20px;
-            cursor: pointer;
-            background:#fff;
-        }
-        .errorMesg{
-            text-align:center;
-            font-size:30px;
-            padding-top:30px;
-            color:#ff4200;
-            height:50px;
-        }
+    <style type="text/css">
+    .telTip {font-size:.6rem;padding:.6rem .4rem;color: #797979;border-bottom: 1px solid #C8C8C8;}
+    .telContent {background: #fff;padding: .4rem .6rem;border-bottom: 1px solid #C8C8C8;}
+    .txtDiv {padding:.4rem .2rem;}
+    label{display: block;min-width: .54rem;text-align: right;color: #999;line-height: 1;background: url(imgs/tel.png) no-repeat 2px 2px;background-size:68%;}
+    .vcode_bg{background:url(imgs/vcode.png) no-repeat 2px 4px;background-size:80%;}
+    .inputTxt{border: none;font-size: .4rem;}
+    .changeCode {font-size: .4rem;color: #208dff;border:none;background:none;text-align: center;-webkit-appearance:none;}
+    .codeTd {padding-top:.2rem;width: 188px;}
+    .codeTd img{cursor:pointer;}
+    .btnTd {padding: 0px .2rem;width: 180px;}
+    .btnNextStep {margin:.2rem .4rem;height: 1rem;line-height:1rem;font-size: .4rem;color: #543111;text-align: center;color:#fff;background:#208dff;}
+    .errorMesg{text-align:center;font-size:.4rem;padding-top:.1rem;color:#ff4200;height:1rem;}
     </style>
 
     <!--第2、3步-->
     <style type="text/css">
-        .setpDiv {
-            margin-top: 20px;
-            margin-bottom: 10px;
-            padding:0px 20px;
-            background: #fff;
-            border-top: 1px solid #C8C8C8;
-            border-bottom: 1px solid #C8C8C8;
-        }
+    .setpDiv {margin-top: .4rem;margin-bottom: .2rem;padding:0px .3rem;}
+    .setpDiv em{font-size:.6rem;width:3rem;}
     </style>
 
     <!--第4步-->
     <style type="text/css">
-        .okDiv{
-            text-align:center;
-            margin-top:200px;
-        }
-        .okTxt {
-            font-size: 30px;
-            margin-top: 50px;
-            margin-bottom: 100px;
-            color: #7D7D7D;
-        }
-        .btnLogin{
-            display:block;
-            margin: auto;
-            margin-top: 30px;
-            width: 570px;
-            height: 60px;
-            font-size: 30px;
-            color: #543111;
-            border: 1px solid #543111;
-            border-radius: 5px;
-            text-align: center;
-            padding-top: 20px;
-            cursor: pointer;
-            text-decoration:none;
-        }
+    .okDiv{text-align:center;margin-top:4rem;}
+    .okTxt {font-size: .6rem;margin-top: 1rem;margin-bottom:2rem;color: #7D7D7D;}
+    .btnLogin{display:block;margin: auto;margin-top:.6rem;width: 570px;height:1.2rem;font-size:.6rem;color: #543111;border: 1px solid #543111;border-radius: 5px;text-align: center;padding-top: .4rem;cursor: pointer;text-decoration:none;}
     </style>
 
     <script type="text/javascript">
@@ -225,7 +118,7 @@
 <body>
     <div class="pageBack" onclick="backPage()">忘记密码</div>
 
-    <div class="headDiv">
+    <div class="headDiv dn">
         <table>
             <tr>
                 <!--<td id="tdStep1" class="stepName disableStep enableStep">确认账号</td>
@@ -269,45 +162,36 @@
 
     <div id="step2">
         <div class="setpDiv">
-            <div class="txtDiv">
-                <table class="contentTab">
-                    <tr>
-                        <td style="text-align:left;">
-                            <span class="inputTxt">180300497763</span>
-                        </td>
-                        <td class="btnTd">
-                            <div class="changeCode">点击发送</div>
-                        </td>
-                    </tr>
-                </table>
+            <div class="txtDiv box mb20 bgwh br5">
+                <label></label><input id="telNo" type="tel" autocomplete="off" placeholder="请输入手机号码" class="inputTxt item">
             </div>
-            <div class="txtDiv" style="border-bottom:none;">
-                <input id="telCode" type="text" autocomplete="off" placeholder="请输入手机短信中的验证码" class="inputTxt" />
+            <div class="txtDiv box mb20 bgwh br5">
+                <label class="vcode_bg"></label><input id="telCode" type="text" autocomplete="off" placeholder="请输入验证码" class="inputTxt item" /><input type="button" name="" class="changeCode" value="发送验证码" />
             </div>
         </div>
         <div class="errorMesg"></div>
-        <div onclick="nextStep(2)" class="btnNextStep">下一步</div>
+        <div onclick="nextStep(2)" class="btnNextStep br5">下一步</div>
     </div>
     
     <div id="step3" style="display:none;">
         <div class="setpDiv">
-            <div class="txtDiv">
-                <input id="pwd" type="password" autocomplete="off" placeholder="请输入新密码" class="inputTxt" />
+            <div class="txtDiv box mb20 bgwh br5">
+                <em>新密码</em><input id="pwd" type="password" autocomplete="off" placeholder="6-18位数字与字母组合" class="inputTxt item" />
             </div>
-            <div class="txtDiv" style="border-bottom:none;">
-                <input id="pwd1" type="password" autocomplete="off" placeholder="确认新密码" class="inputTxt" />
+            <div class="txtDiv box mb20 bgwh br5">
+                <em>确认密码</em><input id="pwd1" type="password" autocomplete="off" placeholder="请再次输入新密码" class="inputTxt item" />
             </div>
         </div>
         <div class="errorMesg"></div>
-        <div onclick="nextStep(3)" class="btnNextStep">下一步</div>
+        <div onclick="nextStep(3)" class="btnNextStep br5">重置密码</div>
     </div>
 
     <div id="step4" style="display:none;">
         <div class="okDiv">
-            <img src="imgs/ok.png" />
+            <img src="imgs/ok1.png" />
             <div class="okTxt">恭喜您密码设置成功</div>
         </div>
-        <a href="loginRegist.html" class="btnLogin">直接登陆</a>
+        <a href="loginRegist.html" class="btnLogin br5">直接登陆</a>
     </div>
 
     <div style="height:100px;"></div>
