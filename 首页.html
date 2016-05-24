@@ -16,7 +16,7 @@
         
         body{background-color:#111;}
 .hplist{
-padding-bottom:20px;
+padding-bottom:30px;
 background: -webkit-linear-gradient(-90deg, #111111 0, #5d5751 100%);
 background: -moz-linear-gradient(180deg, #111111 0, #5d5751 100%);
 background: linear-gradient(180deg, #111111 0, #5d5751 100%);
@@ -35,8 +35,9 @@ background-size: auto auto;
         $(function () {
             $(".hplist img").bind("click", function () {
                 window.location = "0506详情页最终.html";
-            })
-            timeInterval = setInterval(imgShow, 10000);
+            });
+
+            //timeInterval = setInterval(imgShow, 10000);
             hammertime = new Hammer($("#cakeImg")[0]);
             hammertime.on("swipeleft", function (e) {
                 clearInterval(timeInterval);
@@ -78,33 +79,28 @@ background-size: auto auto;
     </table>
     
     <div class="hplist">
-        <img id="cakeImg" src="uplaod/hp1.png" />
-
-        <div class="pointDiv">
+        <img class="dn" id="cakeImg" src="uplaod/hp1.png" />
+        <div class="pointDiv dn">
             <img src="imgs/point1.png" />
             <img src="imgs/point2.png" />
             <img src="imgs/point2.png" />
         </div>
 
-        <a class="db pct88 auto br10 bgwh p-pct3 mt15" href="#"><img src="uplaod/hp2.png" /></a>
-        <a class="db pct88 auto br10 bgwh p-pct3 mt15" href="#"><img src="uplaod/hp3.png" /></a>
-        <a class="db pct88 auto br10 bgwh p-pct3 mt15" href="#"><img src="uplaod/hp4.png" /></a>
-        <a class="db pct88 auto br10 bgwh p-pct3 mt15" href="#"><img src="uplaod/hp5.png" /></a>
-        <a class="db pct88 auto br10 bgwh p-pct3 mt15" href="#"><img src="uplaod/hp6.png" /></a>
-        <a class="db pct88 auto br10 bgwh p-pct3 mt15" href="#"><img src="uplaod/hp7.png" /></a>
-        <a class="db pct88 auto br10 bgwh p-pct3 mt15" href="#"><img src="uplaod/hp8.png" /></a>
-        <a class="db pct88 auto br10 bgwh p-pct3 mt15" href="#"><img src="uplaod/hp9.png" /></a>
-        <a class="db pct88 auto br10 bgwh p-pct3 mt15" href="#"><img src="uplaod/hp10.png" /></a>
-        <a class="db pct88 auto br10 bgwh p-pct3 mt15" href="#"><img src="uplaod/hp11.png" /></a>
-        <a class="db pct88 auto br10 bgwh p-pct3 mt15" href="#"><img src="uplaod/hp12.png" /></a>
-        <a class="db pct88 auto br10 bgwh p-pct3 mt15" href="#"><img src="uplaod/hp13.png" /></a>
+        <a class="db pct85 auto br10 bgwh p-pct3 mt15 tc" href="#"><img src="uplaod/hp14.jpg" /><span class="db pt8 f18 lh30">黑森林蛋糕Black Forest<br /><i class="f16">￥298</i></span></a>
+        <a class="db pct85 auto br10 bgwh p-pct3 mt15 tc" href="#"><img src="uplaod/hp14.jpg" /><span class="db pt8 f18 lh30">黑森林蛋糕Black Forest<br /><i class="f16">￥298</i></span></a>
+        <a class="db pct85 auto br10 bgwh p-pct3 mt15 tc" href="#"><img src="uplaod/hp14.jpg" /><span class="db pt8 f18 lh30">黑森林蛋糕Black Forest<br /><i class="f16">￥298</i></span></a>
+        <a class="db pct85 auto br10 bgwh p-pct3 mt15 tc" href="#"><img src="uplaod/hp14.jpg" /><span class="db pt8 f18 lh30">黑森林蛋糕Black Forest<br /><i class="f16">￥298</i></span></a>
+        <a class="db pct85 auto br10 bgwh p-pct3 mt15 tc" href="#"><img src="uplaod/hp14.jpg" /><span class="db pt8 f18 lh30">黑森林蛋糕Black Forest<br /><i class="f16">￥298</i></span></a>
+        <a class="db pct85 auto br10 bgwh p-pct3 mt15 tc" href="#"><img src="uplaod/hp14.jpg" /><span class="db pt8 f18 lh30">黑森林蛋糕Black Forest<br /><i class="f16">￥298</i></span></a>
+        <a class="db pct85 auto br10 bgwh p-pct3 mt15 tc" href="#"><img src="uplaod/hp14.jpg" /><span class="db pt8 f18 lh30">黑森林蛋糕Black Forest<br /><i class="f16">￥298</i></span></a>
+        <a class="db pct85 auto br10 bgwh p-pct3 mt15 tc" href="#"><img src="uplaod/hp14.jpg" /><span class="db pt8 f18 lh30">黑森林蛋糕Black Forest<br /><i class="f16">￥298</i></span></a>
     </div>
     <div class="box bottom_bar">
         <div class="row">
-            <a class="item" style="background: #8E7A5C" href="/"><i><img src="imgs/home.png" height="20" /></i>首页</a>
-            <a class="item" href="09所有蛋糕最终.html"><i><img src="imgs/cake.png" height="20" /></i>我的收益</a>
-            <a class="item" href="#"><i><img src="imgs/car.png" height="20" /></i>购物车</a>
-            <a class="item" href="0708会员我的界面.html"><i><img src="imgs/me.png" height="20" /></i>我的</a>
+            <a class="item" style="background: #8E7A5C" href="/"><i><img src="imgs/home.png" height="22" /></i>首页</a>
+            <a class="item" href="09所有蛋糕最终.html"><i><img src="imgs/cake.png" height="22" /></i>我的收益</a>
+            <a class="item" href="#"><i><img src="imgs/car.png" height="22" /></i>购物车</a>
+            <a class="item" href="0708会员我的界面.html"><i><img src="imgs/me.png" height="22" /></i>我的</a>
         </div>
     </div>
 </body>
