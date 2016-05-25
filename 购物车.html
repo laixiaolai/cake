@@ -25,10 +25,7 @@
 .cakeItemSel{background:#fdfce0 !important;}
 .cakeImg{width:60px;height:60px;}
 .cakeNum{height:20px;line-height:20px;font-size:16px;margin-left:-1px;margin-right:-1px;}
-.btnNumTd{width:24px;height:20px;line-height:20px;text-align:center;border:1px solid #9B9B9B;color:#9B9B9B;font-size:16px;border-radius:2px;}
-.name{}
-.norms{}
-.money{}        
+.btnNumTd{width:24px;height:20px;line-height:20px;text-align:center;border:1px solid #9B9B9B;color:#9B9B9B;font-size:16px;border-radius:2px;}      
 .selFirst{background:#6A5F58;color:#fff;font-size:28px;text-align:center;position:fixed;padding:20px;text-align:center;top:300px;width:200px;border-radius:5px;display:none;}
 .resultDiv{background:#fff;border-top:1px solid #E5E5E5;position:fixed;bottom:0px;width:100%;z-index:1;}
 .calculat{background:#343534;padding:;width:100px;text-align:center;cursor:pointer;}
@@ -190,13 +187,29 @@
             })
 
             $("body").on("click",".delImg", function () {
-                $(this).closest(".weui_panel").remove()
-                var price = $(this).closest(".weui_panel").find(".money").attr("money");
+                var w_panel=$(this).closest(".weui_panel");
+                w_panel.remove()
+                var price = w_panel.find(".money").attr("money");
                 var resMoney = $(".resMoney").attr("money");
                 resMoney = parseInt(resMoney);
                 resMoney -= price;
                 $(".resMoney").html("￥" + resMoney);
+
+                if(w_panel.attr("productcate")=="tableware"){
+                    $("#tableware").removeClass('checked');
+                }
+                if(w_panel.attr("productcate")=="candle"){
+                    $("#candle").removeClass('checked');
+                }
+                if(w_panel.attr("productcate")=="hcard"){
+                    $("#hcard").removeClass('checked');
+                }
+
+
+
             });
+
+
         })
         function cakeNum(tag, num) {
             var price = $(tag).closest(".weui_panel_bd").find(".money").attr("money");
@@ -415,13 +428,13 @@ function addproductext(id,name,price,img,product_cate) {
     html +='<div class="weui_media_bd clickTd">';
     html +='<div class="weui_media_title name">'+name+'</div>';
     html +='<div class="weui_media_desc norms pb5">规格：'+price+'/套</div>';
-    html +='<div class="dib btnNumTd" onclick="javascript:cakeNum(this,0);minusNum('+id+',1);">-</div><div class="dib w40 tc bd9b cakeNum">2</div><div class="dib btnNumTd" onclick="javascript:cakeNum(this,1);addNum('+id+',1);">+</div>';
+    html +='<div class="dib btnNumTd" onclick="javascript:cakeNum(this,0);minusNum('+id+',1);">-</div><div class="dib w40 tc bd9b cakeNum">1</div><div class="dib btnNumTd" onclick="javascript:cakeNum(this,1);addNum('+id+',1);">+</div>';
     html +='</div>';
     html +='<div class="tr f16 g9 delImg"><img class="mt-2" src="imgs/del.png" height="20" />&nbsp;删除</div>';
     html +='</div>';
     html +='<div class="weui_media_box weui_media_appmsg">';
     html +='<div class="weui_media_bd">';
-    html +='<h4 class="weui_media_title">共<span class="cakeNum">2</span>件商品</h4>';
+    html +='<h4 class="weui_media_title">共<span class="cakeNum">1</span>件商品</h4>';
     html +='</div>';
     html +='<div class="tr">';
     html +='<h4 class="weui_media_title ge4">小计：<span class="money" money="'+price+'">￥'+price+'</span></h4>';
