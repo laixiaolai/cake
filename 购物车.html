@@ -76,33 +76,20 @@
             if ($(".cakeItem").length == 0) {
                 $("#noCard").removeClass("yc").addClass("xs");
                 $("#dlogo").removeClass("xs").addClass("yc");
-                //$("#paybannber").removeClass("xs").addClass("yc");
             }else{
                 $("#noCard").removeClass("xs").addClass("yc");
                 $("#dlogo").removeClass("yc").addClass("xs");
-                // $("#paybannber").removeClass("xs").addClass("yc");
             }
              
             var cakeList = [];
-            ///cakeList.push({ ID: 1, img: "uplaod/cake2.png", name: "Type The Moon Cake坚果芝士幕斯", type: "2磅 约17*17(cm)", money: 288, count: 2 });
-            //cakeList.push({ ID: 2, img: "uplaod/cake3.png", name: "Type The Moon Cake坚果芝士幕斯", type: "2磅 约17*17(cm)", money: 288, count: 2 });
     
             var resMoney = 0;
             for (var i = 0; i < cakeList.length; i++) {
                 resMoney += cakeList[i].money;
             }
-            //$(".resMoney").html("￥" + resMoney);
-            //$(".resMoney").attr("money", resMoney);
     
             var data = { data: cakeList }
-            //$('#cakesTemplate').tmpl(data).appendTo('#cakeList');
-            /*
-            //$(".clickTd").bind("click", function () {
-            //    var pdiv = $(this).parent().parent().parent().parent();
-            //    if (pdiv.hasClass("cakeItemSel")) pdiv.removeClass("cakeItemSel");
-            //    else pdiv.addClass("cakeItemSel");
-            })
-            */
+            
             $(".prevLink").bind("click", function () {
                 window.history.back(-1);
             })
@@ -110,7 +97,6 @@
 
             $(".check").bind("click", function () {
                 var tid = $(this).attr("tid");
-             //   alert(tid);
                 if ($(this).hasClass("checked")){
                     $(this).removeClass("checked");
                     if(tid == 'tableware') {
@@ -134,9 +120,7 @@
                         delbyproduct('');
                         minmoney('');
                         delproductext('');
-                    }
-                        
-                    
+                    }                    
                 }else{
                     $(this).addClass("checked");
                     if(tid == 'tableware') {
@@ -183,12 +167,7 @@
             })
            
             $(".delBtn").bind("click", function () {
-
-                //var pdiv = $(this).parent().parent().parent().parent();
-                //if (pdiv.hasClass("cakeItemSel")) pdiv.removeClass("cakeItemSel");
-                //else pdiv.addClass("cakeItemSel");
                 $(this).parent().addClass("cakeItemSel");
-                
                 delCake();
                 $(this).parent().remove();
                 $(".delBtn").each(function () {
@@ -199,7 +178,6 @@
                     }
                 })
                 
-                //alert($(".cakeItem").length);
                 if ($(".cakeItem").length == 0) {
                     $("#noCard").removeClass("yc").addClass("xs");
                     $("#dlogo").removeClass("xs").addClass("yc");
@@ -210,10 +188,16 @@
                     $("#paybannber").removeClass("yc").addClass("xs");
                 }
             })
-        })
-        
 
-    
+            $("body").on("click",".delImg", function () {
+                $(this).closest(".weui_panel").remove()
+                var price = $(this).closest(".weui_panel").find(".money").attr("money");
+                var resMoney = $(".resMoney").attr("money");
+                resMoney = parseInt(resMoney);
+                resMoney -= price;
+                $(".resMoney").html("￥" + resMoney);
+            });
+        })
         function cakeNum(tag, num) {
             var price = $(tag).closest(".weui_panel_bd").find(".money").attr("money");
             var count = $(tag).closest(".weui_panel_bd").find(".cakeNum").html();
@@ -411,10 +395,6 @@ $(".clickTd").bind("click", function () {
 })
 $(".prevLink").bind("click", function () {
     window.history.back(-1);
-})
-
-$(".delImg").bind("click", function () {
-    $(this).closest(".weui_panel_bd").remove()
 })
 
 function toorder() {
