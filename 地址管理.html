@@ -11,50 +11,62 @@
     <link href="css/weui.min.css" rel="stylesheet" />
 </head>
 <body class="bgf5">
-    <div class="weui_panel weui_panel_access weui_cells_checkbox">
-        <div class="weui_panel_bd">
-            <div class="weui_media_box weui_media_appmsg">
-                <div class="weui_media_bd">
-                    <h4 class="weui_media_title pb5">萧峰&nbsp;<span class="f18">18888888888</span></h4>
-                    <p class="weui_media_desc" style="font-size:16px;">新港广场 5楼</p>
+    
+    
+
+    <div class="weui_cells weui_cells_radio" style="background:none">
+        <div class="weui_panel">
+            <div class="weui_panel_bd">
+                <div class="weui_media_box weui_media_appmsg">
+                    <div class="weui_media_bd">
+                        <h4 class="weui_media_title pb5">萧峰&nbsp;<span class="f18">18888888888</span></h4>
+                        <p class="weui_media_desc" style="font-size:16px;">新港广场 5楼</p>
+                    </div>
                 </div>
+                <label class="weui_cell weui_check_label" for="x11">
+                    <div class="weui_cell_hd" style="padding-right:.35em">
+                        <input type="radio" class="weui_check" name="radio1" id="x11" checked="checked">
+                        <span class="weui_icon_checked"></span>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p class="f14 g6">设为默认</p>
+                    </div>
+                    <div class="del_addr f14 g6"><img src="imgs/del.png" height="18" />&nbsp;删除</div>
+                </label>
             </div>
-            <label class="weui_cell weui_check_label" for="s12">
-                <div class="weui_cell_hd">
-                    <input type="checkbox" name="checkbox1" class="weui_check" id="s12">
-                    <i class="weui_icon_checked"></i>
-                </div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <p class="f14 g6">设为默认</p>
-                </div>
-                <div class="f14 g6"><img src="imgs/del.png" height="18" />&nbsp;删除</div>
-            </label>
         </div>
-    </div>
-    <div class="weui_panel weui_panel_access weui_cells_checkbox">
-        <div class="weui_panel_bd">
-            <div class="weui_media_box weui_media_appmsg">
-                <div class="weui_media_bd">
-                    <h4 class="weui_media_title pb5">萧峰&nbsp;<span class="f18">18888888888</span></h4>
-                    <p class="weui_media_desc" style="font-size:16px;">新港广场 5楼</p>
+        
+        <div class="weui_panel">
+            <div class="weui_panel_bd">
+                <div class="weui_media_box weui_media_appmsg">
+                    <div class="weui_media_bd">
+                        <h4 class="weui_media_title pb5">萧峰&nbsp;<span class="f18">18888888888</span></h4>
+                        <p class="weui_media_desc" style="font-size:16px;">新港广场 5楼</p>
+                    </div>
                 </div>
+                <label class="weui_cell weui_check_label" for="x12">
+                    <div class="weui_cell_hd" style="padding-right:.35em">
+                        <input type="radio" name="radio1" class="weui_check" id="x12">
+                        <span class="weui_icon_checked"></span>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p class="f14 g6">设为默认</p>
+                    </div>
+                    <div class="del_addr f14 g6"><img src="imgs/del.png" height="18" />&nbsp;删除</div>
+                </label>
             </div>
-            <label class="weui_cell weui_check_label" for="s11">
-                <div class="weui_cell_hd">
-                    <input type="checkbox" class="weui_check" name="checkbox1" id="s11" checked="checked">
-                    <i class="weui_icon_checked"></i>
-                </div>
-                <div class="weui_cell_bd weui_cell_primary">
-                    <p class="f14 g6">设为默认</p>
-                </div>
-                <div class="f14 g6"><img src="imgs/del.png" height="18" />&nbsp;删除</div>
-            </label>
         </div>
+        
     </div>
+
     <a class="db pct100 fixed fix-bt0 auto mt30 lh40 f16 bgwh bte5 tc fw f18 ge4"><span class="f24">+</span>&nbsp;新建地址</a>
     <script src="js/jquery.min.js"></script>
     <script type="text/javascript">
-        
+        $(function(){
+            $(".del_addr").on("click",function(index, el) {
+                $(this).closest('.weui_panel').hide();
+            });
+        });
     </script>
 </body>
 </html>
