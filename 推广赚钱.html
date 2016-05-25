@@ -11,16 +11,22 @@
     <link href="css/weui.min.css" rel="stylesheet" />
     <script src="js/jquery.min.js"></script>
     <script type="text/javascript">
-            function showTX() {
-                $(".menBan").show();
-                $(".vipDiv").css({
-                    left: ($(window).width() - 320) / 2
-                }).show();
-            }
-            function gototx() {
-                $(".menBan").hide();
+        function showTX() {
+            $(".menBan").show();
+            $(".vipDiv").css({
+                left: ($(window).width() - 320) / 2
+            }).show();
+        }
+        function gototx() {
+            $(".menBan").hide();
+            $(".vipDiv").hide();
+        }
+        $(function(){
+            $(".menBan").on("click",function(){
+                $(this).hide();
                 $(".vipDiv").hide();
-            }
+            });
+        });
     </script>
 </head>
 <body class="bgf5">
