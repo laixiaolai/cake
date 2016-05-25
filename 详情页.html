@@ -39,6 +39,12 @@
                 imgShow(0);
                 timeInterval = setInterval(imgShow, 10000);
             });
+            $(function(){
+                $(".menBan").on("click",function(){
+                    $(this).hide();
+                    $(".vipDiv").hide();
+                });
+            });
         })
 
         var imgs = ["uplaod/cake8.png", "uplaod/hp9.png", "uplaod/hp11.png"];
@@ -79,7 +85,7 @@
     <div class="vipDiv dn">
         <div style="margin-top:30px;">
             <span  class="f16">商品成功加入购物车</span>
-            <img src="imgs/car.png" style="height:16px;" />
+            <img src="imgs/car.png" style="height:16px;margin-top:-3px;" />
         </div>
         <div style="margin-top:30px;">
             <div class="gwBtn" onclick="hidevp()" style="background:#000; color:#fff;">去购物车</div>
