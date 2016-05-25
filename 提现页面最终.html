@@ -20,6 +20,12 @@
             $(".menBan").hide();
             $(".vipDiv").hide();
         }
+        $(function(){
+            $(".menBan").on("click",function(){
+                $(this).hide();
+                $(".vipDiv").hide();
+            });
+        });
     </script>
 </head>
 <body>
