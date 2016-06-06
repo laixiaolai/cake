@@ -16,15 +16,15 @@ a, a:visited {text-decoration: none;}
 a:link {text-decoration: none;}
 input {-webkit-appearance: none; /* Safari 和 Chrome */}
 a {text-decoration: none;outline: none;}
-.header {position: fixed;z-index: 100;width: 100%;background: #fff;color: #fff;padding: 26px 20px;cursor: pointer;font-weight: bold;}
+.header {position: fixed;z-index: 1;width: 100%;background: #fff;color: #fff;padding: 26px 20px;cursor: pointer;font-weight: bold;}
 .info {padding: 20px;background: #fff;text-align: center;color: #FFFFFF;font-size: 24px;}
 .active {background: #fff;color: #4A4A4A;font-size: 28px;text-align: center;}
 .list-bg {background: #211E25;}
 .item-list {position: relative;padding: 40px 10px;border-top: 1px solid #2d2a33;border-bottom: 1px solid #2d2a33;text-align: right;color: #EEC900;font-size: 32px;}
 .show {display: block;}
 .hide {display: none;}
-.maskPanel {position: fixed;height: 100%;width: 100%;background: #000;z-index: 100;top: 0px;opacity: 0.8;filter: alpha(opacity=80);cursor: pointer;display: none;}
-.point {width: 700px;height: 188px;position: absolute;z-index: 100;background: url(http://m.danggao.cn/resource/imgs/point.png) no-repeat;background-position: right;right: 10px;top: 10px;color: #fff;font-size: 45px;cursor: pointer;text-align: center;display: none;}
+.maskPanel {position: fixed;height: 100%;width: 100%;background: #000;z-index: 1;top: 0px;opacity: 0.8;filter: alpha(opacity=80);cursor: pointer;display: none;}
+.point {width: 700px;height: 188px;position: absolute;z-index:1;background: url(http://m.danggao.cn/resource/imgs/point.png) no-repeat;background-position: right;right: 10px;top: 10px;color: #fff;font-size: 45px;cursor: pointer;text-align: center;display: none;}
 .btn-addprice {width:47.5%;color:#9fa0a0;background-color:#4d4d4d;line-height:40px;}
 .btn-reduceprice {width: 250px;background: #7ab138;border-radius: 10px;margin: 0 auto;padding: 20px;cursor: pointer;display: inline-block;}
 .btn-invite {width: 250px;background: transparent;border: 1px solid #EEAD0E;border-radius: 10px;margin: 0 auto;padding: 20px;cursor: pointer;display: inline-block;color: #EEAD0E;}
@@ -33,9 +33,13 @@ a {text-decoration: none;outline: none;}
 .btn-default:hover{background:#2d2a33 ;color: #fff;}
 .btn-active{width: 80%;background: #2d2a33;border-radius: 5px;margin: 10px auto;padding: 20px;cursor: pointer;display: inline-block;color: #fff;font-size: 28px;}
 .btn-cancel{width: 60%;background: #868487;border-radius: 5px;margin: 10px auto;padding: 20px;cursor: pointer;display: inline-block;color: #fff;font-size: 28px;}
-.black_overlay {display: none;position: absolute;top: 0%;left: 0%;width: 100%;height: 100%;background-color: black;z-index: 1001;-moz-opacity: 0.8;opacity: .80;filter: alpha(opacity=80);}
-.white_content {display: none;position: fixed;top:10%;left: 5%;width: 85%;min-height: 280px;padding: 16px;border-radius: 5px;background-color: white;z-index: 1002;overflow: auto;}
-.white_content_alert {display: none;position: absolute;top:30%;left: 5%;width: 85%;min-height: 280px;padding: 16px;border-radius: 5px;background-color: white;z-index: 1002;overflow: auto;}
+.black_overlay {display: none;position: absolute;top: 0%;left: 0%;width: 100%;height: 100%;background-color: black;z-index: 2;-moz-opacity: 0.8;opacity: .80;filter: alpha(opacity=80);}
+.white_content {display: none;position: fixed;top:10%;left: 5%;width:90%;min-height: 280px;padding: 16px;border-radius: 5px;background-color: white;z-index:2;overflow: auto;}
+.white_content_alert {display: none;position: absolute;top:30%;left: 5%;width:90%;min-height: 280px;border-radius: 5px;background-color: white;z-index:3;overflow: auto;}
+.jiao{display:block;height:0;width:20px;border-top:1px solid #b29773;top:-19px;left:-23px;-webkit-transform:rotate(45deg);transform:rotate(45deg);}
+.jiao2{top:-19px;left:auto;right:-23px;-webkit-transform:rotate(135deg);transform:rotate(135deg);}
+.jiao3{top:auto;bottom:-19px;left:-23px;-webkit-transform:rotate(135deg);transform:rotate(135deg);}
+.jiao4{top:auto;bottom:-19px;left:auto;right:-23px;}
 </style>
     <script src="js/jquery.min.js"></script>
     <script>
@@ -330,15 +334,12 @@ function kanjia(data, flag){
         </div>
 
     </div>
-    <div id="qrCode" class="white_content_alert">
-        <div style="text-align: center;">
-            <img src="qrcode_for_gh.jpg">
-        </div>
-
-
-      <div style="font-size:30px;text-align: center;">长按二维码进入公众号</div>
-      <div style="font-size:30px;text-align: center;">（苹果用户长按右下角黑色区域）</div>
-        <div style="font-size:30px;text-align: center;">即可参与活动</div>
+    <div id="qrCode" class="white_content_alert f14 tc pt20 pb30">
+        <div class="f16">长按二维码进入公众号</div>
+        <div class="pt10 pb15"><img src="logo.png" height="40" /></div>
+        <div>（苹果用户长按右下角黑色区域）</div>
+        <div class="pb20">即可参与活动</div>
+        <img src="qrcode_for_gh.png" width="200">
     </div>
 
 <div id="fade" class="black_overlay"></div>
@@ -417,6 +418,9 @@ function kanjia(data, flag){
     <div>活动时间:06.10-06.16</div>
     <div class="mt10">客服电话：400-100-8331&nbsp;18859509936</div>
 </div>
-
+<div class="fixed tr" style="width:50px;top:60%;right:15px;z-index:3">
+    <img id="remove_fixed" style="width:25px;margin-right:-10px" src="kanjia_removefix.png" />
+    <img width="50" src="fixed_qcode.png" onclick="openQrCode()" />
+</div>
 </body>
 </html>
