@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>好友砍价</title>
+    <meta charset="utf-8"/>
+    <script src="js/jquery.min.js"></script>
+    <style type="text/css">
+        .container {
+            /*background:#F3F3F3;*/
+            /*max-width: 750px;*/
+            margin: 0 auto;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            background: #2d2a33;
+        }
+
+        a, img, button, input, select {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-tap-highlight-alpha: 0;
+            outline: none;
+        }
+
+        a, a:visited {
+            text-decoration: none;
+
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        input {
+            -webkit-appearance: none; /* Safari 和 Chrome */
+        }
+
+        a {
+            text-decoration: none;
+            outline: none;
+        }
+
+        .header {
+            position: fixed;
+            z-index: 100;
+            width: 100%;
+            background: #2d2a33;
+            color: #fff;
+            padding: 26px 20px;
+            cursor: pointer;
+            font-weight: bold;
+
+        }
+
+        .info {
+            padding: 20px;
+            background: #2d2a33;
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 24px;
+        }
+
+        .active {
+            background: #4d4a55;
+            color: #ffffff;
+            font-size: 28px;
+            text-align: center;
+
+        }
+
+        .list-bg {
+            background: #211E25;
+        }
+
+        .item-list {
+            position: relative;
+            padding: 40px 10px;
+            border-top: 1px solid #2d2a33;
+            border-bottom: 1px solid #2d2a33;
+            text-align: right;
+            color: #EEC900;
+            font-size: 32px;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .maskPanel {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            background: #000;
+            z-index: 2;
+            top: 0px;
+            opacity: 0.8;
+            filter: alpha(opacity=80);
+            cursor: pointer;
+            display: none;
+        }
+
+        .point {
+            width: 700px;
+            height: 188px;
+            position: fixed;
+            z-index: 100;
+            background: url(images/point.png) no-repeat;
+            background-position: right;
+            right: 10px;
+            top: 10px;
+            color: #fff;
+            font-size: 45px;
+            cursor: pointer;
+            text-align: center;
+            display: none;
+        }
+
+        .btn-addprice {
+
+            width: 250px;
+            background: #EEAD0E;
+            border-radius: 10px;
+            margin: 0 auto;
+            padding: 20px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-reduceprice {
+
+            width: 250px;
+            background: #7ab138;
+            border-radius: 10px;
+            margin: 0 auto;
+            padding: 20px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-invite {
+
+            width: 250px;
+            background: transparent;
+            border: 1px solid #EEAD0E;
+            border-radius: 10px;
+            margin: 0 auto;
+            padding: 20px;
+            cursor: pointer;
+            display: inline-block;
+            color: #EEAD0E;
+        }
+
+        .btn-buy {
+            margin-top: 10px;
+            width: 250px;
+            background: #868487;
+            border-radius: 10px;
+            margin: 0 auto;
+            padding: 20px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-default {
+
+            width: 80%;
+            border: 1px solid #2d2a33;
+            border-radius: 5px;
+            margin: 10px auto;
+            padding: 20px;
+            cursor: pointer;
+            display: inline-block;
+            color: #2d2a33;
+            font-size: 28px;
+        }
+        .btn-default:hover{
+            background:#2d2a33 ;
+            color: #fff;
+        }
+        .btn-active{
+            width: 80%;
+            background: #2d2a33;
+            border-radius: 5px;
+            margin: 10px auto;
+            padding: 20px;
+            cursor: pointer;
+            display: inline-block;
+            color: #fff;
+            font-size: 28px;
+        }
+        .btn-cancel{
+            width: 60%;
+           background: #868487;
+            border-radius: 5px;
+            margin: 10px auto;
+            padding: 20px;
+            cursor: pointer;
+            display: inline-block;
+            color: #fff;
+            font-size: 28px;
+        }
+
+        .black_overlay {
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1001;
+            -moz-opacity: 0.8;
+            opacity: .80;
+            filter: alpha(opacity=80);
+        }
+
+        .white_content {
+            display: none;
+            position: absolute;
+            top:10%;
+            left: 5%;
+            width: 85%;
+            min-height: 280px;
+            padding: 16px;
+            border-radius: 5px;
+            background-color: white;
+            z-index: 1002;
+            overflow: auto;
+
+        }
+
+
+    </style>
+    <script>
+        function addPrice() {
+            document.getElementById('light').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+            document.getElementById('fade').style.height = document.body.clientHeight + 'px';
+            document.documentElement.scrollTop = document.body.scrollTop =0;
+
+        }
+        function cancel() {
+            document.getElementById('light').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+        }
+        function openReduce(){
+            document.getElementById('reduceAlert').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+            document.getElementById('fade').style.height = document.body.clientHeight + 'px';
+            document.documentElement.scrollTop = document.body.scrollTop =0;
+        }
+        function closeReduce(){
+            document.getElementById('reduceAlert').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+        }
+       function openAddPrice(){
+           document.getElementById('addPriceAlert').style.display = 'block';
+           document.getElementById('fade').style.display = 'block';
+           document.getElementById('fade').style.height = document.body.clientHeight + 'px';
+           document.documentElement.scrollTop = document.body.scrollTop =0;
+        }
+        function closeAddPrice(){
+            document.getElementById('addPriceAlert').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+        }
+        function selectOption(type){
+            $(".btn-default").removeClass("btn-active");
+            $("#option"+type).addClass("btn-active");
+
+        }
+        function selectOK(){
+            var data=$(".btn-active").attr("data");
+            $(".btn-default").removeClass("btn-active");
+            //alert("选择的值:"+data);
+            cancel();
+            openAddPrice();
+        }
+
+        $(function () {
+            $("#share").bind("click", function () {
+                $(".maskPanel,.point").show();
+
+            })
+            $(".maskPanel,.point").bind("click", function () {
+                $(".maskPanel,.point").hide();
+            });
+        })
+
+    </script>
+
+</head>
+<body>
+
+
+<div class="container">
+    <div id="light" class="white_content">
+        <div style="margin: 20px auto;width: 250px">
+            <img style="width: 100px;height: 60px;float: left;margin: 0px 10px 0px 40px" src="img/IMG_1095.PNG">
+            <span style="font-size: 28px;float: left;line-height: 2.5">闹闹TA</span>
+
+            <div style="clear: both"></div>
+        </div>
+        <div style="text-align: center">
+            <div id="option1" class="btn-default" onclick="selectOption(1)" data="1">
+                收下留情+1元
+            </div>
+        </div>
+        <div style="text-align: center">
+            <div id="option2" class="btn-default" onclick="selectOption(2)" data="2">
+                表白+3元
+            </div>
+        </div>
+        <div style="text-align: center">
+            <div id="option3" class="btn-default" onclick="selectOption(3)" data="3">
+                气死你+5元
+            </div>
+        </div>
+        <div style="text-align: center">
+            <div id="option4" class="btn-default" onclick="selectOption(4)" data="4">
+                恭喜发财+8元
+            </div>
+        </div>
+        <div style="text-align: center">
+            <div id="option5" class="btn-default" onclick="selectOption(5)" data="5">
+                气死单身狗+10元
+            </div>
+        </div>
+        <div style="text-align: center">
+            <div class="btn-active" style="width: 60%" onclick="selectOK()" >
+            确定
+        </div>
+
+        </div>
+        <div style="text-align: center">
+            <div class="btn-cancel" onClick="cancel()">
+                取消
+            </div>
+        </div>
+
+
+</div>
+
+    <div id="reduceAlert" class="white_content">
+        <div style="margin: 20px  auto;width: 250px">
+            <img style="width: 100px;height: 60px;float: left;margin: 0px 10px 0px 40px" src="img/IMG_1096.PNG">
+            <span style="font-size: 28px;float: left;line-height: 2">减价5元</span>
+
+            <div style="clear: both"></div>
+        </div>
+
+        <div style="text-align: center;margin-top: 50px" >
+            <div class="btn-active" style="width: 60%" onclick="closeReduce()" >
+                确定
+            </div>
+            </div>
+
+    </div>
+
+    <div id="addPriceAlert" class="white_content">
+        <div style="margin: 20px  auto;
+text-align: center;">
+            <img style="width: 100px;height: 60px" src="img/IMG_1096.PNG">
+
+
+
+            <div style="font-size: 24px;margin:20px;line-height: 1.5">
+                给好友加价,获得减5元
+            </div>
+        </div>
+
+        <div style="text-align: center">
+            <div class="btn-active" style="width: 60%" onclick="closeAddPrice()" >
+                确定
+            </div>
+        </div>
+
+    </div>
+
+
+<div id="fade" class="black_overlay"></div>
+
+
+<div class="header">
+    <a style="color: #fff;margin-right: 10px;font-weight: bold;font-size: 24px">公众账号</a>
+    <a style="color:#EEC900;font-size: 24px">荡糕</a>
+    <a style="color:#EEC900;float: right;padding-right: 50px;font-size: 30px">立即关注</a>
+</div>
+<div style="padding-top: 90px"></div>
+
+<div class="maskPanel"></div>
+
+
+<div class="point">
+    <div style="height:200px;"></div>
+    点击右上角 &nbsp; <img src="images/menu.png"/> &nbsp; 按钮<br/>
+    选择“分享到朋友圈”
+</div>
+
+
+<div>
+    <div style="position: relative;width: 100%;overflow: hidden">
+        <img style="width: 100%;height: 500px" src="img/example-slide-1.jpg">
+
+        <!--<div style="width:100%;position: absolute;bottom: 3px;background: rgba(0,0,0,0.3);padding: 20px 10px">-->
+        <!--<span style="color: #ffffff;font-size: 30px">LV Montaigne手袋</span>-->
+        <!--<span style="color:#EEC900;float: right;padding-right: 20px;font-size: 30px">￥5688</span>-->
+        <!--</div>-->
+    </div>
+</div>
+
+<div style="background: #2d2a33;">
+    <div style="text-align: center">
+
+        <!--如果是别人点分享进来的就显示-->
+        <div  style="margin-top: 20px">
+            <span style="display: inline-block;font-size: 38px;color:#EEC900; ">我已经帮</span>
+
+            <div style="display: inline-block;position: relative;">
+                <img style="position:absolute;top:0px;width: 40px;height: 40px;border-radius: 100%;line-height: 2"
+                     src="img/user-photo.png">
+                <span style="color: #ffffff;font-size: 28px;padding-left: 45px">calm</span>
+            </div>
+            <span style="display: inline-block;font-size: 38px;color:#EEC900 ">小砍一刀</span>
+        </div>
+        <div style="text-align: center;margin-top: 20px;color: #fff;font-size: 28px">
+            当前价格是 <span style="color:#EEC900; ">￥256</span>
+
+        </div>
+
+
+        <!--=====================-->
+
+        <div style="text-align: center">
+            <span style="display: inline-block;font-size: 38px;color:#EEC900;margin-top: 20px ">分享给好友，请TA帮你砍价</span>
+
+        </div>
+
+
+        <div style="text-align: center;margin: 30px;color: #ffffff;font-size: 30px">
+            <div>
+                <div id="price" class="btn-addprice" onclick="addPrice()">
+                    为TA加价(闹闹他)
+                </div>
+                <div id="reduceprice" class="btn-reduceprice" onclick="openReduce()" >
+                    为TA减价(帮帮他)
+                </div>
+
+            </div>
+            <div style="margin-top: 20px">
+
+                <div id="share" class="btn-invite">
+                    邀请好友砍价
+                </div>
+                <div id="buy" class="btn-buy">
+                    购买
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="list-bg">
+        <div id="td-list1" style="padding: 10px;" class="active">好友贡献</div>
+
+        <div class="show" id="list1">
+            <div class="info">
+                <span style="color:#EEC900 ">calm</span>
+                目前一共砍掉了
+                <span style="color:#EEC900 ">78</span>
+                元，还差
+                <span style="color:#EEC900 ">5610</span>
+                元
+            </div>
+
+            <div class="item-list">
+                <div style="text-align: left;color: #FFFFFF;font-size: 28px;width: 70%;float: left;">
+                    <img style="width: 80px;height: 80px;border-radius: 100%;position: absolute;top: 35px"
+                         src="img/user-photo.png">
+
+                    <div style="display: inline-block;margin-left: 90px;margin-top: 14px">
+                        <span style="color:#EEC900;font-size: 28px;">calm</span>
+                        初次砍价，砍掉
+                        <span style="color:#EEC900;font-size: 28px;">48</span>
+                        元
+                    </div>
+
+                </div>
+                <div style="float: right;padding: 10px">+48元</div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="item-list">
+                <div style="text-align: left;color: #FFFFFF;font-size: 28px;width: 70%;float: left;">
+                    <img style="width: 80px;height: 80px;border-radius: 100%;position: absolute;top: 35px"
+                         src="img/user-photo.png">
+
+                    <div style="display: inline-block;margin-left: 90px;margin-top: 14px">
+                        <span style="color:#EEC900;font-size: 28px;">calm</span>
+                        初次砍价，砍掉
+                        <span style="color:#EEC900;font-size: 28px;">48</span>
+                        元
+                    </div>
+
+                </div>
+                <div style="float: right;padding: 10px">+48元</div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="item-list">
+                <div style="text-align: left;color: #FFFFFF;font-size: 28px;width: 70%;float: left;">
+                    <img style="width: 80px;height: 80px;border-radius: 100%;position: absolute;top: 35px"
+                         src="img/user-photo.png">
+
+                    <div style="display: inline-block;margin-left: 90px;margin-top: 14px">
+                        <span style="color:#EEC900;font-size: 28px;">calm</span>
+                        初次砍价，砍掉
+                        <span style="color:#EEC900;font-size: 28px;">48</span>
+                        元
+                    </div>
+
+                </div>
+                <div style="float: right;padding: 10px">+48元</div>
+                <div style="clear: both"></div>
+            </div>
+            <div class="item-list">
+                <div style="text-align: left;color: #FFFFFF;font-size: 28px;width: 70%;float: left;">
+                    <img style="width: 80px;height: 80px;border-radius: 100%;position: absolute;top: 35px"
+                         src="img/user-photo.png">
+
+                    <div style="display: inline-block;margin-left: 90px;margin-top: 14px">
+                        <span style="color:#EEC900;font-size: 28px;">calm</span>
+                        初次砍价，砍掉
+                        <span style="color:#EEC900;font-size: 28px;">48</span>
+                        元
+                    </div>
+
+                </div>
+                <div style="float: right;padding: 10px">+48元</div>
+                <div style="clear: both"></div>
+            </div>
+
+            <div style=" width:120px;margin: 20px auto 0px auto;padding:10px;font-size: 28px;color: #ffffff;border-radius:5px;background:#4d4a55 ">活动规则</div>
+            <div style="text-align: center;padding: 20px;color: #FFFFFF;font-size: 28px">
+                <span>个人中心</span>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+</body>
+</html>

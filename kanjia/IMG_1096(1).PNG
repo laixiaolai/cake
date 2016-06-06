@@ -1,0 +1,21 @@
+<pre>An Error occurred while handling another error:
+exception &#039;yii\base\InvalidRouteException&#039; with message &#039;Unable to resolve the request: site/error&#039; in /alidata/www/jiwork/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /alidata/www/jiwork/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller-&gt;runAction(&#039;error&#039;, Array)
+#1 /alidata/www/jiwork/vendor/yiisoft/yii2/web/ErrorHandler.php(80): yii\base\Module-&gt;runAction(&#039;site/error&#039;)
+#2 /alidata/www/jiwork/vendor/yiisoft/yii2/base/ErrorHandler.php(101): yii\web\ErrorHandler-&gt;renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler-&gt;handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+exception &#039;yii\base\InvalidRouteException&#039; with message &#039;Unable to resolve the request &quot;kanjia/img/IMG_1096.PNG&quot;.&#039; in /alidata/www/jiwork/vendor/yiisoft/yii2/base/Module.php:461
+Stack trace:
+#0 /alidata/www/jiwork/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module-&gt;runAction(&#039;kanjia/img/IMG_...&#039;, Array)
+#1 /alidata/www/jiwork/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application-&gt;handleRequest(Object(yii\web\Request))
+#2 /alidata/www/jiwork/apps/m/web/index.php(50): yii\base\Application-&gt;run()
+#3 {main}
+
+Next exception &#039;yii\web\NotFoundHttpException&#039; with message &#039;Page not found.&#039; in /alidata/www/jiwork/vendor/yiisoft/yii2/web/Application.php:96
+Stack trace:
+#0 /alidata/www/jiwork/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application-&gt;handleRequest(Object(yii\web\Request))
+#1 /alidata/www/jiwork/apps/m/web/index.php(50): yii\base\Application-&gt;run()
+#2 {main}</pre>

@@ -226,6 +226,7 @@ input{border:none;outline:none}
 .brc{border-right:1px solid #ccc;}
 .btc{border-top:1px solid #ccc;}
 .bbc{border-bottom:1px solid #ccc;}
+.bba5{border-bottom:1px solid #a5a6a6;}
 .bdd{border:1px solid #ddd;}
 .btd{border-top:1px solid #ddd;}
 .brd{border-right:1px solid #ddd;}
@@ -277,6 +278,7 @@ input{border:none;outline:none}
 .bg3{background-color:#333;}
 .bg5{background-color:#555;}
 .bgf0f7f6{background-color:#f0f7f6;}
+.bg1a{background-color:#1a1a1a;}
 .bg1c{background-color:#1cc300;}
 .bg13{background-color:#131313;}
 .bg0{background-color:#000;}
