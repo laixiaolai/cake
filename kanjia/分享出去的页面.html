@@ -16,26 +16,30 @@ a, a:visited {text-decoration: none;}
 a:link {text-decoration: none;}
 input {-webkit-appearance: none; /* Safari 和 Chrome */}
 a {text-decoration: none;outline: none;}
-.header {position: fixed;z-index: 100;width: 100%;background: #fff;color: #fff;padding: 26px 20px;cursor: pointer;font-weight: bold;}
+.header {position: fixed;z-index: 1;width: 100%;background: #fff;color: #fff;padding: 26px 20px;cursor: pointer;font-weight: bold;}
 .info {padding: 20px;background: #fff;text-align: center;color: #FFFFFF;font-size: 24px;}
 .active {background: #fff;color: #4A4A4A;font-size: 28px;text-align: center;}
 .list-bg {background: #211E25;}
 .item-list {position: relative;padding: 40px 10px;border-top: 1px solid #2d2a33;border-bottom: 1px solid #2d2a33;text-align: right;color: #EEC900;font-size: 32px;}
 .show {display: block;}
 .hide {display: none;}
-.maskPanel {position: fixed;height: 100%;width: 100%;background: #000;z-index: 100;top: 0px;opacity: 0.8;filter: alpha(opacity=80);cursor: pointer;display: none;}
-.point {width: 700px;height: 188px;position: absolute;z-index: 100;background: url(http://m.danggao.cn/resource/imgs/point.png) no-repeat;background-position: right;right: 10px;top: 10px;color: #fff;font-size: 45px;cursor: pointer;text-align: center;display: none;}
+.maskPanel {position: fixed;height: 100%;width: 100%;background: #000;z-index: 1;top: 0px;opacity: 0.8;filter: alpha(opacity=80);cursor: pointer;display: none;}
+.point {width:100%;position: absolute;z-index:2;background: url(http://m.danggao.cn/resource/imgs/point.png) no-repeat top right;background-size:50%;right: 10px;top: 10px;color: #fff;font-size:18px;cursor: pointer;text-align: center;display: none;}
 .btn-addprice {width:47.5%;color:#9fa0a0;background-color:#4d4d4d;line-height:40px;}
 .btn-reduceprice {width: 250px;background: #7ab138;border-radius: 10px;margin: 0 auto;padding: 20px;cursor: pointer;display: inline-block;}
 .btn-invite {width: 250px;background: transparent;border: 1px solid #EEAD0E;border-radius: 10px;margin: 0 auto;padding: 20px;cursor: pointer;display: inline-block;color: #EEAD0E;}
 .btn-buy {margin-top: 10px;width: 250px;background: #868487;border-radius: 10px;margin: 0 auto;padding: 20px;cursor: pointer;display: inline-block;}
-.btn-default {width: 80%;border: 1px solid #2d2a33;border-radius: 5px;margin: 10px auto;padding: 20px;cursor: pointer;display: inline-block;color: #2d2a33;font-size: 28px;}
-.btn-default:hover{background:#2d2a33 ;color: #fff;}
-.btn-active{width: 80%;background: #2d2a33;border-radius: 5px;margin: 10px auto;padding: 20px;cursor: pointer;display: inline-block;color: #fff;font-size: 28px;}
-.btn-cancel{width: 60%;background: #868487;border-radius: 5px;margin: 10px auto;padding: 20px;cursor: pointer;display: inline-block;color: #fff;font-size: 28px;}
-.black_overlay {display: none;position: absolute;top: 0%;left: 0%;width: 100%;height: 100%;background-color: black;z-index: 1001;-moz-opacity: 0.8;opacity: .80;filter: alpha(opacity=80);}
-.white_content {display: none;position: fixed;top:10%;left: 5%;width: 85%;min-height: 280px;padding: 16px;border-radius: 5px;background-color: white;z-index: 1002;overflow: auto;}
-.white_content_alert {display: none;position: absolute;top:30%;left: 5%;width: 85%;min-height: 280px;padding: 16px;border-radius: 5px;background-color: white;z-index: 1002;overflow: auto;}
+.btn-default {width: 80%;background:#4d4d4d;margin:8px auto;padding:12px;cursor: pointer;display: inline-block;color: #9fa0a0;font-size:16px;}
+.btn-default:hover{background:#b29773 ;color: #000;}
+.btn-active{width: 80%;background: #b29773;margin: 10px auto;padding: 12px;cursor: pointer;display: inline-block;color: #000;font-size:16px;}
+.btn-cancel{width: 60%;background: #4d4d4d;margin: 10px auto;padding: 12px;cursor: pointer;display: inline-block;color: #9fa0a0;font-size:16px;}
+.black_overlay {display: none;position: absolute;top: 0%;left: 0%;width: 100%;height: 100%;background-color: black;z-index: 2;-moz-opacity: 0.8;opacity: .80;filter: alpha(opacity=80);}
+.white_content {display: none;position: fixed;top:10%;left: 5%;width:88%;min-height: 280px;padding:5% 1%;border-radius: 5px;background-color: white;z-index:2;overflow: auto;}
+.white_content_alert {display: none;position: absolute;top:30%;left: 5%;width:90%;border-radius: 5px;background-color: white;z-index:3;overflow: auto;}
+.jiao{display:block;height:0;width:20px;border-top:1px solid #b29773;top:-19px;left:-23px;-webkit-transform:rotate(45deg);transform:rotate(45deg);}
+.jiao2{top:-19px;left:auto;right:-23px;-webkit-transform:rotate(135deg);transform:rotate(135deg);}
+.jiao3{top:auto;bottom:-19px;left:-23px;-webkit-transform:rotate(135deg);transform:rotate(135deg);}
+.jiao4{top:auto;bottom:-19px;left:auto;right:-23px;}
 </style>
     <script src="js/jquery.min.js"></script>
     <script>
@@ -234,122 +238,95 @@ function kanjia(data, flag){
 </script>
     </head>
         <body>
-<div>
-    <div id="light" class="white_content">
-        <div style="margin: 20px auto;width: 250px">
-            <img style="width: 100px;height: 60px;float: left;margin: 0px 10px 0px 40px" src="IMG_1095.PNG">
-            <span style="font-size: 28px;float: left;line-height: 2.5">闹闹TA</span>
 
-            <div style="clear: both"></div>
-        </div>
-        <div style="text-align: center">
+    <div id="light" class="white_content tc pt10 pb10">
+        <div>
             <div id="option1" class="btn-default" onclick="selectOption(1)" data="1">
-                收下留情+1元
+                手下留情+1元
             </div>
         </div>
-        <div style="text-align: center">
+        <div>
             <div id="option2" class="btn-default" onclick="selectOption(2)" data="2">
                 表白+3元
             </div>
         </div>
-        <div style="text-align: center">
+        <div>
             <div id="option3" class="btn-default" onclick="selectOption(3)" data="3">
                 气死你+5元
             </div>
         </div>
-        <div style="text-align: center">
+        <div>
             <div id="option4" class="btn-default" onclick="selectOption(4)" data="4">
                 恭喜发财+8元
             </div>
         </div>
-        <div style="text-align: center">
+        <div>
             <div id="option5" class="btn-default" onclick="selectOption(5)" data="5">
                 气死单身狗+10元
             </div>
         </div>
-        <div style="text-align: center">
+        <div>
             <div class="btn-active" style="width: 60%" onclick="selectOK()">
             确定
         </div>
 
         </div>
-        <div style="text-align: center">
+        <div>
             <div class="btn-cancel" onclick="cancel()">
                 取消
             </div>
         </div>
-</div>
+    </div>
 
-</div>
-    <div id="reduceAlert" class="white_content_alert">
-        <div style="margin: 20px  auto;width: 400px">
-            <img style="width: 120px;height: 80px;float: left;margin: 0px 10px 0px 40px" src="IMG_1096.PNG">
-            <span style="font-size: 28px;float: left;line-height: 2.8">减价2.7元</span>
+    <div id="reduceAlert" class="white_content_alert tc f16">
+        <div style="margin: 20px auto;">
+            减价<span style="color:#b29773;">2.7</span>元
             <input type="hidden" id="kanval" value="2.7">
-            <div style="clear: both"></div>
         </div>
-
-        <div style="text-align: center;margin-top: 50px">
-            <div class="btn-active" style="width: 60%" onclick="closeReduce()">
+        <div class="mb20">
+            <div class="btn-active" style="width: 60%;margin:0" onclick="closeReduce()">
                 确定
             </div>
-            </div>
-
+        </div>
     </div>
     
-    <div id="reduceAlert2" class="white_content_alert">
-        <div style="margin: 20px  auto;width: 400px">
-            <img style="width: 120px;height: 80px;float: auto;margin: 0px 10px 0px 40px" src="IMG_1096.PNG">
-            <span style="font-size: 28px;float: left;line-height: 2.8" class="jjtxt"></span>
-            <div style="clear: both"></div>
+    <div id="reduceAlert2" class="white_content_alert tc f16">
+        <div>
+            <span style="" class="jjtxt"></span>
         </div>
-
-        <div style="text-align: center;margin-top: 50px">
-            <div class="btn-active" style="width: 60%" onclick="closeReduce2()">
+        <div>
+            <div class="btn-active" style="width: 60%;margin:0" onclick="closeReduce2()">
                 确定
             </div>
-            </div>
+        </div>
     </div>
     
-
-    <div id="addPriceAlert" class="white_content_alert">
-        <div style="margin: 20px  auto;text-align: center;">
-            <img style="width: 120px;height: 80px" src="IMG_1096(1).PNG">
-
-
-
-            <div style="font-size: 24px;margin:20px;line-height: 1.5">
-                给好友加价,获得减5元
-            </div>
+    <div id="addPriceAlert" class="white_content_alert tc f16">
+        <div style="margin: 20px auto;">
+            给好友加价,获得减价<span style="color:#b29773;">5</span>元
         </div>
-
-        <div style="text-align: center">
-            <div class="btn-active" style="width: 60%" onclick="closeAddPrice()">
+        <div class="mb20">
+            <div class="btn-active" style="width: 60%;margin:0" onclick="closeAddPrice()">
                 确定
             </div>
         </div>
-
     </div>
-    <div id="qrCode" class="white_content_alert">
-        <div style="text-align: center;">
-            <img src="qrcode_for_gh.jpg">
-        </div>
-
-
-      <div style="font-size:30px;text-align: center;">长按二维码进入公众号</div>
-      <div style="font-size:30px;text-align: center;">（苹果用户长按右下角黑色区域）</div>
-        <div style="font-size:30px;text-align: center;">即可参与活动</div>
+    <div id="qrCode" class="white_content_alert f14 tc pt20 pb30">
+        <div class="f16">长按二维码进入公众号</div>
+        <div class="pt10 pb15"><img src="logo.png" height="40" /></div>
+        <div>（苹果用户长按右下角黑色区域）</div>
+        <div class="pb20">即可参与活动</div>
+        <img src="qrcode_for_gh.png" width="200">
     </div>
 
 <div id="fade" class="black_overlay"></div>
-
 
 <div class="maskPanel"></div>
 
 
 <div class="point">
-    <div style="height:200px;"></div>
-    点击右上角 &nbsp; <img src="menu.png"> &nbsp; 按钮<br>
+    <div style="height:110px;"></div>
+    点击右上角 &nbsp; <img src="menu.png" width="30"> &nbsp; 按钮<br>
     选择“分享到朋友圈”
 </div>
 
@@ -357,11 +334,11 @@ function kanjia(data, flag){
 <div class="container">
     <div class="bgwh pt10 pr20 pb10 pl20">
         <img style="height:30px " src="logo.png">
-        <span class="g9 r f16 pt5" onclick="window.location.href=&#39;/index/kanrule&#39;">活动规则</span>
+        <a class="g9 r f16 pt5" href="rules.html">活动规则</a>
     </div>
     <div class="pct100 ovh bg0 tc f16" style="color:#8e8b8b;">
         <img src="../uplaod/hp3.png" />
-        <div class="dib pct100 mt20 p10 bg1a rel">
+        <div class="dib mt20 p10 bg1a rel">
             我已经帮&nbsp;<img style="width:20px;height: 20px;border-radius: 100%;margin-top:-3px;" src="0">&nbsp;Jiwork&nbsp;小砍一刀
         </div>
         <div class="mt20 p10 bg1a">当前价格是 <span style="color:#b29773; ">￥191.50</span>元</div>
@@ -417,6 +394,9 @@ function kanjia(data, flag){
     <div>活动时间:06.10-06.16</div>
     <div class="mt10">客服电话：400-100-8331&nbsp;18859509936</div>
 </div>
-
+<div class="fixed tr" style="width:50px;top:60%;right:15px;z-index:3">
+    <img id="remove_fixed" style="width:25px;margin-right:-10px" src="kanjia_removefix.png" />
+    <img width="50" src="fixed_qcode.png" onclick="openQrCode()" />
+</div>
 </body>
 </html>
