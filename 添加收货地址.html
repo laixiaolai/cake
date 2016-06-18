@@ -28,12 +28,11 @@ td{padding:.16rem 0;}
 .btnOk{width:80px;color:#fff;font-size:32px;cursor:pointer;padding:0px;}
 .mapdiv{margin:auto;overflow:hidden;height:220px;width:220px;border-radius:10px;}
 .mapdiv img{height:220px;width:220px;}
-.selectDiv{background:#EEEEEE;width:100%;border:1px solid #979797;border-radius:5px;padding:3px 2px;}
+.selectDiv{background:#EEEEEE;width:100%;border:1px solid #979797;padding:3px 2px;}
 .btnSave{width:600px;font-size:32px;color:#fff;text-align:center;margin:auto;padding:20px;margin-top:50px;background:#69411D;border-radius:5px;cursor:pointer;}
 .addr{font-size:30px;width:90%;border:none;}
         	
     </style>
-    
     <script type="text/javascript">
         
         function checkforms() {
@@ -86,17 +85,19 @@ td{padding:.16rem 0;}
         <table class="contentTab">
             <tr>
                 <td class="pTxt" rowspan="2" style="padding-top:13px; vertical-align:top;">收货地址:</td>
-                <td class="pr5">
-                    <select class="selectDiv pTxt" name="province" id="province" ng-options="province.Name for province in Address" ng-model="address.province">
-                    </select>
-                </td>
-                <td class="pr5">
-                    <select class="selectDiv pTxt" name="city" id="city" ng-options="city.Name for city in address.province.City" ng-model="address.city">
-                    </select>
-                </td>
-                <td class="pr5">
-                    <select class="selectDiv pTxt" name="county" id="country" ng-options="district.Name for district in address.city.Region" ng-model="address.district">
-                    </select>
+                <td>
+                    <div class="pr5 pb5">
+                        <select class="selectDiv pTxt" name="province" id="province" ng-options="province.Name for province in Address" ng-model="address.province">
+                        </select>
+                    </div>
+                    <div class="pr5 pb5">
+                        <select class="selectDiv pTxt" name="city" id="city" ng-options="city.Name for city in address.province.City" ng-model="address.city">
+                        </select>
+                    </div>
+                    <div class="pr5 pb5">
+                        <select class="selectDiv pTxt" name="county" id="country" ng-options="district.Name for district in address.city.Region" ng-model="address.district">
+                        </select>
+                    </div>
                 </td>
             </tr>
         </table>

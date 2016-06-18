@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" href="m_lib.css">
+
+    <title>荡糕砍价</title>
+<style type="text/css">
+.container {margin: 0 auto;}
+body {padding: 0;margin: 0;background: #fff;}
+a, img, button, input, select {-webkit-tap-highlight-color: transparent;-webkit-tap-highlight-alpha: 0;outline: none;}
+a, a:visited {text-decoration: none;}
+a:link {text-decoration: none;}
+input {-webkit-appearance: none; /* Safari 和 Chrome */}
+a {text-decoration: none;outline: none;}
+.header {position: fixed;z-index: 1;width: 100%;background: #fff;color: #fff;padding: 26px 20px;cursor: pointer;font-weight: bold;}
+.info {padding: 20px;background: #fff;text-align: center;color: #FFFFFF;font-size: 24px;}
+.active {background: #fff;color: #4A4A4A;font-size: 28px;text-align: center;}
+.list-bg {background: #211E25;}
+.item-list {position: relative;padding: 40px 10px;border-top: 1px solid #2d2a33;border-bottom: 1px solid #2d2a33;text-align: right;color: #EEC900;font-size: 32px;}
+.show {display: block;}
+.hide {display: none;}
+.maskPanel {position: fixed;height: 100%;width: 100%;background: #000;z-index: 1;top: 0px;opacity: 0.8;filter: alpha(opacity=80);cursor: pointer;display: none;}
+.point {width:100%;position: absolute;z-index:2;background: url(http://m.danggao.cn/resource/imgs/point.png) no-repeat top right;background-size:50%;right: 10px;top: 10px;color: #fff;font-size:18px;cursor: pointer;text-align: center;display: none;}
+.btn-addprice {width:47.5%;color:#9fa0a0;background-color:#4d4d4d;line-height:40px;}
+.btn-reduceprice {width: 250px;background: #7ab138;border-radius: 10px;margin: 0 auto;padding: 20px;cursor: pointer;display: inline-block;}
+.btn-invite {width: 250px;background: transparent;border: 1px solid #EEAD0E;border-radius: 10px;margin: 0 auto;padding: 20px;cursor: pointer;display: inline-block;color: #EEAD0E;}
+.btn-buy {margin-top: 10px;width: 250px;background: #868487;border-radius: 10px;margin: 0 auto;padding: 20px;cursor: pointer;display: inline-block;}
+.btn-default {width: 80%;background:#4d4d4d;margin:8px auto;padding:12px;cursor: pointer;display: inline-block;color: #9fa0a0;font-size:16px;}
+.btn-default:hover{background:#b29773 ;color: #000;}
+.btn-active{width: 80%;background: #b29773;margin: 10px auto;padding: 12px;cursor: pointer;display: inline-block;color: #000;font-size:16px;}
+.btn-cancel{width: 60%;background: #4d4d4d;margin: 10px auto;padding: 12px;cursor: pointer;display: inline-block;color: #9fa0a0;font-size:16px;}
+.black_overlay {display: none;position: absolute;top: 0%;left: 0%;width: 100%;height: 100%;background-color: black;z-index: 2;-moz-opacity: 0.8;opacity: .80;filter: alpha(opacity=80);}
+.white_content {display: none;position: fixed;top:10%;left: 5%;width:88%;min-height: 280px;padding:5% 1%;border-radius: 5px;background-color: white;z-index:2;overflow: auto;}
+.white_content_alert {display: none;position: absolute;top:30%;left: 5%;width:90%;border-radius: 5px;background-color: white;z-index:3;overflow: auto;}
+.jiao{display:block;height:0;width:20px;border-top:1px solid #b29773;top:-19px;left:-23px;-webkit-transform:rotate(45deg);transform:rotate(45deg);}
+.jiao2{top:-19px;left:auto;right:-23px;-webkit-transform:rotate(135deg);transform:rotate(135deg);}
+.jiao3{top:auto;bottom:-19px;left:-23px;-webkit-transform:rotate(135deg);transform:rotate(135deg);}
+.jiao4{top:auto;bottom:-19px;left:auto;right:-23px;}
+</style>
+
+    </head>
+        <body>
+
+        <ul class="bg0 pt20 pr15 pb20 pl15" style="color:#9fa1a0;">
+            <li>
+                <h3 style="font-size:16px;color:#b29773;">【报名需知】</h3>
+                <p class="pl5 pr5 pb20 lh20 f14">请先关注荡糕微信公众号，并在砍价结束后点击提交订单，填写正确的联系人电话号码与送货地址（仅限厦门岛内地址）。</p>
+            </li>
+            <li>
+                <h3 style="font-size:16px;color:#b29773;">【下单需知】</h3>
+                <p class="pl5 pr5 pb20 lh20 f14">下单后请选择方便配送的时间大段，配送时段为每日12:00-21:00。</p>
+            </li>
+            <li>
+                <h3 style="font-size:16px;color:#b29773;">【配送限制】</h3>
+                <p class="pl5 pr5 pb20 lh20 f14">顾客提交订单后，我们将按照下单时间先后安排配送上门，每日限配送60单，在开始配送前会提前电话通知。</p>
+            </li>
+            <li>
+                <h3 style="font-size:16px;color:#b29773;">【产品内涵】</h3>
+                <p class="pl5 pr5 pb20 lh20 f14">6寸宇治抹茶慕斯1个，5人份餐具1套，钢刀1把。</p>
+            </li>
+            <li>
+                <h3 style="font-size:16px;color:#b29773;">【活动时间】</h3>
+                <p class="pl5 pr5 pb20 lh20 f14">2016年6月10日12:00-2016年6月16日24:00，砍价活动结束</p>
+            </li>
+            <li>
+                <h3 style="font-size:16px;color:#b29773;">【配送时间】</h3>
+                <p class="pl5 pr5 pb20 lh20 f14">2016年6月11日12:00-2016年6月25日21:00，完成订单配送</p>
+            </li>
+            <li class="box">
+                <p class="item pt15 pl5 pr5 pb20 lh20 f14" style="-webkit-box-flex: 2;-moz-box-flex:2;-webkit-flex:2;-ms-flex:2;flex: 2;">活动过程中如果有任何疑问，<br />请咨询客服:<br />电话：188-5950-9936<br />微信：danggao_kf</p>
+                <p class="item"><img style="max-width:90px;" src="qcode.png" /></p>
+            </li>
+            <li>
+                <p class="pl5 pr5 pb20 lh20 f14">PS：下单后将另外收取10元的配送费用。</p>
+            </li>
+        </ul>
+</body>
+</html>

@@ -1,0 +1,15 @@
+body {
+    padding:0px; margin:0px; background:#fff;
+}
+*{
+    font-family:Droid Sans Fallback;
+}
+.pageBack{
+    background:#6A5F58 url(../imgs/prev.png) no-repeat 20px 26px;
+    color:#fff;
+    font-size:36px;
+    text-align:center;
+    padding:26px 20px;
+    cursor:pointer;
+    display:none;
+}

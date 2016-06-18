@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" href="m_lib.css">
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery.tmpl.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/cake.js"></script>
+    <title>荡糕砍价</title>
+<style type="text/css">
+.container {margin: 0 auto;}
+body {padding: 0;margin: 0;background: #fff;}
+a, img, button, input, select {-webkit-tap-highlight-color: transparent;-webkit-tap-highlight-alpha: 0;outline: none;}
+a, a:visited {text-decoration: none;}
+a:link {text-decoration: none;}
+input {-webkit-appearance: none; /* Safari 和 Chrome */}
+a {text-decoration: none;outline: none;}
+.header {position: fixed;z-index: 1;width: 100%;background: #fff;color: #fff;padding: 26px 20px;cursor: pointer;font-weight: bold;}
+.info {padding: 20px;background: #fff;text-align: center;color: #FFFFFF;font-size: 24px;}
+.active {background: #fff;color: #4A4A4A;font-size: 28px;text-align: center;}
+.list-bg {background: #211E25;}
+.item-list {position: relative;padding: 40px 10px;border-top: 1px solid #2d2a33;border-bottom: 1px solid #2d2a33;text-align: right;color: #EEC900;font-size: 32px;}
+.show {display: block;}
+.hide {display: none;}
+.maskPanel {position: fixed;height: 100%;width: 100%;background: #000;z-index: 1;top: 0px;opacity: 0.8;filter: alpha(opacity=80);cursor: pointer;display: none;}
+.point {width:100%;position: absolute;z-index:2;background: url(http://m.danggao.cn/resource/imgs/point.png) no-repeat top right;background-size:50%;right: 10px;top: 10px;color: #fff;font-size:18px;cursor: pointer;text-align: center;display: none;}
+.btn-addprice {width:47.5%;color:#9fa0a0;background-color:#4d4d4d;line-height:40px;}
+.btn-reduceprice {width: 250px;background: #7ab138;border-radius: 10px;margin: 0 auto;padding: 20px;cursor: pointer;display: inline-block;}
+.btn-invite {width: 250px;background: transparent;border: 1px solid #EEAD0E;border-radius: 10px;margin: 0 auto;padding: 20px;cursor: pointer;display: inline-block;color: #EEAD0E;}
+.btn-buy {margin-top: 10px;width: 250px;background: #868487;border-radius: 10px;margin: 0 auto;padding: 20px;cursor: pointer;display: inline-block;}
+.btn-default {width: 80%;background:#4d4d4d;margin:8px auto;padding:12px;cursor: pointer;display: inline-block;color: #9fa0a0;font-size:16px;}
+.btn-default:hover{background:#b29773 ;color: #000;}
+.btn-active{width: 80%;background: #b29773;margin: 10px auto;padding: 12px;cursor: pointer;display: inline-block;color: #000;font-size:16px;}
+.btn-cancel{width: 60%;background: #4d4d4d;margin: 10px auto;padding: 12px;cursor: pointer;display: inline-block;color: #9fa0a0;font-size:16px;}
+.black_overlay {display: none;position: absolute;top: 0%;left: 0%;width: 100%;height: 100%;background-color: black;z-index: 2;-moz-opacity: 0.8;opacity: .80;filter: alpha(opacity=80);}
+.white_content {display: none;position: fixed;top:10%;left: 5%;width:88%;min-height: 280px;padding:5% 1%;border-radius: 5px;background-color: white;z-index:2;overflow: auto;}
+.white_content_alert {display: none;position: absolute;top:30%;left: 5%;width:90%;border-radius: 5px;background-color: white;z-index:3;overflow: auto;}
+.jiao{display:block;height:0;width:20px;border-top:1px solid #b29773;top:-19px;left:-23px;-webkit-transform:rotate(45deg);transform:rotate(45deg);}
+.jiao2{top:-19px;left:auto;right:-23px;-webkit-transform:rotate(135deg);transform:rotate(135deg);}
+.jiao3{top:auto;bottom:-19px;left:-23px;-webkit-transform:rotate(135deg);transform:rotate(135deg);}
+.jiao4{top:auto;bottom:-19px;left:auto;right:-23px;}
+</style>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        function addPrice() {
+            if('1' == '1'){
+                alert("您已经砍过~");
+                return;
+            }
+            document.getElementById('light').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+            document.getElementById('fade').style.height = document.body.clientHeight + 'px';
+            document.documentElement.scrollTop = document.body.scrollTop =0;
+
+        }
+        function cancel() {
+            document.getElementById('light').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+        }
+        function openReduce(){
+            if('1' == '1'){
+                alert("您已经砍过~");
+                return;
+            }
+            document.getElementById('reduceAlert').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+            document.getElementById('fade').style.height = document.body.clientHeight + 'px';
+            document.documentElement.scrollTop = document.body.scrollTop =0;
+        }
+        function openReduce2(){
+            document.getElementById('reduceAlert2').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+            document.getElementById('fade').style.height = document.body.clientHeight + 'px';
+            document.documentElement.scrollTop = document.body.scrollTop =0;
+        }
+        function closeReduce(){
+            document.getElementById('reduceAlert').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+            kanjia($("#kanval").val(), '-');
+            //alert("aa");
+        }
+        function closeReduce2(){
+            document.getElementById('reduceAlert2').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+            //kanjia($("#kanval").val(), '-');
+            //alert("aa");
+            window.location.reload();
+        }
+       function openAddPrice(){
+           document.getElementById('addPriceAlert').style.display = 'block';
+           document.getElementById('fade').style.display = 'block';
+           document.getElementById('fade').style.height = document.body.clientHeight + 'px';
+           document.documentElement.scrollTop = document.body.scrollTop =0;
+        }
+        function closeAddPrice(){
+            document.getElementById('addPriceAlert').style.display = 'none';
+            document.getElementById('fade').style.display = 'none';
+        }
+        //弹出二维码方法,在按钮上加 onclick="openQrCode()"
+        function openQrCode(){
+            document.getElementById('qrCode').style.display = 'block';
+            document.getElementById('fade').style.display = 'block';
+            document.getElementById('fade').style.height = document.body.clientHeight + 'px';
+            document.documentElement.scrollTop = document.body.scrollTop =0;
+            
+        }
+        
+        function selectOption(type){
+            $(".btn-default").removeClass("btn-active");
+            $("#option"+type).addClass("btn-active");
+
+        }
+        function selectOK(){
+            var data=$(".btn-active").attr("data");
+            $(".btn-default").removeClass("btn-active");
+            //alert("选择的值:"+data);
+            //alert(data);
+            kanjia(data, '+');
+            cancel();
+            //openAddPrice();
+        }
+
+        $(function () {
+            $("#share").bind("click", function () {
+                $(".maskPanel,.point").show();
+                document.documentElement.scrollTop = document.body.scrollTop =0;
+
+            })
+            $(".maskPanel,.point").bind("click", function () {
+                $(".maskPanel,.point").hide();
+            });
+            $(".black_overlay").bind("click",function(){
+                $(".black_overlay").hide();
+
+                $("#qrCode").hide();
+            })
+
+        })
+
+function kanjia(data, flag){
+    if('1' == '1') {
+        alert("你已经砍价过~");
+        return;
+    }
+    
+    $.post("/kanjia/dokanjia", {product_id:'85', openid:'ogkODs75BsomKASb0NXWlK8k-RJU', orgid: 'ogkODs5UtHTH9IkmZ5JjpKJDn4rg',value: data,flag:flag },
+    function(data){
+        var arr = data.split("|");
+        if(arr[0] == '1') {
+            if(arr[1] != '' && arr[1] !=undefined) {
+                $(".jjtxt").html("给好友加价，获得减价"+arr[1]+'元');
+                openReduce2();
+            }else{
+                window.location.reload();
+            }
+            return;
+        }
+    });
+}
+    </script>
+
+
+
+<script src="js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var shareCode = "ZASDFHESSA";
+        $(".code").html(shareCode);
+
+        $(".shareDiv").bind("click", function () {
+            $(".maskPanel,.point").show();
+            //$(".shareOK").css({
+            //    left: ($(window).width() - $(".shareOK").width()) / 2
+            //})
+            //$(".shareOK").show();
+            //setTimeout(function () {
+            //    $(".shareOK").hide();
+            //}, 1000);
+        })
+        $(".maskPanel,.point").bind("click", function () {
+            $(".maskPanel,.point").hide();
+        });
+
+
+        wx.config({
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: 'wxc560721eafeaf804', // 必填，公众号的唯一标识
+            timestamp: 1464964879, // 必填，生成签名的时间戳
+            nonceStr: 'abc5348899065', // 必填，生成签名的随机串
+            signature: '04c23ebad37c23efe53efb757783e2632f31852d',// 必填，签名，见附录1
+            jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+        });
+        wx.ready(function(){
+            wx.onMenuShareTimeline({
+                title: "不够钱买这味道超赞的蛋糕，大家帮我砍价咯~", // 分享标题
+                desc: '顶级宇治抹茶和瑞士白巧克力的味觉冲突，彼此分明，彼此融合，缠绵成自己独有的甜The taste of Uji matcha and Switzerland white chocolate is like the fight in the mouth, but also combine to form their particular sweetness.', // 分享描述
+                link: "http://m.danggao.cn/kanjia/wxauth?id=85&orgid=ogkODs5UtHTH9IkmZ5JjpKJDn4rg", // 分享链接
+                imgUrl: "http://web.danggao.cn/upload/product/2016-05-04/083be1144f535216cb46e6c8bd9d32b1.jpg", // 分享图标
+                success: function () {
+                    //couponCallback('abc123456');
+                    alert("分享成功");
+                    $(".maskPanel,.point").hide();
+                },
+                cancel: function () { 
+                    // 用户取消分享后执行的回调函数
+                },
+                fail: function (res) {
+                    alert("分享失败，请重新尝试");  
+                }
+            });
+
+            wx.onMenuShareAppMessage({
+                title: "不够钱买这味道超赞的蛋糕，大家帮我砍价咯~", // 分享标题
+                desc: '顶级宇治抹茶和瑞士白巧克力的味觉冲突，彼此分明，彼此融合，缠绵成自己独有的甜The taste of Uji matcha and Switzerland white chocolate is like the fight in the mouth, but also combine to form their particular sweetness.', // 分享描述
+                link: "http://m.danggao.cn/kanjia/wxauth?id=85&orgid=ogkODs5UtHTH9IkmZ5JjpKJDn4rg", // 分享链接
+                imgUrl: "http://web.danggao.cn/upload/product/2016-05-04/083be1144f535216cb46e6c8bd9d32b1.jpg", // 分享图标
+                type: 'link', // 分享类型,music、video或link，不填默认为link
+                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+                success: function () { 
+                    alert("分享成功");
+                    $(".maskPanel,.point").hide();
+                },
+                cancel: function () { 
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        });
+
+        wx.error(function(res){
+            alert("配置错误");
+            //alert(res);
+            // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+        });
+    })
+</script>
+    </head>
+        <body>
+        <div id="light" class="white_content tc pt10 pb10">
+            <div>
+                <div id="option1" class="btn-default" onclick="selectOption(1)" data="1">
+                    手下留情+1元
+                </div>
+            </div>
+            <div>
+                <div id="option2" class="btn-default" onclick="selectOption(2)" data="2">
+                    表白+3元
+                </div>
+            </div>
+            <div>
+                <div id="option3" class="btn-default" onclick="selectOption(3)" data="3">
+                    气死你+5元
+                </div>
+            </div>
+            <div>
+                <div id="option4" class="btn-default" onclick="selectOption(4)" data="4">
+                    恭喜发财+8元
+                </div>
+            </div>
+            <div>
+                <div id="option5" class="btn-default" onclick="selectOption(5)" data="5">
+                    气死单身狗+10元
+                </div>
+            </div>
+            <div>
+                <div class="btn-active" style="width: 60%" onclick="selectOK()">
+                确定
+            </div>
+
+            </div>
+            <div>
+                <div class="btn-cancel" onclick="cancel()">
+                    取消
+                </div>
+            </div>
+        </div>
+    <div class="maskPanel"></div>
+    <div id="reduceAlert" class="white_content_alert tc f16">
+            <div style="margin: 20px auto;">
+                减价<span style="color:#b29773;">2.7</span>元
+                <input type="hidden" id="kanval" value="2.7">
+            </div>
+            <div class="mb20">
+                <div class="btn-active" style="width: 60%;margin:0" onclick="closeReduce()">
+                    确定
+                </div>
+            </div>
+        </div>
+        
+        <div id="reduceAlert2" class="white_content_alert tc f16">
+            <div>
+                <span style="" class="jjtxt"></span>
+            </div>
+            <div>
+                <div class="btn-active" style="width: 60%;margin:0" onclick="closeReduce2()">
+                    确定
+                </div>
+            </div>
+        </div>
+        <div id="addPriceAlert" class="white_content_alert tc f16">
+            <div style="margin: 20px auto;">
+                给好友加价,获得减价<span style="color:#b29773;">5</span>元
+            </div>
+            <div class="mb20">
+                <div class="btn-active" style="width: 60%;margin:0" onclick="closeAddPrice()">
+                    确定
+                </div>
+            </div>
+        </div>
+    <div id="qrCode" class="white_content_alert f14 tc pt20 pb30">
+        <div class="f16">长按二维码进入公众号</div>
+        <div class="pt10 pb15"><img src="logo.png" height="40" /></div>
+        <div>（苹果用户长按右下角黑色区域）</div>
+        <div class="pb20">即可参与活动</div>
+        <img src="qrcode_for_gh.png" width="200">
+    </div>
+
+<div id="fade" class="black_overlay"></div>
+<div class="point">
+    <div style="height:200px;"></div>
+    点击右上角 &nbsp; <img src="menu.png"> &nbsp; 按钮<br>
+    选择“分享到朋友圈”
+</div>
+
+
+<div class="container">
+    <div class="pct100 rel ovh bg0 tc f16 rel" style="color:#8e8b8b;">
+        <img src="kanjjd.jpg" />
+        <img class="abs" style="top:30px;right:20px;" src="kanjia_logo.png" height="60" />
+        <div class="dib mt40 mr40 ml40 pt30 pb20 bg0 rel" style="border:1px solid #b29773;">
+            <i class="abs jiao jiao1"></i><i class="abs jiao jiao2"></i><i class="abs jiao jiao3"></i><i class="abs jiao jiao4"></i>
+            <img class="pct80" src="kanjia_bg.png" />
+            <div class="box bg1a mt20 f14">
+                <div class="item pt5 pb5" style="border-right:2px solid #2d2c2c;">还剩&nbsp;<span class="dib bg0 pt5 pr10 pb5 pl10">1000</span>&nbsp;个</div>
+                <div class="item pt5 pb5">倒计时&nbsp;<span class="dib bg0 pt5 pr10 pb5 pl10">7</span>&nbsp;天</div>
+            </div>
+            <div class="dib br4 mt15 pt5 pr10 pb5 pl10" style="border:1px solid #b29773;color:#b29773;">活动时间：06.10-06.16</div>
+        </div>
+        <div class="mt20 p10">当前价格是 <span style="color:#b29773; ">￥191.50</span>元</div>
+        <div class="pr20 pl20 mt15">
+            <div id="price" class="btn-addprice l mb15" onclick="openReduce()">帮TA砍价</div>
+            <div id="reduceprice" class="btn-addprice r mb15" onclick="openQrCode()">我要参加</div>
+            <div style="clear: both"></div>
+            <a class="db lh40 g0 mb15" style="background: #b29773;" href="#">看看还有哪些荡糕</a>
+            <a class="db lh40 g0 mb15" style="background: #b29773;" href="#">活动规则</a>
+        </div>
+        <div class="mt20 mb20 p10 bg1a">原价&nbsp;<span style="color:#b29773;">75</span>&nbsp;元的宇治抹茶慕斯，现在最低可以砍到&nbsp;<span style="color:#b29773;">6.5</span>&nbsp;元！</div>
+    </div>
+</div>
+<div class="fixed tr" style="width:50px;top:60%;right:15px;z-index:3">
+    <img id="remove_fixed" style="width:25px;margin-right:-10px" src="kanjia_removefix.png" />
+    <img width="50" src="fixed_qcode.png" onclick="openQrCode()" />
+</div>
+
+<ul class="bg0 pr15 pb20 pl15" style="color:#9fa1a0;">
+    <li>
+        <h3 style="font-size:16px;color:#b29773;">【报名需知】</h3>
+        <p class="pl5 pr5 pb20 lh20 f14">请先关注荡糕微信公众号，并在砍价结束后点击提交订单，填写正确的联系人电话号码与送货地址（仅限厦门岛内地址）。</p>
+    </li>
+    <li>
+        <h3 style="font-size:16px;color:#b29773;">【下单需知】</h3>
+        <p class="pl5 pr5 pb20 lh20 f14">下单后请选择方便配送的时间大段，配送时段为每日12:00-21:00。</p>
+    </li>
+    <li>
+        <h3 style="font-size:16px;color:#b29773;">【配送限制】</h3>
+        <p class="pl5 pr5 pb20 lh20 f14">顾客提交订单后，我们将按照下单时间先后安排配送上门，每日限配送60单，在开始配送前会提前电话通知。</p>
+    </li>
+    <li>
+        <h3 style="font-size:16px;color:#b29773;">【产品内涵】</h3>
+        <p class="pl5 pr5 pb20 lh20 f14">6寸宇治抹茶慕斯1个，5人份餐具1套，钢刀1把。</p>
+    </li>
+    <li>
+        <h3 style="font-size:16px;color:#b29773;">【活动时间】</h3>
+        <p class="pl5 pr5 pb20 lh20 f14">2016年6月10日12:00-2016年6月16日24:00，砍价活动结束</p>
+    </li>
+    <li>
+        <h3 style="font-size:16px;color:#b29773;">【配送时间】</h3>
+        <p class="pl5 pr5 pb20 lh20 f14">2016年6月11日12:00-2016年6月25日21:00，完成订单配送</p>
+    </li>
+    <li class="box">
+        <p class="item pt15 pl5 pr5 pb20 lh20 f14" style="-webkit-box-flex: 2;-moz-box-flex:2;-webkit-flex:2;-ms-flex:2;flex: 2;">活动过程中如果有任何疑问，<br />请咨询客服:<br />电话：188-5950-9936<br />微信：danggao_kf</p>
+        <p class="item"><img style="max-width:90px;" src="qcode.png" /></p>
+    </li>
+    <li>
+        <p class="pl5 pr5 pb20 lh20 f14">PS：下单后将另外收取10元的配送费用。</p>
+    </li>
+</ul>
+
+</body>
+</html>
