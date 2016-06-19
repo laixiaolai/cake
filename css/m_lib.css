@@ -488,7 +488,7 @@ to{margin-top:-5px}}
 .bottom_bar i{display: block;width: 100%;height: .5rem;line-height: .5rem;}
 /*收益明细*/
 .tabs {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: wrap;align-content: space-between;text-align: center;color: #000;position: relative;overflow: hidden;height: .6rem;line-height: .6rem;-webkit-border-radius: .08rem;border-radius: .08rem;border: 1px solid #4A4A4A;background-color: #FFF;width:80%;margin:.2rem auto}
-.tabs li {-webkit-box-flex: 1;-moz-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;width: 25%;font-size: .28rem;position: relative;overflow: hidden;text-align: center;height: .6rem;line-height: .6rem;border-right:1px solid #4A4A4A;box-sizing: border-box;}
+.tabs li {float:none;-webkit-box-flex: 1;-moz-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;width: 25%;font-size: .28rem;position: relative;overflow: hidden;text-align: center;height: .6rem;line-height: .6rem;border-right:1px solid #4A4A4A;box-sizing: border-box;}
 .tabs li:last-child{border:none}
 .tabs li.on {border-bottom-color: #5cccb9;background: #4A4A4A;color: #FFF;}
 .warp .li {float: left;overflow: hidden;height:.1rem}
