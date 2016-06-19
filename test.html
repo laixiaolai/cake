@@ -11,10 +11,8 @@
 		<style>
 
     body,html{position: relative;height: 100%;}
-    #main-box{min-width: 320px;max-width: 640px;background: #fff;margin: 0 auto;overflow: hidden;position: relative;}
 
-
-    .tabs {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: wrap;align-content: space-between;text-align: center;color: #000;position: relative;overflow: hidden;height: .6rem;line-height: .6rem;-webkit-border-radius: .08rem;border-radius: .08rem;border: 1px solid #4A4A4A;background-color: #FFF;width:80%;margin:.2rem auto}
+    .swiper-nav .tabs {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: wrap;align-content: space-between;text-align: center;color: #000;position: relative;overflow: hidden;height: .6rem;line-height: .6rem;-webkit-border-radius: .08rem;border-radius: .08rem;border: 1px solid #4A4A4A;background-color: #FFF;width:80%;margin:.2rem auto}
 	.tabs li {-webkit-box-flex: 1;-moz-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;width: 25%;font-size: .28rem;position: relative;overflow: hidden;text-align: center;height: .6rem;line-height: .6rem;border-right:1px solid #4A4A4A;box-sizing: border-box;}
 	.tabs li:last-child{border:none}
 	.tabs li.active {border-bottom-color: #5cccb9;background: #4A4A4A;color: #FFF;}
@@ -472,7 +470,7 @@
 	//Function to Fix Pages Height
 	function fixPagesHeight() {
 		$('.swiper-pages').css({
-			height: $(window).height()-nav.height-48
+			height: $(window).height()-nav.height+38
 		})
 	}
 	$(window).on('resize',function(){
