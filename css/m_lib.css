@@ -491,7 +491,8 @@ to{margin-top:-5px}}
 .tabs li {-webkit-box-flex: 1;-moz-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;width: 25%;font-size: .28rem;position: relative;overflow: hidden;text-align: center;height: .6rem;line-height: .6rem;border-right:1px solid #4A4A4A;box-sizing: border-box;}
 .tabs li:last-child{border:none}
 .tabs li.on {border-bottom-color: #5cccb9;background: #4A4A4A;color: #FFF;}
-.warp .li {float: left;overflow: hidden;}
+.warp .li {float: left;overflow: hidden;height:.1rem}
+.warp .li.on{height:auto}
 .listgc dt,.listgc dd{margin:0;overflow:hidden;font-weight:400;position:relative}
 .listgc dt:last-child,.listgc dd:last-of-type{border-bottom:0}
 .listgc dt{border-bottom:1px solid #E5E5E5;}

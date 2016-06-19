@@ -9,48 +9,14 @@
     <title>全部订单</title>
     <link href="css/m_lib.css" rel="stylesheet" />
     <link href="css/weui.min.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css" />
     <style>
     body{background:#F5F5F5;}
-    .tabs {
-}
-.tabs li {
-  display: block;
-  float: left;
-  width: 200px;
-  color: #333;
-  text-align: center;
-  border-radius: 5px 5px 0 0;
-  border: 1px solid #ccc;
-  background: #fff;
-  line-height: 40px;
-  font-size: 25px;
-  font-style: italic;
-  text-decoration: none;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ddd)); /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, #ffffff, #ddd); /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background-image:    -moz-linear-gradient(top, #ffffff, #ddd); /* FF3.6 */
-  background-image:     -ms-linear-gradient(top, #ffffff, #ddd); /* IE10 */
-  background-image:      -o-linear-gradient(top, #ffffff, #ddd); /* Opera 11.10+ */
-  background-image:         linear-gradient(to bottom, #ffffff, #ddd);
-}
-.tabs li.active {
-  color: #fff;
-  background: #333;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#333), to(#000)); /* Saf4+, Chrome */
-  background-image: -webkit-linear-gradient(top, #333, #000); /* Chrome 10+, Saf5.1+, iOS 5+ */
-  background-image:    -moz-linear-gradient(top, #333, #000); /* FF3.6 */
-  background-image:     -ms-linear-gradient(top, #333, #000); /* IE10 */
-  background-image:      -o-linear-gradient(top, #333, #000); /* Opera 11.10+ */
-  background-image:         linear-gradient(to bottom, #333, #000);
-  border-bottom: 1px solid #000;
-}
+
     </style>
 </head>
 <body>
     <div class="goods_info">
         <ul id="proTabs" class="tabs"><li class="li active on">全部订单</li><li class="li">进行中</li><li class="li">已完成</li></ul>
-        <div class="tabs"> <a href="#" class="active">Tab 1</a> <a href="#" style="margin:0 17px">Tab 2</a> <a href="#">Tab 3</a> </div>
         <div class="views swiper-container ohv">
             <div class="warp swiper-wrapper fix">
                 <div class="li swiper-slide on">
@@ -430,12 +396,11 @@
     </div>
 
     <script src="js/jquery.min.js"></script>
-    <script src="js/idangerous.swiper.min.js"></script>
-    <script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
+    <script src="js/swiper.min.js"></script>
     <script>
         (function () {
             $(function () {
-                var goods_info = new Swiper('.goods_info .views',{pagination: '.goods_info .tabs',mousewheelControl:false,simulateTouch:false,noSwiping:false});
+                var goods_info = new Swiper('.goods_info .views',{pagination: '.goods_info .tabs',mousewheelControl:false,simulateTouch:false});
 
             });
         }.call(this));
