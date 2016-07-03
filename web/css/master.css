@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+body {margin: 0px; font-size:14px; color:#333; font-family:"微软雅黑"; background:#FFF;}
+ul, ol, li, dl, dt, dd{margin: 0px;padding: 0px;list-style-type: none;}
+img {border: 0px; margin:0px; padding:0px;}
+h1, h2, h3, h4, h5, h6,p, i{margin: 0;padding: 0; font-size:12px; font-weight:normal;Font-style:normal;}
+/*链接样式*/
+a:{color: #3e3a39;text-decoration: none;}
+a:link {color: #3e3a39;text-decoration: none;}
+a:visited {color: #3e3a39;text-decoration: none;}
+a:hover {color:#fe8401;text-decoration:none;}
+img, object, embed, video {max-width: 100%;}
+.ie6 img {width:100%;}
+.fluid {clear: both;margin-left: 0;width: 100%;float: left;display: block;}
+.fluidList {list-style:none;list-style-image:none; margin:0;padding:0;}
+.More{ float:right; width:auto; padding-right:5px; line-height:24px; padding-top:3px;color: #3e3a39;}
+.More a:{color: #3e3a39;text-decoration: none; padding-left:5px; padding-right:5px;}
+.More a:link {color: #3e3a39;text-decoration: none; padding-left:5px; padding-right:5px;}
+.More a:visited {color: #3e3a39;text-decoration: none; padding-left:5px; padding-right:5px;}
+.More a:hover {color:#fe8401;text-decoration:none; padding-left:5px; padding-right:5px;}
+.More samp{font-family:"宋体";}
+.wrap{margin-bottom: 0;margin-left: auto;margin-right: auto;margin-top:0;min-width: 1190px;overflow-x: hidden;overflow-y: hidden;}
+
+/*翻页样式*/
+.Page { float:left;  margin-top:20px; width:1190px; font-size:14px;}
+.NewPage { padding:5px; margin:5px; text-align:center;}
+.NewPage A { border:1px solid #CCC;  padding-left:13px; padding-right:13px; padding-bottom:9px; padding-top:9px;text-decoration:none; margin-right:5px;}
+.NewPage A:hover { padding-left:13px; padding-right:13px; padding-bottom:9px; padding-top:9px; border:1px solid #09C;text-decoration:none; margin-right:5px; }
+.NewPage A:active { padding-left:13px; padding-right:13px; padding-bottom:9px; padding-top:9px; border:1px solid #09C;text-decoration:none; margin-right:5px;}
+.NewPage b{ padding-left:13px; padding-right:13px; padding-bottom:9px; padding-top:9px; border:1px solid #09C; background-color:#09C; color:#fff; text-decoration:none; margin-right:5px; margin-left:5px; }
+.NewPage .disabled { border:1px solid #ccc; padding-left:13px; padding-right:13px; padding-bottom:9px; padding-top:9px;text-decoration:none; color:#999; margin-right:3px;}
+.NewPage .Total{padding-left:10px; padding-right:10px;margin-top:8px;}
+.NewPage .button{ width:45px; padding:0px;border:0px; height:23px; line-height:23px; background:#09C; margin-left:5px;cursor:pointer; color:#fff;}
+.NewPage .input{ width:30px; padding:2px; border:1px solid #CCC; height:18px; line-height:18px;margin-left:5px;}
+
+/*页脚*/
+.footer{ float:left; background-attachment: scroll;background-clip: border-box;background-color: #3d3a39;background-image: none;background-origin: padding-box;background-position: 0 0;background-repeat: repeat;background-size: auto auto;line-height: 25px;min-width: 1190px; width: 100%; color:#CCC;overflow-x: hidden;overflow-y: hidden; padding-bottom:30px; padding-top:30px;}
+.footer .content{margin-bottom: 0;margin-left: auto;margin-right: auto;width: 1190px;}
+.footer .content .awm{float:left; width:111px;}
+.footer .content .hot{float:left; width:680px; padding-right:15px;line-height:36px; font-size:14px; color:#968c87;}
+.footer .content .foonav{float:left; width:380px; line-height:35px;}
+.footer .content .foonav span{ float:left; width:23px; text-align:center;color:#fff; padding-right:10px; padding-left:10px; }
+.footer .content .foonav a:{float:left;  color:#fff; font-size:14px;}
+.footer .content .foonav a:link {float:left;color:#fff; font-size:14px;}
+.footer .content .foonav a:visited {float:left; color:#fff; font-size:14px;}
+.footer .content .foonav a:hover {float:left;color:#fe8401; font-size:14px;}
+.footer .content .foonav p{float:right; width:335px; line-height:35px; text-align:right; padding-right:25px;color:#fff; }
+
+.footer .content .Copyright{float:left; width:1190px; color:#968c87; padding-top:10px;}
