@@ -5,85 +5,25 @@
 <title>蛋糕官网商城</title>
 </head>
 <link rel="stylesheet" type="text/css" href="css/lib.css">
-<link rel="stylesheet" type="text/css" href="css/home.css">
-<link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="stylesheet" type="text/css" href="css/master.css">
 <body>
 <div class="wrapnav">
-  <div class="subnav">
+  <div class="subnav fix">
       <h1 class="logo"><a href="#" target="_blank" title="蛋糕官网商城">蛋糕官网商城</a></h1><!--公司LOGO-->
     <!--主导航-->
     <div class="mainNav">
-      <ul>
-        <li><strong><a href="home/index.html">全部产品</a></strong></li>
-        <li><a href="new/index.html">最新活动</a></li>
-        <li><a href="members/gerenzhongxin.html">会员中心</a></li>
+      <ul class="fix">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">蛋糕</a></li>
+        <li><a href="#">活动</a></li>
+        <li><a href="#">品牌故事</a></li>
+        <li><a href="#">登录</a></li>
+        <li><a href="#">注册</a></li>
+        <li><a href="#">订单</a></li>
+        <li><a href="#"><img class="mr5" src="images/cart.png" />0</a></li>
+        <li><a href="javascript:;" style="background:none;"><img src="images/main.png" alt="免" /></a></li>
       </ul>
-    </div>
-      <div class="switch">
-        <!--切换城市-->
-        <span class="allcity" onMouseOver="document.getElementById('switch').className='allshows'"  onMouseOut="document.getElementById('switch').className='allhidden'">
-          <span class="btn"><b>泉州</b><i><img src="images/jt03.jpg" alt=""/></i></span>
-          <span id="switch" class="allhidden">
-          <span class="btn_color"><b>泉州</b><i><img src="images/jt02.jpg" alt=""/></i></span>
-            <span class="allwrap"><!--全部城市-->
-              <dl>
-                <dt>周边城市</dt>
-                <dd>
-                <a href="#" target="_blank" title="">福建</a>
-                <a href="#" target="_blank" title="">福州</a>
-                <a href="#" target="_blank" title="">龙岩</a>
-                <a href="#" target="_blank" title="">南平</a>
-                <a href="#" target="_blank" title="">泉州</a>
-                <a href="#" target="_blank" title="">三明</a>
-                <a href="#" target="_blank" title="">厦门</a>
-                <a href="#" target="_blank" title="">漳州</a>
-                <a href="#" target="_blank" title="">宁德</a>
-                <a href="#" target="_blank" title="">莆田</a>
-                </dd>
-              </dl>
-              <dl>
-                <dt>重点城市</dt>
-                <dd>
-                 <a href="#"  target="_blank">全国站</a>
-                 <a href="#"  target="_blank">厦门</a>
-                 <a href="#" target="_blank">成都</a>
-                 <a href="#" target="_blank">沈阳</a>
-                 <a href="#" target="_blank">武汉</a>  
-                 <a href="#" target="_blank">湖南</a>
-                 <a href="#" target="_blank">广西</a>
-                 <a href="#" target="_blank">黑龙江</a>
-                 <a href="#" target="_blank">重庆</a>  
-                 <a href="#" target="_blank">山西</a>
-                 <a href="#" target="_blank">河北</a>
-                 <a href="#" target="_blank">河南</a>
-                 <a href="#" target="_blank">吉林</a>  
-                 <a href="#" target="_blank">深圳</a>
-                 <a href="#" target="_blank">长春</a>  
-                 <a href="#" target="_blank">西安</a>
-                 <a href="#" target="_blank">青岛</a>
-                 <a href="#" target="_blank">柳州</a>  
-                 <a href="#" target="_blank">济南</a>
-                 <a href="#" target="_blank">石家庄</a>  
-                 <a href="#" target="_blank">苏州</a>
-                 <a href="#" target="_blank">哈尔滨</a>   
-                 <a href="#" target="_blank">新疆</a>   
-                </dd>
-              </dl>
-              <div class="More"><a href="#" target="_blank">更多城市</a></div>
-          </span>
-         </span>
-       </span>
-    </div><!--切换城市结束-->
-    <div class="dl">
-      <ul>
-        <li><a href="login/index.html" target="_blank"><img src="images/dl.jpg" alt=""/></a></li>
-        <li><a href="reg/index.html" target="_blank"><img src="images/zc.jpg" alt=""/></a></li>
-        <li class="dlh" style="display:none">欢迎您 1803004926</li>
-        <li class="dlh" style="display:none"><a href="home/index.html">[ 退出 ]</a></li>
-        <li><a href="members/wodedindan.html" target="_blank"><img src="images/dg.jpg" alt=""/></a></li>
-      </ul>
-    </div>
+    </div>    
     <!--页头结束 -->
   </div>
 </div>
@@ -106,20 +46,26 @@ $(document).ready(function(){
 </script>
 </div>
 <div class="product" id="che03"><!--产品列表-->
-  <div class="title">
-    <h1><img src="images/cakeplan.jpg" alt=""/></h1>
-    <span><a href="#" target="_blank"><img src="images/jt01.jpg" alt=""/></a></span>
+  <div class="tc"><img src="images/title.png" alt=""/>
   </div>
   <div class="pic">
-    <ul>
-      <li class="pic01"><a href="details/index.html" target="_blank"><img src="upload/product01.jpg"  alt=""/></a><span><img src="images/icon01.jpg" alt=""/></span>
-      <h2><a href="details/index.html" target="_blank">Mango Jerry 芒果慕斯</a></h2><h3>￥198.0/磅</h3></li>
-      <li class="pic01"><a href="details/index.html" target="_blank"><img src="upload/product02.jpg"  alt=""/></a><span><img src="images/icon01.jpg" alt=""/></span>
-      <h2><a href="details/index.html" target="_blank">Mango Jerry 芒果慕斯</a></h2><h3>￥198.0/磅</h3></li>
-      <li class="pic01"><a href="details/index.html" target="_blank"><img src="upload/product03.jpg"  alt=""/></a><span><img src="images/icon01.jpg" alt=""/></span>
-      <h2><a href="details/index.html" target="_blank">Mango Jerry 芒果慕斯</a></h2><h3>￥198.0/磅</h3></li>
-      <li class="pic02"><a href="#" target="_blank"><img src="upload/product04.jpg"  alt=""/></a><span><img src="images/icon01.jpg" alt=""/></span>
-      <h2><a href="details/index.html" target="_blank">Mango Jerry 芒果慕斯</a></h2><h3>￥198.0/磅</h3></li>
+    <ul class="fix" style="margin-left:-24px;">
+      <li><a href="details/index.html" target="_blank"><img src="images/cake.jpg"  alt=""/>
+      <h2><span class="db f15 mb5">Mango Jerry</span>芒果慕斯</h2><h3>￥198.0/磅</h3></a></li>
+      <li><a href="details/index.html" target="_blank"><img src="images/cake.jpg"  alt=""/>
+      <h2><span class="db f15 mb5">Mango Jerry</span>芒果慕斯</h2><h3>￥198.0/磅</h3></a></li>
+      <li><a href="details/index.html" target="_blank"><img src="images/cake.jpg"  alt=""/>
+      <h2><span class="db f15 mb5">Mango Jerry</span>芒果慕斯</h2><h3>￥198.0/磅</h3></a></li>
+      <li><a href="#" target="_blank"><img src="images/cake.jpg"  alt=""/>
+      <h2><span class="db f15 mb5">Mango Jerry</span>芒果慕斯</h2><h3>￥198.0/磅</h3></a></li>
+      <li><a href="details/index.html" target="_blank"><img src="images/cake.jpg"  alt=""/>
+      <h2><span class="db f15 mb5">Mango Jerry</span>芒果慕斯</h2><h3>￥198.0/磅</h3></a></li>
+      <li><a href="details/index.html" target="_blank"><img src="images/cake.jpg"  alt=""/>
+      <h2><span class="db f15 mb5">Mango Jerry</span>芒果慕斯</h2><h3>￥198.0/磅</h3></a></li>
+      <li><a href="details/index.html" target="_blank"><img src="images/cake.jpg"  alt=""/>
+      <h2><span class="db f15 mb5">Mango Jerry</span>芒果慕斯</h2><h3>￥198.0/磅</h3></a></li>
+      <li><a href="#" target="_blank"><img src="images/cake.jpg"  alt=""/>
+      <h2><span class="db f15 mb5">Mango Jerry</span>芒果慕斯</h2><h3>￥198.0/磅</h3></a></li>
     </ul>
   </div>
 </div>
