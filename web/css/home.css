@@ -1,4 +1,4 @@
-.banner{ float:left;min-width: 1190px; width: 100%; height:598px; position:relative; margin-top:70px;}
+.banner{ float:left;min-width: 1190px; width: 100%; height:598px; position:relative;}
 /* 横幅 */
 .flexslider{position:relative;height:598px;background:url(../images/loading.gif) 50% no-repeat;}
 .slides{position:relative;z-index:1;}
