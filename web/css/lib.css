@@ -496,6 +496,7 @@ a.ghs,.ghs{color: #987C69;}
 .grid-c2f.index_xinfang .main-wrap{margin-right: 274px;}
 .grid-c2f.index_xinfang .col-sub{width: 236px;margin-left: -236px;}
 /*三栏布局，两边固定，中间自适应*/
+.grid-c3{padding:39px 0;}
 .grid-c3 .col-sub{width: 165px;margin-left: -100%;}
 .grid-c3 .col-extra{width:234px;margin-left: -234px;}
 .grid-c3 .col-extra li{display:block;height:47px;line-height:47px;text-align:left;font-size:18px;padding-left:46px;color:#000;margin-bottom:1px;background:url(../images/list_bg.png);}

@@ -49,6 +49,9 @@ img, object, embed, video {max-width: 100%;}
 /**/
 .w1168{width:1168px;margin:0 auto;text-align:center;}
 .w1168 .inner{position:absolute;width:1920px;margin-left:-376px;margin-top:0;}
+.list_filter{width:90%;margin:0 auto 15px;padding:75px 0 13px;border-bottom:2px solid #603913;}
+.list_filter span,.list_filter a{float:left;color:#a78b6b;padding:2px 5px;margin-right:5px;}
+.list_filter a:hover{color:#fff;background-color:#231916;}
 /*产品列表*/
 .product{margin:auto; width:1168px;}
 .product .pic{margin-top:47px; padding-bottom:80px;}
