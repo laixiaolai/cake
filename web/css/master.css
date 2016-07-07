@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* CSS Document */
+body {margin: 0px; font-size:14px; color:#333; font-family:"微软雅黑"; background:#f4f6f7 url(../images/bg.png);overflow-x:hidden;}
+ul, ol, li, dl, dt, dd{margin: 0px;padding: 0px;list-style-type: none;}
+img {border: 0px; margin:0px; padding:0px;}
+h1, h2, h3, h4, h5, h6,p, i{margin: 0;padding: 0; font-size:12px; font-weight:normal;Font-style:normal;}
+/*链接样式*/
+a:{color: #3e3a39;text-decoration: none;}
+a:link {color: #3e3a39;text-decoration: none;}
+a:visited {color: #3e3a39;text-decoration: none;}
+a:hover {color:#fe8401;text-decoration:none;}
+img, object, embed, video {max-width: 100%;}
+.ie6 img {width:100%;}
+.fluid {clear: both;margin-left: 0;width: 100%;float: left;display: block;}
+.fluidList {list-style:none;list-style-image:none; margin:0;padding:0;}
+.More{ float:right; width:auto; padding-right:5px; line-height:24px; padding-top:3px;color: #3e3a39;}
+.More a:{color: #3e3a39;text-decoration: none; padding-left:5px; padding-right:5px;}
+.More a:link {color: #3e3a39;text-decoration: none; padding-left:5px; padding-right:5px;}
+.More a:visited {color: #3e3a39;text-decoration: none; padding-left:5px; padding-right:5px;}
+.More a:hover {color:#fe8401;text-decoration:none; padding-left:5px; padding-right:5px;}
+.More samp{font-family:"宋体";}
+.wrap{margin-bottom: 0;margin-left: auto;margin-right: auto;margin-top:0;min-width: 1190px;overflow-x: hidden;overflow-y: hidden;}
+
+/*顶部导航*/
+.wrapnav {width:100%;min-width: 1190px; height:86px;padding-top:45px;position:absolute;z-index:2;}
+.subnav {width:1190px;margin: auto;}
+/*公司LOGO*/
+.subnav .logo {float:left; width:135px; height:86px;}
+.subnav .logo a{display:block;width:135px;height:86px;overflow:hidden;text-indent:-999px;background:url(../images/logo.png) no-repeat;}
+.subnav_i .logo a{background:url(../images/logo_.png) no-repeat scroll 0 0;}
+/*总导航*/
+.mainNav{float:right;padding-top:38px;}
+.mainNav li{float:left;}
+.mainNav li a{padding:0 15px;color:#fff;height:18px; line-height:18px; text-align:center; font-size:15px;text-decoration:none;background:url(../images/border.png) no-repeat 100% 2px;}
+.mainNav li a:hover {text-decoration:underline;}
+.subnav_i .mainNav li a{color:#231f20;background:url(../images/border_b.png) no-repeat 100% 2px;}
+.banner{ float:left;min-width: 1190px; width: 100%; height:598px; position:relative;}
+/* 横幅 */
+.flexslider{position:relative;height:548px;background:url(../images/loading.gif) 50% no-repeat;}
+.slides{position:relative;z-index:1;}
+.slides li{height:548px;}
+.flex-control-nav{position:absolute;bottom:10px;z-index:2;width:100%;text-align:center;}
+.flex-control-nav li{display:inline-block;width:14px;height:14px;margin:0 5px;*display:inline;zoom:1;}
+.flex-control-nav a{display:inline-block;width:14px;height:14px;overflow:hidden;background:#b29873;color:#b29873;cursor:pointer;-webkit-border-radius:50%;-moz-border-radius:50%;border-radius:50%;}
+.flex-control-nav .flex-active{background-position:0 0;background:#ccc;color:#ccc;}
+.order{ float:left; width:auto; height:407px;}
+.order a{display:block;width:100%; height:407px;overflow:hidden;text-indent:-999px;}
+
+/**/
+.w1168{width:1168px;margin:0 auto;text-align:center;}
+.w1168 .inner{position:absolute;width:1920px;margin-left:-376px;margin-top:0;}
+.list_filter{width:90%;margin:0 auto 15px;padding:75px 0 13px;border-bottom:2px solid #603913;}
+.list_filter span,.list_filter a{float:left;color:#a78b6b;padding:2px 5px;margin-right:5px;}
+.list_filter a:hover{color:#fff;background-color:#231916;}
+/*产品列表*/
+.product{margin:auto; width:1168px;}
+.product .pic{margin-top:47px; padding-bottom:80px;}
+.product .pic li{ float:left; width:274px; margin-bottom:18px;padding-left:24px;}
+.product .pic img{-webkit-box-shadow:0 0 8px #000;-moz-box-shadow:0 0 8px #000;box-shadow:0 0 8px #000;}
+.product .pic h2{line-height:22px; font-size:21px; padding-top:10px;white-space:nowrap;text-overflow: ellipsis; color:#636466;text-overflow:ellipsis;overflow:hidden; word-break:keep-all;text-align:center; }
+.product .pic h3{line-height:22px; font-size:15px; color:#636466; padding-top:5px;text-align:center;}
+.product .pic b{ color:#F60;}
+
+
+/*翻页样式*/
+.Page { float:left;  margin-top:20px; width:1190px; font-size:14px;}
+.NewPage { padding:5px; margin:5px; text-align:center;}
+.NewPage a { border:1px solid #CCC;  padding-left:13px; padding-right:13px; padding-bottom:9px; padding-top:9px;text-decoration:none; margin-right:5px;}
+.NewPage a:hover { padding-left:13px; padding-right:13px; padding-bottom:9px; padding-top:9px; border:1px solid #09C;text-decoration:none; margin-right:5px; }
+.NewPage a:active { padding-left:13px; padding-right:13px; padding-bottom:9px; padding-top:9px; border:1px solid #09C;text-decoration:none; margin-right:5px;}
+.NewPage b{ padding-left:13px; padding-right:13px; padding-bottom:9px; padding-top:9px; border:1px solid #09C; background-color:#09C; color:#fff; text-decoration:none; margin-right:5px; margin-left:5px; }
+.NewPage .disabled { border:1px solid #ccc; padding-left:13px; padding-right:13px; padding-bottom:9px; padding-top:9px;text-decoration:none; color:#999; margin-right:3px;}
+.NewPage .Total{padding-left:10px; padding-right:10px;margin-top:8px;}
+.NewPage .button{ width:45px; padding:0px;border:0px; height:23px; line-height:23px; background:#09C; margin-left:5px;cursor:pointer; color:#fff;}
+.NewPage .input{ width:30px; padding:2px; border:1px solid #CCC; height:18px; line-height:18px;margin-left:5px;}
+
+/*页脚*/
+.footer{border-top:1px solid #231916;background-color: #fff;line-height: 25px;min-width: 1190px; width: 100%; color:#CCC;overflow-x: hidden;overflow-y: hidden; padding-bottom:30px; padding-top:30px;}
+.footer .content{margin-bottom: 0;margin-left: auto;margin-right: auto;width: 1190px;}
+.footer .content .awm{float:left; width:111px;}
+.footer .content .hot{float:left; width:680px; padding-right:15px;font-size:15px; color:#231916;}
+.footer .content .foonav{float:right; width:400px;line-height:35px;}
+.footer .content .foonav a{float:left;color:#231916;height:18px;line-height:18px;padding:0 18px;font-size:15px;background:url(../images/border_b.png) no-repeat 100% 2px;}
+.footer .content .foonav a:hover {color:#fe8401;}
+.footer .content .Copyright{color:#898989;}
