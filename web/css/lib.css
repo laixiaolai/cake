@@ -284,6 +284,7 @@ img{max-width: 100%;vertical-align: middle;border: none;}
 .bgfa{background-color: #fafafa;}
 .bgfb{background-color: #fbfbfb;}
 .bgf5{background-color: #f5f5f5;}
+.bgf8{background-color: #f8f8f8;}
 .bge5{background-color: #e5e5e5;}
 .bgf0{background-color: #f0f0f0;}
 .bgeb{background-color: #ebebeb;}
@@ -519,84 +520,3 @@ a.ghs,.ghs{color: #987C69;}
 .flot-x-axis .flot-tick-label{white-space: nowrap;}
 #line-chart2 .flot-x-axis .tickLabel{margin-top: 5px;}
 #line-chart2 .flot-y-axis .tickLabel{margin-right: 5px;}
-.calendar{width: 100%;}
-.calendar th{font-weight: normal;}
-.calendar th .title{color: #2fbeff;}
-.calendar th a:hover{text-decoration: none;}
-.calendar td{color: #444;font-family: Arial;font-size: 16px;width: 3.5em;height: 3em;text-align: center;}
-.calendar .prevMonth,
-.calendar .nextMonth{color: #ccc;}
-.calendar td a:visited{color: blue;}
-.calendar .curDay{background-color: #f43e1f;color: #fff;-moz-box-shadow: 3px 3px 5px #666;-webkit-box-shadow: 3px 3px 5px #666;box-shadow: 3px 3px 5px #666;}
-ul li:first-child .tongji_ph span{color: #D32F2F;}
-ul li:first-child .tongji_ph em{background-color: #D32F2F;}
-.tongji_ph .medal{text-indent: -9999em;width: 32px;height: 26px;line-height: 26px;background: url(/style/images/tongji_ph.png) no-repeat 6px 0;}
-.tongji_ph .medal.second{background-position: 6px -47px;}
-.tongji_ph .medal.third{background-position: 6px -91px;}
-.tongji_ph .medal.number{text-indent: 0;background: none;color: #666;font-size: 16px;letter-spacing: -2px;}
-.tongji_ph .tongji_tx img{width: 32px;height: 32px;padding: 12px;border: 1px solid #fff;-moz-border-radius: 50%;-webkit-border-radius: 50%;border-radius: 50%;}
-.tongji_ph .tongji_bar{background: #fff;}
-.tongji_ph .tongji_bar span.abs{height: 4px;left: 0;bottom: -8px;border: 2px solid #fff;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;}
-.tongji_ph .tongji_bar em{height: 4px;background-color: #bebebe;-moz-border-radius: 2px;-webkit-border-radius: 2px;border-radius: 2px;}
-.tongji_ph.cur img,
-.tongji_ph:hover img{width: 50px;height: 50px;padding: 3px;border-color: #d9d9d9;}
-.tongji_ph.cur span,
-.tongji_ph:hover span{font-size: 14px;font-weight: 700;color: #02a0ea;}
-.tongji_ph.cur span .medal.number,
-.tongji_ph:hover span .medal.number{font-size: 20px;color: #02a0ea;}
-.tongji_ph.cur span.abs,
-.tongji_ph:hover span.abs{background-color: #EEE;border: 2px solid #EEE;}
-.tongji_ph.cur em,
-.tongji_ph:hover em{bottom: -1px;height: 6px;background-color: #0eb1fd;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;}
-.gaishu h3:before{content: "";display: block;width: 9px;height: 9px;background-color: #00a0e9;position: absolute;margin-left: -17px;margin-top: 13px;}
-.gaishu .zoomico{content: "";display: block;width: 13px;height: 13px;cursor: pointer;background: url(/style/images/buttonx.png) no-repeat 0 -2681px;position: absolute;right: 3px;top: 10px;}
-.gaishu .iradio_minimal-grey{background: none;}
-.gaishu label > span{font-size: 20px;color: #777;}
-.gaishu .iCheck-helper{width: 12px!important;height: 12px!important;-moz-border-radius: 50%;-webkit-border-radius: 50%;border-radius: 50%;border: 1px solid #ccc!important;background: #fff!important;opacity: 1!important;}
-.gaishu .hover .iCheck-helper,
-.gaishu .checked .iCheck-helper{-moz-border-radius: 50%;-webkit-border-radius: 50%;border-radius: 50%;width: 6px!important;height: 6px!important;border: 4px solid #00a0e9!important;background-color: #fff!important;}
-.gaishu .hover + label > span,
-.gaishu .checked + label > span{font-family: Arial;font-size: 28px;color: #00a0e9;}
-.gaishu.bg43 h3:before{background-color: #43c5d7;}
-.gaishu.bg43 .hover .iCheck-helper,
-.gaishu.bg43 .checked .iCheck-helper{border: 4px solid #43c5d7!important;}
-.gaishu.bg43 .hover + label > span,
-.gaishu.bg43 .checked + label > span{color: #43c5d7;}
-.gaishu.bg03 h3:before{background-color: #03e553;}
-.gaishu.bg03 .hover .iCheck-helper,
-.gaishu.bg03 .checked .iCheck-helper{border: 4px solid #03e553!important;}
-.gaishu.bg03 .hover + label > span,
-.gaishu.bg03 .checked + label > span{color: #03e553;}
-.gaishu.bgff h3:before{background-color: #ffc377;}
-.gaishu.bgff .hover .iCheck-helper,
-.gaishu.bgff .checked .iCheck-helper{border: 4px solid #ffc377!important;}
-.gaishu.bgff .hover + label > span,
-.gaishu.bgff .checked + label > span{color: #ffc377;}
-.gaishu.bgf2 h3:before{background-color: #f23530;}
-.gaishu.bgf2 .hover .iCheck-helper,
-.gaishu.bgf2 .checked .iCheck-helper{border: 4px solid #f23530!important;}
-.gaishu.bgf2 .hover + label > span,
-.gaishu.bgf2 .checked + label > span{color: #f23530;}
-.gaishu.bg00 h3:before{background-color: #009944;}
-.gaishu.bg00 .hover .iCheck-helper,
-.gaishu.bg00 .checked .iCheck-helper{border: 4px solid #009944!important;}
-.gaishu.bg00 .hover + label > span,
-.gaishu.bg00 .checked + label > span{color: #009944;}
-.gaishu.bg69 h3:before{background-color: #69a9ff;}
-.gaishu.bg69 .hover .iCheck-helper,
-.gaishu.bg69 .checked .iCheck-helper{border: 4px solid #69a9ff!important;}
-.gaishu.bg69 .hover + label > span,
-.gaishu.bg69 .checked + label > span{color: #69a9ff;}
-.fixspline{position: fixed;width: 80%;left: 10%;top: 50%;margin-top: -205px;z-index: 5;}
-.fixspline .gaishu .zoomico{background: url(/style/images/buttonx.png) no-repeat 0 -2703px;right: 3px;top: 10px;}
-.omask{display: none;position: fixed;z-index: 4;top: 0;left: 0;width: 100%;height: 100%;background-color: #fff;background-color: rgba(0, 0, 0, 0.35);filter: alpha(opacity=35);}
-#treeEmployee,
-#treeMenuContent{min-width: 158px;background: #fff;border: 1px solid #ddd;margin-top: -1px;-moz-border-radius: 2px;-webkit-border-radius: 2px;border-radius: 2px;}
-#treeEmployee #sourceemployee,
-#treeMenuContent #sourceemployee,
-#treeEmployee #sourcearea,
-#treeMenuContent #sourcearea{padding: 5px;}
-#treeEmployee #sourceemployee input,
-#treeMenuContent #sourceemployee input,
-#treeEmployee #sourcearea input,
-#treeMenuContent #sourcearea input{vertical-align: middle;margin-top: -2px;margin-bottom: 1px;margin-right: 2px;}
