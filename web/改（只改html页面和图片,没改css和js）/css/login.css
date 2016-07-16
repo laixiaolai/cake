@@ -1,0 +1,128 @@
+/*快速登录*/
+.login{ float:left;min-width: 1190px; width: 100%; height:692px; margin-top:70px; background:#ededed; padding-top:98px;}
+.login .content{ margin:auto; width:1190px;}
+.login .content .pic{ float:left; width: 711px; padding-top:42px;}
+.login .content .layout{ float:left; width:353px; height:500px; background:#fff; padding-top:42px; padding-left:63px; padding-right:63px;}
+.login .content .layout h2{ float:left; width:353px; font-size:24px;}
+.login .content .layout .click{ float:left; width:353px; text-align:right; padding-top:50px; color:#999999;}
+.login .content .layout .click a:{color: #e99596;text-decoration:underline;}
+.login .content .layout .click a:link {color: #e99596;text-decoration:underline;}
+.login .content .layout .click a:visited {color: #e99596;text-decoration:underline;}
+.login .content .layout .click a:hover {color:#fe8401;text-decoration:none;}
+.login .content .layout dl{ float:left; width:353px;}
+
+.login .content .layout dl .input01{ float:left; width:328px; line-height:43px; height:43px; border:0px; padding-left:25px; background:url(../images/slk.jpg) no-repeat scroll; color:#c5c5c5; font-size:14px; margin-top:15px; margin-bottom:15px;} 
+.login .content .layout .jzzh{float:left; width:200px;color:#999999;}
+.login .content .layout .jzzh input{ padding-top:1px; float:left;}
+.login .content .layout .wjmm{float:left; width:153px; text-align:right;}
+.login .content .layout .wjmm a:{color: #e99596;text-decoration:underline;}
+.login .content .layout .wjmm a:link {color: #e99596;text-decoration:underline;}
+.login .content .layout .wjmm a:visited {color: #e99596;text-decoration:underline;}
+.login .content .layout .wjmm a:hover {color:#fe8401;text-decoration:none;}
+
+.login .content .layout .ljdl{ float:left; width:353px; height:49px; line-height:49px; text-align:center; font-size:24px; background:#3e3a39; color:#fff; margin-top:45px;}
+.login .content .layout .ljdl a:{ float:left; width:353px; height:49px; line-height:49px; text-align:center; font-size:24px; background:#3e3a39; color:#fff; }
+.login .content .layout .ljdl a:link { float:left; width:353px; height:49px; line-height:49px; text-align:center; font-size:24px; background:#3e3a39; color:#fff; }
+.login .content .layout .ljdl a:visited { float:left; width:353px; height:49px; line-height:49px; text-align:center; font-size:24px; background:#3e3a39; color:#fff; }
+.login .content .layout .ljdl a:hover { float:left; width:353px; height:49px; line-height:49px; text-align:center; font-size:24px; background:#3e3a39; color:#b2b2b2; }
+
+.login .content .layout .qqdl{ float:left; width:353px; height:49px; line-height:49px;font-size:14px; background:#656363; color:#fff; margin-top:25px;}
+.login .content .layout .qqdl img{ float:left; padding-top:17px; padding-right:10px; padding-left:95px;}
+.login .content .layout .qqdl a:{float:left; width:353px; height:49px; line-height:49px;font-size:14px; background:#656363; color:#fff;}
+.login .content .layout .qqdl a:link {float:left; width:353px; height:49px; line-height:49px;font-size:14px; background:#656363; color:#fff; }
+.login .content .layout .qqdl a:visited {float:left; width:353px; height:49px; line-height:49px;font-size:14px; background:#656363; color:#fff;}
+.login .content .layout .qqdl a:hover {float:left; width:353px; height:49px; line-height:49px;font-size:14px; background:#656363; color:#b2b2b2;}
+/*快速注册*/
+.reg{ float:left;min-width: 1190px; width: 100%; height:692px; margin-top:70px; background:#ededed; padding-top:98px;}
+.reg .content{ margin:auto; width:1190px;}
+.reg .content .pic{ float:left; width: 711px; padding-top:42px;}
+.reg .content .layout{ float:left; width:353px; height:500px; background:#fff; padding-top:32px; padding-left:63px; padding-right:63px;}
+.reg .content .layout h2{ float:left; width:353px; font-size:24px; padding-bottom:10px;}
+.reg .content .layout .click{ float:left; width:353px; text-align:right; padding-top:50px; color:#999999;}
+.reg .content .layout .click a:{color: #e99596;text-decoration:underline;}
+.reg .content .layout .click a:link {color: #e99596;text-decoration:underline;}
+.reg .content .layout .click a:visited {color: #e99596;text-decoration:underline;}
+.reg .content .layout .click a:hover {color:#fe8401;text-decoration:none;}
+.reg .content .layout dl{ float:left; width:353px;}
+
+.reg .content .layout dl .input01{ float:left; width:328px; line-height:43px; height:43px; border:0px; padding-left:25px; background:url(../images/slk.jpg) no-repeat scroll; color:#c5c5c5; font-size:14px; margin-top:10px;} 
+.reg .content .layout dl .input02{ float:left; width:194px; line-height:43px; height:43px; border:0px; padding-left:25px; background:url(../images/slk2.jpg) no-repeat scroll; color:#c5c5c5; font-size:14px; margin-top:10px;} 
+.reg .content .layout dl .yzm{ float:left; width:133px; line-height:43px; height:43px; border:0px; background:url(../images/slk3.jpg) no-repeat scroll; color:#c5c5c5; font-size:14px; margin-top:10px;} 
+.reg .content .layout dl .yzm i{ float:left; margin-top:5px; padding-right:5px;} 
+.reg .content .layout dl .yzm a:{color: #1e89cf;text-decoration:none;}
+.reg .content .layout dl .yzm a:link {color: #1e89cf;text-decoration:none;}
+.reg .content .layout dl .yzm a:visited {color: #1e89cf;text-decoration:none;}
+.reg .content .layout dl .yzm a:hover {color:#fe8401;text-decoration:none;}
+
+.reg .content .layout .jzzh{float:left; width:250px;color:#999999; font-size:12px; padding-top:25px;}
+.reg .content .layout .jzzh a:{color: #1e89cf;text-decoration:none;}
+.reg .content .layout .jzzh a:link {color: #1e89cf;text-decoration:none;}
+.reg .content .layout .jzzh a:visited {color: #1e89cf;text-decoration:none;}
+.reg .content .layout .jzzh a:hover {color:#fe8401;text-decoration:none;}
+
+.reg .content .layout .jzzh input{ padding-top:1px; float:left;}
+.reg .content .layout .wjmm{float:left; width:103px; text-align:right; padding-top:25px;}
+.reg .content .layout .wjmm a:{color: #e99596;text-decoration:underline;}
+.reg .content .layout .wjmm a:link {color: #e99596;text-decoration:underline;}
+.reg .content .layout .wjmm a:visited {color: #e99596;text-decoration:underline;}
+.reg .content .layout .wjmm a:hover {color:#fe8401;text-decoration:none;}
+
+.reg .content .layout .ljdl{ float:left; width:353px; height:49px; line-height:49px; text-align:center; font-size:24px; background:#3e3a39; color:#fff; margin-top:35px;}
+.reg .content .layout .ljdl a:{ float:left; width:353px; height:49px; line-height:49px; text-align:center; font-size:24px; background:#3e3a39; color:#fff; }
+.reg .content .layout .ljdl a:link { float:left; width:353px; height:49px; line-height:49px; text-align:center; font-size:24px; background:#3e3a39; color:#fff; }
+.reg .content .layout .ljdl a:visited { float:left; width:353px; height:49px; line-height:49px; text-align:center; font-size:24px; background:#3e3a39; color:#fff; }
+.reg .content .layout .ljdl a:hover { float:left; width:353px; height:49px; line-height:49px; text-align:center; font-size:24px; background:#3e3a39; color:#b2b2b2; }
+
+.reg .content .layout .qqdl{ float:left; width:353px; height:49px; line-height:49px;font-size:14px; background:#656363; color:#fff; margin-top:15px;}
+.reg .content .layout .qqdl img{ float:left; padding-top:17px; padding-right:10px; padding-left:95px;}
+.reg .content .layout .qqdl a:{float:left; width:353px; height:49px; line-height:49px;font-size:14px; background:#656363; color:#fff;}
+.reg .content .layout .qqdl a:link {float:left; width:353px; height:49px; line-height:49px;font-size:14px; background:#656363; color:#fff; }
+.reg .content .layout .qqdl a:visited {float:left; width:353px; height:49px; line-height:49px;font-size:14px; background:#656363; color:#fff;}
+.reg .content .layout .qqdl a:hover {float:left; width:353px; height:49px; line-height:49px;font-size:14px; background:#656363; color:#b2b2b2;}
+
+/*找回密码*/
+.back{ float:left;min-width: 1190px; width: 100%; height:692px; margin-top:70px; background:#ededed; padding-top:98px;}
+.back .content{ margin:auto; width:1190px;}
+.back .content .pic{ float:left; width: 711px; padding-top:42px;}
+.back .content .layout{ float:left; width:353px; height:500px; background:#fff; padding-top:32px; padding-left:63px; padding-right:63px;}
+.back .content .layout h2{ float:left; width:353px; font-size:24px; padding-bottom:30px;}
+.back .content .layout .click{ float:left; width:353px; text-align:right; padding-top:50px; color:#999999;}
+.back .content .layout .click a:{color: #e99596;text-decoration:underline;}
+.back .content .layout .click a:link {color: #e99596;text-decoration:underline;}
+.back .content .layout .click a:visited {color: #e99596;text-decoration:underline;}
+.back .content .layout .click a:hover {color:#fe8401;text-decoration:none;}
+.back .content .layout dl{ float:left; width:353px;}
+
+.back .content .layout dl .input01{ float:left; width:328px; line-height:43px; height:43px; border:0px; padding-left:25px; background:url(../images/slk.jpg) no-repeat scroll; color:#c5c5c5; font-size:14px; margin-top:15px;} 
+.back .content .layout dl .input02{ float:left; width:194px; line-height:43px; height:43px; border:0px; padding-left:25px; background:url(../images/slk2.jpg) no-repeat scroll; color:#c5c5c5; font-size:14px; margin-top:15px;} 
+.back .content .layout dl .yzm{ float:left; width:98px; line-height:35px; height:35px; border:0px; background:url(../images/slk3.jpg) no-repeat scroll; color:#c5c5c5; font-size:14px; margin-top:15px; padding-top:8px; padding-left:35px} 
+.back .content .layout dl .yzm a:{ float:left; width:88px; height:27px; line-height:27px; text-align:center; font-size:14px; background:url(../images/fsyzm.jpg) scroll no-repeat; color:#fff;}
+.back .content .layout dl .yzm a:link {float:left; width:88px; height:27px; line-height:27px; text-align:center; font-size:14px; background:url(../images/fsyzm.jpg) scroll no-repeat;color:#fff;}
+.back .content .layout dl .yzm a:visited {float:left; width:88px; height:27px; line-height:27px; text-align:center; font-size:14px; background:url(../images/fsyzm.jpg) scroll no-repeat;color:#fff;}
+.back .content .layout dl .yzm a:hover {float:left; width:88px; height:27px; line-height:27px; text-align:center; font-size:14px; background:url(../images/fsyzm.jpg) scroll no-repeat;color:#fff;}
+
+.back .content .layout .jzzh{float:left; width:353px;color:#999999; font-size:12px; padding-top:25px;}
+.back .content .layout .jzzh a:{color: #1e89cf;text-decoration:none;}
+.back .content .layout .jzzh a:link {color: #1e89cf;text-decoration:none;}
+.back .content .layout .jzzh a:visited {color: #1e89cf;text-decoration:none;}
+.back .content .layout .jzzh a:hover {color:#fe8401;text-decoration:none;}
+
+.back .content .layout .jzzh input{ padding-top:1px; float:left;}
+.back .content .layout .wjmm{float:right; width:353px; text-align:right;}
+.back .content .layout .wjmm a:{color: #e99596;text-decoration:underline;}
+.back .content .layout .wjmm a:link {color: #e99596;text-decoration:underline;}
+.back .content .layout .wjmm a:visited {color: #e99596;text-decoration:underline;}
+.back .content .layout .wjmm a:hover {color:#fe8401;text-decoration:none;}
+
+.back .content .layout .ljdl{ float:left; width:353px; height:49px; line-height:49px; text-align:center; font-size:24px; background:#3e3a39; color:#fff; margin-top:35px;}
+.back .content .layout .ljdl a:{ float:left; width:353px; height:49px; line-height:49px; text-align:center; font-size:24px; background:#3e3a39; color:#fff; }
+.back .content .layout .ljdl a:link { float:left; width:353px; height:49px; line-height:49px; text-align:center; font-size:24px; background:#3e3a39; color:#fff; }
+.back .content .layout .ljdl a:visited { float:left; width:353px; height:49px; line-height:49px; text-align:center; font-size:24px; background:#3e3a39; color:#fff; }
+.back .content .layout .ljdl a:hover { float:left; width:353px; height:49px; line-height:49px; text-align:center; font-size:24px; background:#3e3a39; color:#b2b2b2; }
+
+.back .content .layout .qqdl{ float:left; width:353px; height:49px; line-height:49px;font-size:14px; background:#656363; color:#fff; margin-top:15px;}
+.back .content .layout .qqdl img{ float:left; padding-top:17px; padding-right:10px; padding-left:95px;}
+.back .content .layout .qqdl a:{float:left; width:353px; height:49px; line-height:49px;font-size:14px; background:#656363; color:#fff;}
+.back .content .layout .qqdl a:link {float:left; width:353px; height:49px; line-height:49px;font-size:14px; background:#656363; color:#fff; }
+.back .content .layout .qqdl a:visited {float:left; width:353px; height:49px; line-height:49px;font-size:14px; background:#656363; color:#fff;}
+.back .content .layout .qqdl a:hover {float:left; width:353px; height:49px; line-height:49px;font-size:14px; background:#656363; color:#b2b2b2;}
