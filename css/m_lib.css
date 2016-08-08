@@ -247,8 +247,9 @@ input{border:none;outline:none}
 .bte{border-top:1px solid #eee;}
 .bbe{border-bottom:1px solid #eee;}
 .bbe5{border-bottom:1px solid #e5e5e5;}
+.bbe5{border-bottom:1px solid #e5e5e5;}
 .bte5{border-top:1px solid #e5e5e5;}
-.bde5{border:1px solid #e5e5e5;}
+.bbdashe5{border-bottom:1px dashed #e5e5e5;}
 .btdsc{border-top:1px dashed #ccc;}
 .bdd8{border:1px solid #D84C3F;}
 .bd5b{border:1px solid #5B4A3B;}
@@ -316,6 +317,7 @@ input{border:none;outline:none}
 .ge4{color:#e41730;}
 .gd8{color:#D84C3F;}
 .g1c{color:#1CC300;}
+.gzs{color:#6364D8;}
 /* font-size */
 .f0{font-size:0;}
 .f12{font-size:.24rem;}
