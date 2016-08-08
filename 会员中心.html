@@ -1,0 +1,523 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1">
+	<title>全部订单</title>
+    <link href="css/m_lib.css" rel="stylesheet" />
+    <link href="css/weui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css" />
+		<style>
+
+    body,html{position: relative;height: 100%;}
+
+    .swiper-nav{padding:.2rem 0;}
+    .tabs {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: wrap;align-content: space-between;text-align: center;color: #000;position: relative;overflow: hidden;height: .6rem;line-height: .6rem;-webkit-border-radius: .08rem;border-radius: .08rem;border: 1px solid #4A4A4A;background-color: #FFF;width:80%;margin:.2rem auto}
+	.tabs li {-webkit-box-flex: 1;-moz-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;width: 25%;font-size: .28rem;position: relative;overflow: hidden;text-align: center;height: .6rem;line-height: .6rem;border-right:1px solid #4A4A4A;box-sizing: border-box;}
+	.tabs li:last-child{border:none}
+	.tabs li.active {border-bottom-color: #5cccb9;background: #4A4A4A;color: #FFF;}
+    
+    .swiper-pages{height: 100%;}
+    .scroll-container{height: 100%;width: 100%;}
+    .scroll-container .swiper-slide{width: 100%;}
+    /* Scrollbars*/
+    .swiper-scrollbar {
+    	border-radius: 10px;
+    	position: relative;
+    	-ms-touch-action: none;
+    	background: rgba(0,0,0,0.1)
+    }
+    .swiper-scrollbar-drag {
+    	height: 100%;
+    	width: 100%;
+    	position: relative;
+    	background: rgba(0,0,0,0.5);
+    	border-radius: 10px;
+    }
+    .swiper-scrollbar-cursor-drag {
+    	cursor: move;
+    }
+    .swiper-scrollbar{position: absolute;right: 3px;top: 2%;width: 3px;height: 96%;background: rgba(0,0,0,0.4);z-index: 10;}
+    .swiper-scrollbar-drag{height: 100%;width: 100%;position: relative;background: rgba(255,255,255,0.7);border-radius: 10px;}
+    </style>
+</head>
+<body>
+<div id="main-box">
+	<div class="bgwh" style="height:100px;padding:10px 0 0;">
+        <div class="weui_panel_bd wh">
+            <div class="weui_media_box weui_media_appmsg">
+                <div class="weui_media_hd">
+                    <img class="weui_media_appmsg_thumb" src="imgs/avater0.png" alt="">
+                </div>
+                <div class="weui_media_bd">
+                    <h4 class="weui_media_title" style="font-size:18px;color:#131313;">一级会员</h4>
+                    <h4 class="weui_media_title g13" style="font-size:18px;color:#131313;">恶风的包子</h4>
+                </div>
+                <div class="tr pt20"><a class=" f16 wh pt5 pr8 pb5 pl8 br5 bgz" href="#">充值</a></div>
+            </div>
+        </div>
+    </div>
+	<div class="swiper-nav swiper-container">
+		<ul class="swiper-wrapper tabs">
+			<li class="swiper-slide active"><span>优惠券</span></li>
+			<li class="swiper-slide"><span>账单明细</span></li>
+			<li class="swiper-slide"><span>个人积分</span></li>
+		</ul>
+	</div>
+	<div class="swiper-pages swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="swiper-container scroll-container swiper-no-swiping">
+					<div class="swiper-scrollbar"></div>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide swiper-slide-visible swiper-slide-active">
+						    <div class="weui_panel weui_panel_access">
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title"><span class="g9b">201604280021</span></h4>
+						            </div>
+						            <div class="tr">
+						                <span class="dib ge4 pr10 f14 mr10 brc">待支付</span><img class="mt-2" src="imgs/del.png" height="18" />
+						            </div>
+						        </div>
+						        <div class="weui_panel_bd">
+						            <div class="weui_media_box weui_media_appmsg" style="background-color:#f6f6f6;">
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_bd">
+						                    <h4 class="weui_media_title pb15">香草奶油草莓慕斯香草奶油香草奶油草莓慕斯</h4>
+						                    <p class="weui_media_desc">规格：6寸</p>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title">共1件商品</h4>
+						            </div>
+						            <div class="tr">
+						                <h4 class="weui_media_title">总计：<span class="ge4">￥280.00</span></h4>
+						            </div>
+						        </div>
+						    </div>
+						    <div class="weui_panel weui_panel_access">
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title"><span class="g9b">201604280021</span></h4>
+						            </div>
+						            <div class="tr">
+						                <span class="dib pr10 f14 mr10 brc">失败</span><img class="mt-2" src="imgs/del.png" height="18" />
+						            </div>
+						        </div>
+						        <div class="weui_panel_bd">
+						            <div class="weui_media_box weui_media_appmsg" style="background-color:#f6f6f6;">
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_bd">
+						                    <h4 class="weui_media_title pb15">香草奶油草莓慕斯香草奶油香草奶油草莓慕斯</h4>
+						                    <p class="weui_media_desc">规格：6寸</p>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title">共1件商品</h4>
+						            </div>
+						            <div class="tr">
+						                <h4 class="weui_media_title">总计：<span class="ge4">￥280.00</span></h4>
+						            </div>
+						        </div>
+						    </div>
+						    <div class="weui_panel weui_panel_access">
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title"><span class="g9b">201604280021</span></h4>
+						            </div>
+						            <div class="tr">
+						                <span class="dib pr10 f14 mr10 brc">失败</span><img class="mt-2" src="imgs/del.png" height="18" />
+						            </div>
+						        </div>
+						        <div class="weui_panel_bd">
+						            <div class="weui_media_box weui_media_appmsg" style="background-color:#f6f6f6;">
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_bd">
+						                    <h4 class="weui_media_title pb15">香草奶油草莓慕斯香草奶油香草奶油草莓慕斯</h4>
+						                    <p class="weui_media_desc">规格：6寸</p>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title">共1件商品</h4>
+						            </div>
+						            <div class="tr">
+						                <h4 class="weui_media_title">总计：<span class="ge4">￥280.00</span></h4>
+						            </div>
+						        </div>
+						    </div>
+						    <div class="weui_panel weui_panel_access">
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title"><span class="g9b">201604280021</span></h4>
+						            </div>
+						            <div class="tr">
+						                <span class="dib pr10 f14 mr10 brc">失败</span><img class="mt-2" src="imgs/del.png" height="18" />
+						            </div>
+						        </div>
+						        <div class="weui_panel_bd">
+						            <div class="weui_media_box weui_media_appmsg" style="background-color:#f6f6f6;">
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_bd">
+						                    <h4 class="weui_media_title pb15">香草奶油草莓慕斯香草奶油香草奶油草莓慕斯</h4>
+						                    <p class="weui_media_desc">规格：6寸</p>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title">共1件商品</h4>
+						            </div>
+						            <div class="tr">
+						                <h4 class="weui_media_title">总计：<span class="ge4">￥280.00</span></h4>
+						            </div>
+						        </div>
+						    </div>
+						    <div class="weui_panel weui_panel_access">
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title"><span class="g9b">201604280021</span></h4>
+						            </div>
+						            <div class="tr">
+						                <span class="dib pr10 f14 mr10 brc">失败</span><img class="mt-2" src="imgs/del.png" height="18" />
+						            </div>
+						        </div>
+						        <div class="weui_panel_bd">
+						            <div class="weui_media_box weui_media_appmsg" style="background-color:#f6f6f6;">
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_bd">
+						                    <h4 class="weui_media_title pb15">香草奶油草莓慕斯香草奶油香草奶油草莓慕斯</h4>
+						                    <p class="weui_media_desc">规格：6寸</p>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title">共1件商品</h4>
+						            </div>
+						            <div class="tr">
+						                <h4 class="weui_media_title">总计：<span class="ge4">￥280.00</span></h4>
+						            </div>
+						        </div>
+						    </div>
+						    <div class="weui_panel weui_panel_access">
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title"><span class="g9b">201604280021</span></h4>
+						            </div>
+						            <div class="tr">
+						                <span class="dib g1c pr10 f14 mr10 brc">待发货</span><img class="mt-2" src="imgs/del.png" height="18" />
+						            </div>
+						        </div>
+						        <div class="weui_panel_bd">
+						            <div class="weui_media_box weui_media_appmsg" style="background-color:#f6f6f6;">
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_bd">
+						                    <h4 class="weui_media_title pb15">香草奶油草莓慕斯香草奶油香草奶油草莓慕斯</h4>
+						                    <p class="weui_media_desc">规格：6寸</p>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title">共1件商品</h4>
+						            </div>
+						            <div class="tr">
+						                <h4 class="weui_media_title">总计：<span class="ge4">￥280.00</span></h4>
+						            </div>
+						        </div>
+						    </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="swiper-container scroll-container">
+					<div class="swiper-scrollbar"></div>
+					<div class="swiper-wrapper">
+					    <div class="swiper-slide swiper-slide-visible swiper-slide-active">
+						    <div class="weui_panel weui_panel_access">
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title"><span class="g9b">201604280021</span></h4>
+						            </div>
+						            <div class="tr">
+						                <span class="dib ge4 pr10 f14 mr10 brc">待支付</span><img class="mt-2" src="imgs/del.png" height="18" />
+						            </div>
+						        </div>
+						        <div class="weui_panel_bd">
+						            <div class="weui_media_box weui_media_appmsg" style="background-color:#f6f6f6;">
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_bd">
+						                    <h4 class="weui_media_title pb15">香草奶油草莓慕斯香草奶油香草奶油草莓慕斯</h4>
+						                    <p class="weui_media_desc">规格：6寸</p>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title">共1件商品</h4>
+						            </div>
+						            <div class="tr">
+						                <h4 class="weui_media_title">总计：<span class="ge4">￥280.00</span></h4>
+						            </div>
+						        </div>
+						    </div>
+						    <div class="weui_panel weui_panel_access">
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title"><span class="g9b">201604280021</span></h4>
+						            </div>
+						            <div class="tr">
+						                <span class="dib pr10 f14 mr10 brc">失败</span><img class="mt-2" src="imgs/del.png" height="18" />
+						            </div>
+						        </div>
+						        <div class="weui_panel_bd">
+						            <div class="weui_media_box weui_media_appmsg" style="background-color:#f6f6f6;">
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_bd">
+						                    <h4 class="weui_media_title pb15">香草奶油草莓慕斯香草奶油香草奶油草莓慕斯</h4>
+						                    <p class="weui_media_desc">规格：6寸</p>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title">共1件商品</h4>
+						            </div>
+						            <div class="tr">
+						                <h4 class="weui_media_title">总计：<span class="ge4">￥280.00</span></h4>
+						            </div>
+						        </div>
+						    </div>
+						    <div class="weui_panel weui_panel_access">
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title"><span class="g9b">201604280021</span></h4>
+						            </div>
+						            <div class="tr">
+						                <span class="dib g1c pr10 f14 mr10 brc">待发货</span><img class="mt-2" src="imgs/del.png" height="18" />
+						            </div>
+						        </div>
+						        <div class="weui_panel_bd">
+						            <div class="weui_media_box weui_media_appmsg" style="background-color:#f6f6f6;">
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_bd">
+						                    <h4 class="weui_media_title pb15">香草奶油草莓慕斯香草奶油香草奶油草莓慕斯</h4>
+						                    <p class="weui_media_desc">规格：6寸</p>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title">共1件商品</h4>
+						            </div>
+						            <div class="tr">
+						                <h4 class="weui_media_title">总计：<span class="ge4">￥280.00</span></h4>
+						            </div>
+						        </div>
+						    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="swiper-container scroll-container">
+					<div class="swiper-scrollbar"></div>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide swiper-slide-visible swiper-slide-active">
+						    <div class="weui_panel weui_panel_access">
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title"><span class="g9b">201604280021</span></h4>
+						            </div>
+						            <div class="tr">
+						                <span class="dib ge4 pr10 f14 mr10 brc">待支付</span><img class="mt-2" src="imgs/del.png" height="18" />
+						            </div>
+						        </div>
+						        <div class="weui_panel_bd">
+						            <div class="weui_media_box weui_media_appmsg" style="background-color:#f6f6f6;">
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_bd">
+						                    <h4 class="weui_media_title pb15">香草奶油草莓慕斯香草奶油香草奶油草莓慕斯</h4>
+						                    <p class="weui_media_desc">规格：6寸</p>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title">共1件商品</h4>
+						            </div>
+						            <div class="tr">
+						                <h4 class="weui_media_title">总计：<span class="ge4">￥280.00</span></h4>
+						            </div>
+						        </div>
+						    </div>
+						    <div class="weui_panel weui_panel_access">
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title"><span class="g9b">201604280021</span></h4>
+						            </div>
+						            <div class="tr">
+						                <span class="dib pr10 f14 mr10 brc">失败</span><img class="mt-2" src="imgs/del.png" height="18" />
+						            </div>
+						        </div>
+						        <div class="weui_panel_bd">
+						            <div class="weui_media_box weui_media_appmsg" style="background-color:#f6f6f6;">
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_bd">
+						                    <h4 class="weui_media_title pb15">香草奶油草莓慕斯香草奶油香草奶油草莓慕斯</h4>
+						                    <p class="weui_media_desc">规格：6寸</p>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title">共1件商品</h4>
+						            </div>
+						            <div class="tr">
+						                <h4 class="weui_media_title">总计：<span class="ge4">￥280.00</span></h4>
+						            </div>
+						        </div>
+						    </div>
+						    <div class="weui_panel weui_panel_access">
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title"><span class="g9b">201604280021</span></h4>
+						            </div>
+						            <div class="tr">
+						                <span class="dib g1c pr10 f14 mr10 brc">待发货</span><img class="mt-2" src="imgs/del.png" height="18" />
+						            </div>
+						        </div>
+						        <div class="weui_panel_bd">
+						            <div class="weui_media_box weui_media_appmsg" style="background-color:#f6f6f6;">
+						                <div class="weui_media_hd">
+						                    <img class="weui_media_appmsg_thumb bdc" src="imgs/cake1.jpg" alt="">
+						                </div>
+						                <div class="weui_media_bd">
+						                    <h4 class="weui_media_title pb15">香草奶油草莓慕斯香草奶油香草奶油草莓慕斯</h4>
+						                    <p class="weui_media_desc">规格：6寸</p>
+						                </div>
+						            </div>
+						        </div>
+						        <div class="weui_media_box weui_media_appmsg">
+						            <div class="weui_media_bd">
+						                <h4 class="weui_media_title">共1件商品</h4>
+						            </div>
+						            <div class="tr">
+						                <h4 class="weui_media_title">总计：<span class="ge4">￥280.00</span></h4>
+						            </div>
+						        </div>
+						    </div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/idangerous.swiper.min.js"></script>
+	<script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
+	<script>
+    $(function(){
+
+	//Init Navigation
+	var nav = $('.swiper-nav').swiper({
+		slidesPerView: 'auto',
+		freeMode:true,
+		noSwiping : true,
+		freeModeFluid:true,
+		calculateHeight : true,
+		visibilityFullFit: true,
+		onSlideClick: function(nav){
+			pages.swipeTo( nav.clickedSlideIndex )
+		}
+	})
+
+	//Function to Fix Pages Height
+	function fixPagesHeight() {
+		$('.swiper-pages').css({
+			height: $(window).height()-nav.height-48
+		})
+	}
+	$(window).on('resize',function(){
+		fixPagesHeight()
+	})
+	fixPagesHeight()
+
+	//Init Pages
+	var pages = $('.swiper-pages').swiper({
+		noSwiping : true,
+	onSlideChangeStart: function(){
+        $(".swiper-nav .active").removeClass('active')
+        $(".swiper-nav .swiper-slide").eq(pages.activeIndex).addClass('active')  
+    },
+	})
+
+	//Scroll Containers
+	$('.scroll-container').each(function(){
+		$(this).swiper({
+		
+			mode:'vertical',
+			scrollContainer: true,
+			mousewheelControl: true,
+			scrollbar: {
+				container:$(this).find('.swiper-scrollbar')[0]
+			}
+		})
+	})
+
+	
+
+})
+    </script>
+</body>
+</html>
