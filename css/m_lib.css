@@ -155,6 +155,7 @@ input{border:none;outline:none}
 .mb15{margin-bottom:15px;}
 .mb20{margin-bottom:.4rem;}
 .mb30{margin-bottom:30px;}
+.mb50{margin-bottom:50px;}
 .mr200{margin-right:4rem;}
 .mr-200{margin-right:-4rem;}
 .m5{margin:.1rem;}
@@ -527,3 +528,56 @@ to{margin-top:-5px}}
     color: #007AFF;
     font-size: 16px;
 }
+/*会员中心*/
+.zdmx{
+	padding:10px 8px;
+	overflow: hidden
+}
+.zdmx .weui_media_box.weui_media_appmsg{
+	background:#fff;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	margin-bottom:8px;
+}
+.zdmx .weui_media_box:before{
+	border:none;
+}
+.zdmx .weui_media_box.weui_media_appmsg .weui_media_hd{
+	width:50px;
+	height:50px;
+	line-height:50px;
+	border:none;
+}
+.zdmx .weui_media_box.weui_media_appmsg .weui_media_appmsg_thumb{
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	border-radius:50%;
+}
+.weui_media_box .weui_media_title.f20{font-size:20px;}
+.yhq{
+	padding:10px 8px;
+	overflow: hidden
+}
+.yhq .weui_media_box.weui_media_appmsg{
+	background:#fff;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	margin-bottom:8px;
+}
+.yhq .weui_media_box:before{
+	border:none;
+}
+.yhq .weui_media_box.weui_media_appmsg .weui_media_hd{
+	width:50px;
+	height:50px;
+	line-height:50px;
+	border:none;
+}
+.yhq .weui_media_box.weui_media_appmsg .weui_media_appmsg_thumb{
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	border-radius:50%;
+}
+.weui_media_box .weui_media_title.f20{font-size:20px;}
