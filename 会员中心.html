@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1">
+	<title>全部订单</title>
+    <link href="css/m_lib.css" rel="stylesheet" />
+    <link href="css/weui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css" />
+	<style>
+    body,html{position: relative;height: 100%;}
+    .swiper-nav{padding:.2rem 0 0;}
+    .tabs {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: wrap;align-content: space-between;text-align: center;color: #666;position: relative;overflow: hidden;height: .6rem;line-height: .6rem;-webkit-border-radius: .08rem;border-radius: .08rem;background-color: #FFF;width:100%;margin:.2rem auto;border:none;}
+	.tabs li {-webkit-box-flex: 1;-moz-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;width:0%;font-size: .28rem;position: relative;overflow: hidden;text-align: center;height: 1.6rem;line-height: .4rem;box-sizing: border-box;border:none;}
+	.tabs li.active {background:url(imgs/z_tab.png) no-repeat bottom center;color: #131313;}
+    .swiper-pages{height: 100%;}
+    .scroll-container{height: 100%;width: 100%;}
+    .scroll-container .swiper-slide{width: 100%;}
+    /* Scrollbars*/
+    .swiper-scrollbar {border-radius: 10px;position: relative;-ms-touch-action: none;background: rgba(0,0,0,0.1)}
+    .swiper-scrollbar-drag {height: 100%;width: 100%;position: relative;background: rgba(0,0,0,0.5);border-radius: 10px;}
+    .swiper-scrollbar-cursor-drag {cursor: move;}
+    .swiper-scrollbar{position: absolute;right: 3px;top: 2%;width: 3px;height: 96%;background: rgba(0,0,0,0.4);z-index: 10;}
+    .swiper-scrollbar-drag{height: 100%;width: 100%;position: relative;background: rgba(255,255,255,0.7);border-radius: 10px;}
+    </style>
+</head>
+<body class="bgz">
+<div id="main-box">
+	<div class="bgwh bbdashe5 pt10" style="height:100px;">
+        <div class="weui_panel_bd">
+            <div class="weui_media_box weui_media_appmsg">
+                <div class="weui_media_hd">
+                    <img class="weui_media_appmsg_thumb" src="imgs/avater0.png" alt="">
+                </div>
+                <div class="weui_media_bd">
+                    <h4 class="weui_media_title mb5" style="font-size:14px;color:#6364D8;"><img src="imgs/crown.png" width="18" />&nbsp;一级会员</h4>
+                    <h4 class="weui_media_title g13" style="font-size:16px;color:#131313;">恶风的包子&nbsp;<img src="imgs/ewm.png" width="20" /></h4>
+                </div>
+                <div class="tr"><span class="db f14 mb5">余额:￥111114.02</span><a class="dib tc f14 wh pt2 pl8 pb2 pr8 br5 bgz" href="#">充值</a></div>
+            </div>
+        </div>
+    </div>
+	<div class="swiper-nav swiper-container bgwh">
+		<ul class="swiper-wrapper tabs">
+			<li class="swiper-slide active"><span class="db h40"><img width="30" src="imgs/yhq.png" /></span>优惠券</li>
+			<li class="swiper-slide"><span class="db h40"><img width="30" src="imgs/zdmx.png" /></span>账单明细</li>
+			<li class="swiper-slide"><span class="db h40"><img width="30" src="imgs/grjf.png" /></span>个人积分</li>
+		</ul>
+	</div>
+	<div class="swiper-pages swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="swiper-container scroll-container swiper-no-swiping">
+					<div class="swiper-scrollbar"></div>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide swiper-slide-visible swiper-slide-active">
+					    	<div class="weui_panel_bd yhq">
+			    	            <div class="weui_media_box weui_media_appmsg">
+			    	                <div class="weui_media_hd">
+			    	                    <img class="weui_media_appmsg_thumb" src="imgs/dang.png" alt="">
+			    	                </div>
+			    	                <div class="weui_media_bd">
+			    	                    <h4 class="weui_media_title">香草奶油草莓慕斯香草莓慕斯</h4>
+			    	                    <p class="weui_media_desc">04-09</p>
+			    	                    <p class="weui_media_desc">04-09</p>
+			    	                </div>
+			    	                <div class="tr">
+			    	                    <h4 class="weui_media_title f20">-100</h4>
+			    	                </div>
+			    	            </div>
+			    	            <div class="weui_media_box weui_media_appmsg">
+			    	                <div class="weui_media_hd">
+			    	                    <img class="weui_media_appmsg_thumb" src="imgs/dang.png" alt="">
+			    	                </div>
+			    	                <div class="weui_media_bd">
+			    	                    <h4 class="weui_media_title">退款</h4>
+			    	                    <p class="weui_media_desc">04-09</p>
+			    	                    <p class="weui_media_desc">04-09</p>
+			    	                </div>
+			    	                <div class="tr">
+			    	                    <h4 class="weui_media_title f20 g1c">+200</h4>
+			    	                </div>
+			    	            </div>
+			    	        </div>
+							<!--没有优惠券s-->
+							<div class="pct100 wh tc" style="margin-top:100px;">
+						        <div class="pct30 auto"><img src="imgs/yhq_bg.png" /></div>
+						        <div class="noTxt f22 mt10 mb50">暂无优惠券</div>
+						        <div class="f14"><img class="mt-3" src="imgs/tips.png" width="20" />&nbsp;累积记分升级会员，每月可定期领取优惠券</div>
+						    </div>
+							<!--没有优惠券e-->
+					    </div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="swiper-container scroll-container">
+					<div class="swiper-scrollbar"></div>
+					<div class="swiper-wrapper">
+					    <div class="swiper-slide swiper-slide-visible swiper-slide-active">
+					    	<div class="weui_panel_bd zdmx">
+			    	            <div class="weui_media_box weui_media_appmsg">
+			    	                <div class="weui_media_hd">
+			    	                    <img class="weui_media_appmsg_thumb" src="imgs/outcome.png" alt="">
+			    	                </div>
+			    	                <div class="weui_media_bd">
+			    	                    <h4 class="weui_media_title">香草奶油草莓慕斯香草莓慕斯</h4>
+			    	                    <p class="weui_media_desc">04-09</p>
+			    	                </div>
+			    	                <div class="tr">
+			    	                    <h4 class="weui_media_title f20">-100</h4>
+			    	                </div>
+			    	            </div>
+			    	            <div class="weui_media_box weui_media_appmsg">
+			    	                <div class="weui_media_hd">
+			    	                    <img class="weui_media_appmsg_thumb" src="imgs/income.png" alt="">
+			    	                </div>
+			    	                <div class="weui_media_bd">
+			    	                    <h4 class="weui_media_title">退款</h4>
+			    	                    <p class="weui_media_desc">04-09</p>
+			    	                </div>
+			    	                <div class="tr">
+			    	                    <h4 class="weui_media_title f20 g1c">+200</h4>
+			    	                </div>
+			    	            </div>
+			    	        </div>
+					    	<!--暂无明细s-->
+							<div class="pct100 wh tc" style="margin-top:100px;">
+						        <div class="pct20 auto"><img src="imgs/mingxi_bg.png" /></div>
+						        <div class="noTxt f22 mt10 mb50">暂无明细</div>
+						    </div>
+							<!--暂无明细e-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="swiper-container scroll-container">
+					<div class="swiper-scrollbar"></div>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide swiper-slide-visible swiper-slide-active wh">
+							<div class="fix p20">累计积分：288<a class="wh r" href="#">查看特权&gt;</a></div>
+							<div id="indicatorContainer" class="auto rel"><div class="abs pct100 f40 b tc" style="top:50%;margin-top:-32px;">14</div></div> 
+							<div class="tc">再积14个积分升级<strong class="db b f20 gf8">2级会员</strong></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/idangerous.swiper.min.js"></script>
+	<script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
+	<script src="js/radialIndicator.min.js"></script>
+	<script>
+    $(function(){
+    	$('#indicatorContainer').radialIndicator({
+    		barBgColor:'#FFF',
+	        barColor: '#50E3C2',
+	        barWidth: 15,
+	        initValue:40,
+	        displayNumber: false
+    }); 
+	//Init Navigation
+	var nav = $('.swiper-nav').swiper({
+		slidesPerView: 'auto',
+		freeMode:true,
+		noSwiping : true,
+		freeModeFluid:true,
+		calculateHeight : true,
+		visibilityFullFit: true,
+		onSlideClick: function(nav){
+			pages.swipeTo( nav.clickedSlideIndex )
+		}
+	})
+
+	//Function to Fix Pages Height
+	function fixPagesHeight() {
+		$('.swiper-pages').css({
+			height: $(window).height()-nav.height-48
+		})
+	}
+	$(window).on('resize',function(){
+		fixPagesHeight()
+	})
+	fixPagesHeight()
+
+	//Init Pages
+	var pages = $('.swiper-pages').swiper({
+		noSwiping : true,
+	onSlideChangeStart: function(){
+        $(".swiper-nav .active").removeClass('active')
+        $(".swiper-nav .swiper-slide").eq(pages.activeIndex).addClass('active')  
+    },
+	})
+
+	//Scroll Containers
+	$('.scroll-container').each(function(){
+		$(this).swiper({
+		
+			mode:'vertical',
+			scrollContainer: true,
+			mousewheelControl: true,
+			scrollbar: {
+				container:$(this).find('.swiper-scrollbar')[0]
+			}
+		})
+	})
+
+	
+
+})
+    </script>
+</body>
+</html>
