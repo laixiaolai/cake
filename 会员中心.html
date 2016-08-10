@@ -138,8 +138,10 @@
 				<div class="swiper-container scroll-container">
 					<div class="swiper-scrollbar"></div>
 					<div class="swiper-wrapper">
-						<div class="swiper-slide swiper-slide-visible swiper-slide-active">
-
+						<div class="swiper-slide swiper-slide-visible swiper-slide-active wh">
+							<div class="fix p20">累计积分：288<a class="wh r" href="#">查看特权&gt;</a></div>
+							<div id="indicatorContainer" class="auto rel"><div class="abs pct100 f40 b tc" style="top:50%;margin-top:-32px;">14</div></div> 
+							<div class="tc">再积14个积分升级<strong class="db b f20 gf8">2级会员</strong></div>
 						</div>
 					</div>
 				</div>
@@ -150,9 +152,16 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/idangerous.swiper.min.js"></script>
 	<script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
+	<script src="js/radialIndicator.min.js"></script>
 	<script>
     $(function(){
-
+    	$('#indicatorContainer').radialIndicator({
+    		barBgColor:'#FFF',
+	        barColor: '#50E3C2',
+	        barWidth: 15,
+	        initValue:40,
+	        displayNumber: false
+    }); 
 	//Init Navigation
 	var nav = $('.swiper-nav').swiper({
 		slidesPerView: 'auto',

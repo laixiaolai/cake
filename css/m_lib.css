@@ -319,6 +319,7 @@ input{border:none;outline:none}
 .gd8{color:#D84C3F;}
 .g1c{color:#1CC300;}
 .gzs{color:#6364D8;}
+.gf8{color:#F8E71C;}
 /* font-size */
 .f0{font-size:0;}
 .f12{font-size:.24rem;}
@@ -581,3 +582,9 @@ to{margin-top:-5px}}
 	border-radius:50%;
 }
 .weui_media_box .weui_media_title.f20{font-size:20px;}
+
+canvas{
+	display:block;
+	width:50%;
+	margin:0 auto;
+}
