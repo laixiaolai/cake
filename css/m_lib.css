@@ -566,6 +566,7 @@ to{margin-top:-5px}}
 	-moz-border-radius:5px;
 	border-radius:5px;
 	margin-bottom:8px;
+	border-left:6px solid #F8E71C;
 }
 .yhq .weui_media_box:before{
 	border:none;
