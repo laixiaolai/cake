@@ -582,6 +582,15 @@ to{margin-top:-5px}}
 	-moz-border-radius:50%;
 	border-radius:50%;
 }
+.yhq .bbfc:after{
+	content:"";
+	width:0;
+	height:90px;
+	border-left:1px dashed #666;
+	position:absolute;
+	right:73px;
+	top:0px;
+}
 .weui_media_box .weui_media_title.f20{font-size:20px;}
 
 canvas{
