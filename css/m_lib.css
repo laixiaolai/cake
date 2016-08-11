@@ -319,6 +319,7 @@ input{border:none;outline:none}
 .gd8{color:#D84C3F;}
 .g1c{color:#1CC300;}
 .gzs{color:#6364D8;}
+.gf8{color:#F8E71C;}
 /* font-size */
 .f0{font-size:0;}
 .f12{font-size:.24rem;}
@@ -565,6 +566,7 @@ to{margin-top:-5px}}
 	-moz-border-radius:5px;
 	border-radius:5px;
 	margin-bottom:8px;
+	border-left:6px solid #F8E71C;
 }
 .yhq .weui_media_box:before{
 	border:none;
@@ -581,3 +583,8 @@ to{margin-top:-5px}}
 	border-radius:50%;
 }
 .weui_media_box .weui_media_title.f20{font-size:20px;}
+
+canvas{
+	display:block;
+	margin:0 auto;
+}
