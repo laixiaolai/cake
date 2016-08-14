@@ -267,6 +267,7 @@ input{border:none;outline:none}
 .br0{border-right:none;}
 .bb0{border-bottom:none;}
 .bl0{border-left:none;}
+.bbcb{border-bottom:1px dashed #CBCBCB;}
 /*border-radius*/
 .br4{-webkit-border-radius:.08rem;-moz-border-radius:.08rem;-ms-border-radius:.08rem;border-radius:.08rem}
 .br5{-webkit-border-radius:.1rem;-moz-border-radius:.1rem;-ms-border-radius:.1rem;border-radius:.1rem}
@@ -595,4 +596,21 @@ to{margin-top:-5px}}
 canvas{
 	display:block;
 	margin:0 auto;
+}
+.two-radius:before,.two-radius:after{
+	content:"";
+	display:block;
+	width:10px;
+	height:10px;
+	background:#6364D8;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	border-radius:50%;
+	position:absolute;
+	bottom:-5px;
+	left:-5px;
+}
+.two-radius:after{
+	left:auto;
+	right:-5px;
 }
