@@ -267,6 +267,7 @@ input{border:none;outline:none}
 .br0{border-right:none;}
 .bb0{border-bottom:none;}
 .bl0{border-left:none;}
+.bbcb{border-bottom:1px dashed #CBCBCB;}
 /*border-radius*/
 .br4{-webkit-border-radius:.08rem;-moz-border-radius:.08rem;-ms-border-radius:.08rem;border-radius:.08rem}
 .br5{-webkit-border-radius:.1rem;-moz-border-radius:.1rem;-ms-border-radius:.1rem;border-radius:.1rem}
@@ -517,7 +518,6 @@ to{margin-top:-5px}}
 /*充值*/
 .rechange{padding:50px 0;background:#6364D8 url(../imgs/rechange_bg.png);background-size:100px;}
 .rechange span{color:#f8e71c;}
-
 .rechange-form .weui_cells_radio .weui_check+.weui_icon_checked:before {
     content: '\EA08';
     color: #fff;
@@ -566,6 +566,7 @@ to{margin-top:-5px}}
 	-moz-border-radius:5px;
 	border-radius:5px;
 	margin-bottom:8px;
+	border-left:6px solid #F8E71C;
 }
 .yhq .weui_media_box:before{
 	border:none;
@@ -581,9 +582,35 @@ to{margin-top:-5px}}
 	-moz-border-radius:50%;
 	border-radius:50%;
 }
+.yhq .bbfc:after{
+	content:"";
+	width:0;
+	height:90px;
+	border-left:1px dashed #666;
+	position:absolute;
+	right:73px;
+	top:0px;
+}
 .weui_media_box .weui_media_title.f20{font-size:20px;}
 
 canvas{
 	display:block;
 	margin:0 auto;
+}
+.two-radius:before,.two-radius:after{
+	content:"";
+	display:block;
+	width:10px;
+	height:10px;
+	background:#6364D8;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	border-radius:50%;
+	position:absolute;
+	bottom:-5px;
+	left:-5px;
+}
+.two-radius:after{
+	left:auto;
+	right:-5px;
 }

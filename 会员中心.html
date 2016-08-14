@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="initial-scale=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
 	<title>全部订单</title>
     <link href="css/m_lib.css" rel="stylesheet" />
     <link href="css/weui.min.css" rel="stylesheet" />
@@ -12,7 +12,7 @@
     .swiper-nav{padding:.2rem 0 0;}
     .tabs {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;flex-wrap: wrap;align-content: space-between;text-align: center;color: #666;position: relative;overflow: hidden;height: .6rem;line-height: .6rem;-webkit-border-radius: .08rem;border-radius: .08rem;background-color: #FFF;width:100%;margin:.2rem auto;border:none;}
 	.tabs li {-webkit-box-flex: 1;-moz-box-flex: 1;-webkit-flex: 1;-ms-flex: 1;flex: 1;width:0%;font-size: .28rem;position: relative;overflow: hidden;text-align: center;height: 1.6rem;line-height: .4rem;box-sizing: border-box;border:none;}
-	.tabs li.active {background:url(imgs/z_tab.png) no-repeat bottom center;color: #131313;}
+	.tabs li.active {background:url(imgs/z_tab.png) no-repeat center 101%;color: #131313;}
     .swiper-pages{height: 100%;}
     .scroll-container{height: 100%;width: 100%;}
     .scroll-container .swiper-slide{width: 100%;}
@@ -43,6 +43,7 @@
 	<div class="swiper-nav swiper-container bgwh">
 		<ul class="swiper-wrapper tabs">
 			<li class="swiper-slide active"><span class="db h40"><img width="30" src="imgs/yhq.png" /></span>优惠券</li>
+			<li class="swiper-slide"><span class="db h40"><img width="30" src="imgs/yhq.png" /></span>优惠券</li>
 			<li class="swiper-slide"><span class="db h40"><img width="30" src="imgs/zdmx.png" /></span>账单明细</li>
 			<li class="swiper-slide"><span class="db h40"><img width="30" src="imgs/grjf.png" /></span>个人积分</li>
 		</ul>
@@ -50,35 +51,47 @@
 	<div class="swiper-pages swiper-container">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
+				<div class="swiper-container scroll-container">
+					<div class="swiper-scrollbar"></div>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide swiper-slide-visible swiper-slide-active wh f14">
+							<div class="fix p20">累计积分：288<a class="wh r" href="#">查看特权&gt;</a></div>
+							<div id="indicatorContainer1" class="auto rel"><div class="abs pct100 f40 b tc" style="top:50%;margin-top:-32px;">14</div></div> 
+							<div class="tc">再积14个积分升级<strong class="db b f20 gf8">2级会员</strong></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
 				<div class="swiper-container scroll-container swiper-no-swiping">
 					<div class="swiper-scrollbar"></div>
 					<div class="swiper-wrapper">
 						<div class="swiper-slide swiper-slide-visible swiper-slide-active">
 					    	<div class="weui_panel_bd yhq">
-			    	            <div class="weui_media_box weui_media_appmsg">
+			    	            <div class="weui_media_box weui_media_appmsg rel bbfc">
 			    	                <div class="weui_media_hd">
 			    	                    <img class="weui_media_appmsg_thumb" src="imgs/dang.png" alt="">
 			    	                </div>
-			    	                <div class="weui_media_bd">
+			    	                <div class="weui_media_bd pr20">
 			    	                    <h4 class="weui_media_title">香草奶油草莓慕斯香草莓慕斯</h4>
-			    	                    <p class="weui_media_desc">04-09</p>
-			    	                    <p class="weui_media_desc">04-09</p>
+			    	                    <p class="weui_media_desc">满59元即可使用</p>
+			    	                    <p class="weui_media_desc">2016-06-28 过期</p>
 			    	                </div>
-			    	                <div class="tr">
-			    	                    <h4 class="weui_media_title f20">-100</h4>
+			    	                <div class="rel tr">
+			    	                    <h4 class="weui_media_title f20">100<i class="f13">&nbsp;元</i></h4>
 			    	                </div>
 			    	            </div>
-			    	            <div class="weui_media_box weui_media_appmsg">
+			    	            <div class="weui_media_box weui_media_appmsg rel bbfc">
 			    	                <div class="weui_media_hd">
 			    	                    <img class="weui_media_appmsg_thumb" src="imgs/dang.png" alt="">
 			    	                </div>
-			    	                <div class="weui_media_bd">
+			    	                <div class="weui_media_bd pr20">
 			    	                    <h4 class="weui_media_title">退款</h4>
-			    	                    <p class="weui_media_desc">04-09</p>
-			    	                    <p class="weui_media_desc">04-09</p>
+			    	                    <p class="weui_media_desc">满59元即可使用</p>
+			    	                    <p class="weui_media_desc">2016-06-28 过期</p>
 			    	                </div>
-			    	                <div class="tr">
-			    	                    <h4 class="weui_media_title f20 g1c">+200</h4>
+			    	                <div class="rel tr">
+			    	                    <h4 class="weui_media_title f20">8.8<i class="f13">&nbsp;折</i></h4>
 			    	                </div>
 			    	            </div>
 			    	        </div>
