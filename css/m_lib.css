@@ -110,6 +110,7 @@ input{border:none;outline:none}
 .lh30{line-height:.6rem;}
 .lh34{line-height:.68rem;}
 .lh40{line-height:.8rem;}
+.lh42{line-height:.84rem;}
 .lh52{line-height:1.04rem;}
 .lh62{line-height:1.24rem;}
 /* margin */
@@ -531,7 +532,7 @@ to{margin-top:-5px}}
 }
 /*会员中心*/
 .zdmx{
-	padding:10px 8px;
+	padding:15px 8px;
 	overflow: hidden
 }
 .zdmx .weui_media_box.weui_media_appmsg{
@@ -539,7 +540,7 @@ to{margin-top:-5px}}
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	border-radius:5px;
-	margin-bottom:8px;
+	margin-bottom:9px;
 }
 .zdmx .weui_media_box:before{
 	border:none;
@@ -557,7 +558,7 @@ to{margin-top:-5px}}
 }
 .weui_media_box .weui_media_title.f20{font-size:20px;}
 .yhq{
-	padding:10px 8px;
+	padding:15px 8px;
 	overflow: hidden
 }
 .yhq .weui_media_box.weui_media_appmsg{
@@ -565,7 +566,7 @@ to{margin-top:-5px}}
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
 	border-radius:5px;
-	margin-bottom:8px;
+	margin-bottom:9px;
 	border-left:6px solid #F8E71C;
 }
 .yhq .weui_media_box:before{
@@ -588,10 +589,10 @@ to{margin-top:-5px}}
 	height:90px;
 	border-left:1px dashed #666;
 	position:absolute;
-	right:73px;
+	right:76px;
 	top:0px;
 }
-.weui_media_box .weui_media_title.f20{font-size:20px;}
+.weui_media_box .weui_media_title.f22{font-size:22px;}
 
 canvas{
 	display:block;
