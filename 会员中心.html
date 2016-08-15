@@ -56,8 +56,8 @@
 					<div class="swiper-wrapper">
 						<div class="swiper-slide swiper-slide-visible swiper-slide-active wh f14">
 							<div class="fix p20">累计积分：288<a class="wh r" href="#">查看特权&gt;</a></div>
-							<div id="indicatorContainer1" class="auto rel"><div class="abs pct100 f40 b tc" style="top:50%;margin-top:-32px;">14</div></div> 
-							<div class="tc">再积14个积分升级<strong class="db b f20 gf8">2级会员</strong></div>
+							<div class="auto rel"><input class="knob" data-fgColor="#50E3C2" data-thickness=".3" data-readOnly="true" data-width="150" value="22"><div class="abs pct100 f40 b tc" style="top:50%;margin-top:-32px;">14</div></div> 
+							<div class="tc pt10">再积14个积分升级<strong class="db b f20 gf8">2级会员</strong></div>
 						</div>
 					</div>
 				</div>
@@ -166,8 +166,10 @@
     <script src="js/idangerous.swiper.min.js"></script>
 	<script src="js/idangerous.swiper.scrollbar-2.0.js"></script>
 	<script src="js/radialIndicator.min.js"></script>
+	<script type="text/javascript" src="http://demo.htmleaf.com/1410/201410201741/js/jquery.knob.js"></script>
 	<script>
     $(function(){
+    	$(".knob").knob();
     	$('#indicatorContainer').radialIndicator({
     		barBgColor:'#FFF',
 	        barColor: '#50E3C2',
