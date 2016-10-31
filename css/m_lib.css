@@ -84,6 +84,8 @@ input{border:none;outline:none}
 .pct100{width:100%;}
 /* height */
 .hauto{height:auto}
+.h4{height:.08rem;line-height:.08rem;}
+.h10{height:.2rem;line-height:.2rem;}
 .h14{height:.28rem;line-height:.28rem;}
 .h16{height:.32rem;line-height:.32rem;}
 .h18{height:.36rem;line-height:.36rem;}
@@ -110,6 +112,7 @@ input{border:none;outline:none}
 .lh30{line-height:.6rem;}
 .lh34{line-height:.68rem;}
 .lh40{line-height:.8rem;}
+.lh44{line-height:.88rem;}
 .lh42{line-height:.84rem;}
 .lh52{line-height:1.04rem;}
 .lh62{line-height:1.24rem;}
@@ -157,6 +160,7 @@ input{border:none;outline:none}
 .mb20{margin-bottom:.4rem;}
 .mb30{margin-bottom:30px;}
 .mb50{margin-bottom:50px;}
+.mb60{margin-bottom:60px;}
 .mr200{margin-right:4rem;}
 .mr-200{margin-right:-4rem;}
 .m5{margin:.1rem;}
@@ -179,6 +183,8 @@ input{border:none;outline:none}
 .mt-3{margin-top:-3px;}
 .mb-3{margin-bottom:-3px;}
 .mt-4{margin-top:-4px;}
+.ml-5{margin-left:-5px;}
+.mr-5{margin-right:-5px;}
 .ml-20{margin-left:-20px;}
 .mr-20{margin-right:-20px;}
 .mt-20{margin-top:-20px;}
@@ -262,8 +268,10 @@ input{border:none;outline:none}
 .bd9b{border:1px solid #9B9B9B;}
 .bdd0{border:1px solid #D0021B;}
 .bd3f{border:2px solid #FFF;}
-.bd413{border:4px solid #131313}
+.bd413{border:4px solid #131313;}
+.bb4a{border-bottom:1px solid #4A4A4A;}
 .bl4e3{border-left:4px solid #E33A29}
+.bb97{border-bottom:1px solid #979797;}
 .bt0{border-top:none;}
 .br0{border-right:none;}
 .bb0{border-bottom:none;}
@@ -291,21 +299,27 @@ input{border:none;outline:none}
 .bgf0f7f6{background-color:#f0f7f6;}
 .bg1a{background-color:#1a1a1a;}
 .bg1c{background-color:#1cc300;}
+.bg1c1c{background-color:#1C1C1C;}
 .bg13{background-color:#131313;}
 .bg0{background-color:#000;}
 .bge4{background-color:#e41730;}
 .bgb2{background-color:#B29873;}
 .bgz{background-color:#6364D8;}
+.bg9b{background-color:#9B9B9B;}
+.bg9f{background-color:#9FA0A0;}
 /* safe color */
 .g0{color:#000;}
 .g13{color:#131313;}
 .g3{color:#333;}
 .g4a{color:#4A4A4A;}
 .g6{color:#666;}
+.g8e{color:#8E8E93;}
 .g9{color:#999;}
 .g9b{color:#9B9B9B;}
+.g9f{color:#9FA0A0;}
 .gbe{color:#bebebe;}
 .gc{color:#ccc;}
+.gcb{color:#CBCBCB;}
 .ge5{color:#E5E5E5;}
 .ge9{color:#e9e9e9;}
 .gg{color:#5cccb9;}
@@ -615,3 +629,5 @@ canvas{
 	left:auto;
 	right:-5px;
 }
+.weui_panel.bg1c1c{background-color:#1C1C1C;}
+.weui_panel.bg1c1c:before,.weui_panel.bg1c1c:after{border:none;}
