@@ -67,6 +67,10 @@ Basic Swiper Styles
 	-o-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
 	margin: 0 auto;
+	border-bottom:8px solid #6364D8;
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	border-radius:0;
 }
 .swiper-slide {
 	float: left;
