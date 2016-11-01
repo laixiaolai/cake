@@ -1,0 +1,514 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>购物车</title>
+    <meta charset="utf-8" />
+    <link href="css/m_lib.css" rel="stylesheet" />
+    <link href="css/weui.min.css" rel="stylesheet" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.tmpl.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/cake.js"></script>
+    <script src="js/hammer.min.js"></script>
+    <style type="text/css">
+.head{background:#6A5F58;padding:20px;display:none;}
+.contentTab{width:100%;}
+.title{text-align:center;font-size:32px;color:#fff;}
+.btnImg{cursor:pointer;width:50px;}
+.prevLink{text-decoration:none;outline:none;}
+.prevLink img{border:none;}
+.cakeItem{background:#131313;}
+.cakeItemSel{background:#fdfce0 !important;}
+.cakeImg{}
+.cakeNum{height:20px;line-height:20px;color:#CBCBCB;font-size:16px;margin-left:-1px;margin-right:-1px;}
+.btnNumTd{width:24px;height:20px;line-height:20px;text-align:center;background-color:#353535;color:#CBCBCB;font-size:16px;border-radius:2px;}      
+.selFirst{background:#6A5F58;color:#fff;font-size:28px;text-align:center;position:fixed;padding:20px;text-align:center;top:300px;width:200px;border-radius:5px;display:none;}
+.resultDiv{position:fixed;bottom:0px;width:100%;z-index:1;}
+.calculat{background:#343534;padding:;width:100px;text-align:center;cursor:pointer;}
+.calculat a{text-decoration:none;outline:none;display:block;font-size:16px;color:#fff;}
+.resTxt{font-size:16px;color:#686868;padding-left:15px;}
+.resMoney{}
+.check{width:24px;height:27px;padding:8px 0 0 0px;cursor:pointer;}
+.check .inner{width:15px;height:15px;border:1px solid #979797;background-color:#1C1C1C;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;}
+.checked .inner{background:url(imgs/checking2.png) no-repeat 0px 0 !important;background-size:100%!important;;}
+.checkTxt{color:#CBCBCB;font-size:16px;padding-right:15px;line-height:35px;}
+.delBtn{background:#ED1630 url(imgs/del1.png) no-repeat center center;height:200px;width:220px;cursor:pointer;position:absolute;display:none;right:0px;z-index:2;}
+#noCard{font-size:32px;color:#C8C8C8;text-align:center;margin-top:180px;}
+.noTxt{font-size:34px;color:#CBCBCB;margin-top:40px;}
+.xs{display:block;}
+.yc{display:none;}
+    </style>
+    
+    <script id="cakesTemplate" type="text/x-jquery-tmpl">
+        {{tmpl(data) '#tdEachTemplate'}}
+    </script>
+    <script id="tdEachTemplate" type="text/x-jquery-tmpl">
+        <div class="cakeItem">
+            <table class="contentTab">
+                <tr>
+                    <td class="clickTd" style="width:220px;">
+                        <img class="cakeImg" src="${img}" />
+                    </td>
+                    <td class="clickTd">
+                        <div class="name">${name}</div>
+                        <div class="norms">规格：${type}</div>
+                        <div class="money" money="${money}">￥${money}</div>
+                    </td>
+                    <td class="btnNumTd" onclick="cakeNum(this,0)"><img src="imgs/less.png" /></td>
+                    <td style="width:60px;"><div class="cakeNum">${count}</div></td>
+                    <td class="btnNumTd" onclick="cakeNum(this,1)"><img src="imgs/more.png" /></td>
+                </tr>
+            </table>
+            <div class="delBtn"></div>
+        </div>
+    </script>
+    
+    <script type="text/javascript">
+        var hammerList = [];
+        $(function () {
+             
+            if ($(".cakeItem").length == 0) {
+                $("#noCard").removeClass("yc").addClass("xs");
+                $("#dlogo").removeClass("xs").addClass("yc");
+            }else{
+                $("#noCard").removeClass("xs").addClass("yc");
+                $("#dlogo").removeClass("yc").addClass("xs");
+            }
+             
+            var cakeList = [];
+    
+            var resMoney = 0;
+            for (var i = 0; i < cakeList.length; i++) {
+                resMoney += cakeList[i].money;
+            }
+    
+            var data = { data: cakeList }
+            
+            $(".prevLink").bind("click", function () {
+                window.history.back(-1);
+            })
+            
+
+            $(".check").bind("click", function () {
+                var tid = $(this).attr("tid");
+                if ($(this).hasClass("checked")){
+                    $(this).removeClass("checked");
+                    if(tid == 'tableware') {
+                        delbyproduct('4');
+                        delproductext('tableware');
+                        minmoney('5');
+                    }else if(tid == 'champagne') {
+                        delbyproduct('');
+                        minmoney('');
+                        delproductext('');
+                        
+                    }else if(tid == 'candle') {
+                        delbyproduct('43');
+                        minmoney('25');
+                        delproductext('candle');
+                    }else if(tid == 'hcard') {
+                        delbyproduct('56');
+                        minmoney('10');
+                        delproductext('hcard');
+                    }else if(tid == 'jifanxi') {
+                        delbyproduct('');
+                        minmoney('');
+                        delproductext('');
+                    }                    
+                }else{
+                    $(this).addClass("checked");
+                    if(tid == 'tableware') {
+                        addShoppingcar('4',1,'5','套');
+                        addproductext('4','餐具','5','http://web.danggao.cn/upload/product/2016-01-25/f1499d55a39334fc549e8f052eea0966.jpg','tableware');
+                        incmoney('5');
+                        
+                    }else if(tid == 'champagne') {
+                        addShoppingcar('',1,'','');
+                        addproductext('','','','','');
+                        incmoney('');
+                        
+                    }else if(tid == 'candle') {
+                        addShoppingcar('43',1,'25','套');
+                        addproductext('43','生日蜡烛','25','http://web.danggao.cn/upload/product/2016-01-25/d1cc501fbb814ea17dd3bf77b0094880.jpg','candle');
+                        incmoney('25');
+
+                    }else if(tid == 'hcard') {
+                        addShoppingcar('56',1,'10','张');
+                        addproductext('56','生日贺卡','10','http://web.danggao.cn/upload/product/2016-02-24/f4bdabc4ef45c27e34ab7bf7b64ffa74.jpg','hcard');
+                        incmoney('10');
+                    }else if(tid == 'jifanxi') {
+                        addShoppingcar('',1,'','');
+                        addproductext('','','','','');
+                        incmoney('');
+                    }
+                }
+                
+            })
+
+            $(".cakeItem").each(function () {
+                var tag = $(this);
+                var hammertime = new Hammer(this);
+                hammertime.on("swipeleft", function (e) {
+                    tag.find(".delBtn").css({
+                        height: tag.height() + 40,
+                        top: tag.offset().top
+                    }).show();
+                });
+                hammertime.on("swiperight", function (e) {
+                    tag.find(".delBtn").hide();
+                });
+                hammerList.push(hammertime);
+            })
+           
+            $(".delBtn").bind("click", function () {
+                $(this).parent().addClass("cakeItemSel");
+                delCake();
+                $(this).parent().remove();
+                $(".delBtn").each(function () {
+                    if ($(".delBtn").css("display") != "none") {
+                        $(this).css({
+                            top: $(this).parent().offset().top
+                        });
+                    }
+                })
+                
+                if ($(".cakeItem").length == 0) {
+                    $("#noCard").removeClass("yc").addClass("xs");
+                    $("#dlogo").removeClass("xs").addClass("yc");
+                    $("#paybannber").removeClass("xs").addClass("yc");
+                }else{
+                    $("#noCard").removeClass("xs").addClass("yc");
+                    $("#dlogo").removeClass("yc").addClass("xs");
+                    $("#paybannber").removeClass("yc").addClass("xs");
+                }
+            })
+
+            $("body").on("click",".delImg", function () {
+                var w_panel=$(this).closest(".weui_panel");
+                w_panel.remove()
+                var price = w_panel.find(".money").attr("money");
+                var resMoney = $(".resMoney").attr("money");
+                resMoney = parseInt(resMoney);
+                resMoney -= price;
+                $(".resMoney").html("￥" + resMoney);
+
+                if(w_panel.attr("productcate")=="tableware"){
+                    $("#tableware").removeClass('checked');
+                }
+                if(w_panel.attr("productcate")=="candle"){
+                    $("#candle").removeClass('checked');
+                }
+                if(w_panel.attr("productcate")=="hcard"){
+                    $("#hcard").removeClass('checked');
+                }
+            });
+        })
+        function cakeNum(tag, num) {
+            var price = $(tag).closest(".weui_panel_bd").find(".money").attr("money");
+            var count = $(tag).closest(".weui_panel_bd").find(".cakeNum").html();
+            var resMoney = $(".resMoney").attr("money");
+            resMoney = parseInt(resMoney);
+            count = parseInt(count);
+            price = parseInt(price);
+            resMoney -= price;
+            price = price / count;
+    
+            if (num == 0) {
+                count--;
+                if (count <= 0) {
+
+                    if($(tag).parent().parent().parent().parent().attr("productcate") == 'champagne') {
+                        $("#champagne").removeClass("checked");
+                    }
+
+                    if($(tag).parent().parent().parent().parent().attr("productcate") == 'tableware') {
+                        $("#tableware").removeClass("checked");
+                    }
+
+                    if($(tag).parent().parent().parent().parent().attr("productcate") == 'candle') {
+                        $("#candle").removeClass("checked");
+                    }
+                    
+                    if($(tag).parent().parent().parent().parent().attr("productcate") == 'hcard') {
+                        $("#hcard").removeClass("checked");
+                    }
+
+                    if($(tag).parent().parent().parent().parent().attr("productcate") == 'jifanxi') {
+                        $("#jifanxi").removeClass("checked");
+                    }
+                    
+                    $(tag).parent().parent().parent().parent().remove();
+                    $(".resMoney").attr("money", resMoney);
+                    $(".resMoney").html("￥" + resMoney);
+                    return;
+                }
+                price = price * count;
+            }
+            else {
+                count++;
+                price = price * count;
+            }
+            $(tag).closest(".weui_panel_bd").find(".money").attr("money", price);
+            $(tag).closest(".weui_panel_bd").find(".money").html("￥" + price);
+            $(tag).closest(".weui_panel_bd").find(".cakeNum").html(count)
+    
+            resMoney += price;
+            $(".resMoney").attr("money", resMoney);
+            $(".resMoney").html("￥" + resMoney);
+        }
+    
+        function delCake() {
+            if ($(".cakeItemSel").length == 0) {
+                $(".selFirst").css({
+                    left: ($(window).width() - $(".selFirst").width()) / 2
+                })
+                $(".selFirst").show();
+                setTimeout(function () {
+                    $(".selFirst").hide();
+                }, 1000);
+            }
+            else {
+    
+                var ids = '';
+                var sels = $(".cakeItemSel");
+                for(var i=0;i<sels.length;i++) {
+                    ids = ids+','+sels[i].id;
+                }
+                //alert(ids);
+                delShoppingcar(ids);
+                
+                var price = $(".cakeItemSel").find(".money").attr("money");
+                var resMoney = $(".resMoney").attr("money");
+                resMoney = parseInt(resMoney);
+                price = parseInt(price);
+                resMoney -= price;
+                $(".resMoney").attr("money", resMoney);
+                $(".resMoney").html("￥" + resMoney);
+                $(".cakeItemSel").remove();
+                //alert(resMoney);
+                
+                if(sels.attr("productcate") == "tableware") {
+                    $("#tableware").removeClass("checked");
+                }
+                if(sels.attr("productcate") == "champagne") {
+                    $("#champagne").removeClass("checked");
+                }
+                if(sels.attr("productcate") == "candle") {
+                    $("#candle").removeClass("checked");
+                }
+                if(sels.attr("productcate") == "hcard") {
+                    $("#hcard").removeClass("checked");
+                }
+                if(sels.attr("productcate") == "jifanxi") {
+                    $("#jifanxi").removeClass("checked");
+                }
+                
+                var product_num = 0;
+                $(".cakeItem").each(function () {
+                    if($.trim( $(this).attr("productcate") ) == '') {
+                        ++product_num;
+                    }
+                })
+                if(product_num == 0) {
+                    $(".cakeItem").each(function () {
+                        $(this).remove();
+                    })
+                    $("#noCard").removeClass("yc").addClass("xs");
+                    $("#dlogo").removeClass("xs").addClass("yc");
+                    $("#paybannber").removeClass("xs").addClass("yc");
+                    clearShoppingcar();
+                }
+                
+            }
+        }
+    </script>
+</head>
+<body class="bg0">
+
+<div class="head">
+    <table class="contentTab">
+        <tr>
+            <td class="btnImg">
+                <div class="prevLink" href="cakes.html">
+                    <img src="imgs/prev.png" />
+                </div>
+            </td>
+            <td class="title">购物车</td>
+            <td class="btnImg" onclick="delCake()"><img src="imgs/del.png" /></td>
+        </tr>
+    </table>
+</div>
+    
+ 
+<div id="noCard" class="yc">
+    <img src="imgs/cart_bg.png" />
+    <div class="noTxt">购物车是空的</div>
+</div>
+
+<div id="cakeList">
+    <div class="cakeItem weui_panel weui_panel_access">
+        <div class="weui_panel_bd contentTab">
+            <div class="weui_media_box weui_media_appmsg cakeItem">
+                <div class="weui_media_hd clickTd">
+                    <img class="weui_media_appmsg_thumb cakeImg" src="imgs/shopcart1.jpg" onclick="window.location.href='/product/detail?id=49'"/>
+                </div>
+                <div class="weui_media_bd clickTd">
+                    <div class="dib btnNumTd" onclick="javascript:cakeNum(this,0);minusNum(6029,1);">-</div><div class="dib w40 tc cakeNum">2</div><div class="dib btnNumTd" onclick="javascript:cakeNum(this,1);addNum(6029,1);">+</div>
+                    <div class="weui_media_title name gcb mt10 mb5">焦糖酱香白酒慕斯</div>
+                    <div class="weui_media_desc norms pb5">规格：288/8寸</div>
+                    <div class="weui_media_desc norms pb5">￥198</div>
+                </div>
+                <div class="tr f16 g9 delImg dn"><img class="mt-2" src="imgs/del.png" height="20" />&nbsp;删除</div>
+            </div>
+            <div class="weui_media_box weui_media_appmsg" style="display:none">
+                <div class="weui_media_bd">
+                    <h4 class="weui_media_title g9f">共<span class="cakeNum">2</span>件商品</h4>
+                </div>
+                <div class="tr">
+                    <h4 class="weui_media_title ge4">小计：<span class="money" money="576">￥576</span></h4>
+                </div>
+            </div>
+        </div>
+        <div class="delBtn"></div>
+    </div>
+</div>
+
+<div class="resultDiv xs" id="paybannber">
+    <div class="box pl15 bg1c1c">
+        <div class="check" id="tableware" tid="tableware" tval="4"><div class="inner"></div></div>
+        <div class="checkTxt">餐具</div>
+        <div class="check" id="candle" tid="candle" tid="candle" tval="43"><div class="inner"></div></div>
+        <div class="checkTxt">生日蜡烛</div>
+        <div class="check" id="hcard" tid="hcard" tid="hcard" tval="56"><div class="inner"></div></div>
+        <div class="checkTxt">生日贺卡</div>
+    </div>
+    <div class="contentTab box bgwh lh52 f16 pct100">
+        <div class="item pl15 g6">总价(不含运费)：<span class="resMoney ge4 f18"></span></div>
+        <div class="pr15 pl10"><a class="pt5 pr20 pb5 pl20 bg13 fw wh br5" href="javascript:void()" onclick="toorder()">结算</a></div>
+    </div>
+</div>
+
+</body>
+<script>
+var ifclick = 0;
+var resMoney = '576';
+$(".resMoney").html("￥" + resMoney);
+$(".resMoney").attr("money", resMoney);
+$(".clickTd").bind("click", function () {
+    var pdiv = $(this).parents('.cakeItem');
+    if (pdiv.hasClass("cakeItemSel")) pdiv.removeClass("cakeItemSel");
+    else pdiv.addClass("cakeItemSel");
+})
+$(".prevLink").bind("click", function () {
+    window.history.back(-1);
+})
+
+function toorder() {
+    if(ifclick==0) {
+        ifclick = 1;
+        window.location.href='/order/order?type=shoppingcar&addr_id=&pay_type=wxpay&shipping_type=';
+    }
+}
+
+//添加餐具套餐香槟等 
+function addproductext(id,name,price,img,product_cate) {
+    var html = '<div class="cakeItem weui_panel weui_panel_access" id="'+id+'" pid="'+id+'" productcate="'+product_cate+'" tid="prod_'+id+'">';
+    html +='<div class="weui_panel_bd contentTab">';
+    html +='<div class="weui_media_box weui_media_appmsg">';
+    html +='<div class="weui_media_hd clickTd">';
+    html +='<img class="weui_media_appmsg_thumb bdc cakeImg" src="'+img+'" onclick="window.location.href=\'/product/detail?id='+id+'\'">';
+    html +='</div>';
+    html +='<div class="weui_media_bd clickTd">';
+    html +='<div class="weui_media_title name">'+name+'</div>';
+    html +='<div class="weui_media_desc norms pb5">规格：'+price+'/套</div>';
+    html +='<div class="dib btnNumTd" onclick="javascript:cakeNum(this,0);minusNum('+id+',1);">-</div><div class="dib w40 tc bd9b cakeNum">1</div><div class="dib btnNumTd" onclick="javascript:cakeNum(this,1);addNum('+id+',1);">+</div>';
+    html +='</div>';
+    html +='<div class="tr f16 g9 delImg"><img class="mt-2" src="imgs/del.png" height="20" />&nbsp;删除</div>';
+    html +='</div>';
+    html +='<div class="weui_media_box weui_media_appmsg">';
+    html +='<div class="weui_media_bd">';
+    html +='<h4 class="weui_media_title">共<span class="cakeNum">1</span>件商品</h4>';
+    html +='</div>';
+    html +='<div class="tr">';
+    html +='<h4 class="weui_media_title ge4">小计：<span class="money" money="'+price+'">￥'+price+'</span></h4>';
+    html +='</div>';
+    html +='</div>';
+    html +='</div>';
+    html +='<div class="delBtn"></div>';
+    html +='</div>';
+    
+    $("#cakeList").append(html);
+
+    $(".cakeItem").each(function () {
+        var tag = $(this);
+        var hammertime = new Hammer(this);
+        hammertime.on("swipeleft", function (e) {
+            tag.find(".delBtn").css({
+                height: tag.height() + 40,
+                top: tag.offset().top
+            }).show();
+        });
+        hammertime.on("swiperight", function (e) {
+            tag.find(".delBtn").hide();
+        });
+        hammerList.push(hammertime);
+    })
+
+    $(".delBtn").bind("click", function () {
+        
+        $(this).closest(".cakeItem").addClass("cakeItemSel");
+        delCake();
+        $(this).parent().remove();
+        
+        if ($(".cakeItem").length == 0) {
+            $("#noCard").removeClass("yc").addClass("xs");
+            $("#dlogo").removeClass("xs").addClass("yc");
+            $("#paybannber").removeClass("xs").addClass("yc");
+        }else{
+            $("#noCard").removeClass("xs").addClass("yc");
+            $("#dlogo").removeClass("yc").addClass("xs");
+            $("#paybannber").removeClass("yc").addClass("xs");
+        }
+    })
+    if ($(".cakeItem").length == 0) {
+        $("#noCard").removeClass("yc").addClass("xs");
+        $("#dlogo").removeClass("xs").addClass("yc");
+        $("#paybannber").removeClass("xs").addClass("yc");
+    }else{
+        $("#noCard").removeClass("xs").addClass("yc");
+        $("#dlogo").removeClass("yc").addClass("xs");
+        $("#paybannber").removeClass("yc").addClass("xs");
+    }
+}
+
+function delproductext(product_cate) {
+    $('#cakeList div').each(function(i) {
+            if($(this).attr("productcate") == product_cate) {
+                $(this).remove();
+            }
+        })
+}
+
+function incmoney(price) {
+    var resMoney = $(".resMoney").attr("money");
+    var price = parseInt(price);
+    resMoney = parseInt(resMoney);
+    resMoney += price
+    $(".resMoney").attr("money", resMoney);
+    $(".resMoney").html("￥" + resMoney);
+}
+
+function minmoney(price) {
+    var resMoney = $(".resMoney").attr("money");
+    var price = parseInt(price);
+    resMoney = parseInt(resMoney);
+    resMoney -= price;
+    $(".resMoney").attr("money", resMoney);
+    $(".resMoney").html("￥" + resMoney);
+}
+</script>
+</html>
