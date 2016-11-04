@@ -6,15 +6,50 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>商品详情</title>
+    <title>首页</title>
     <link href="css/m_lib.css" rel="stylesheet" />
     <script src="js/jquery.min.js"></script>
     <script src="js/hammer.min.js"></script>
     <style type="text/css">
-.pointDiv{}
 .pointDiv img{margin: 5px 3px;cursor: pointer;height:11px;}
 .line {height: 2px;background: #979797;margin: 10px 0px;}
-.gwBtn{border:1px solid #000;text-align:center;padding:10px;margin:10px 0px;cursor:pointer;}
+.gwBtn{border:1px solid #000;text-align:center;padding:10px;margin:10px 0px;cursor:pointer;} 
+
+.m-focusPic{position:relative;width:100%;overflow:hidden} 
+ .m-focusPic .views li{float:left} 
+ .m-focusPic .views img{width:100%} 
+ .m-focusPic .tabs{position:absolute;bottom:4%;left:43%;width:6em;height:1.2rem;z-index:1} 
+ .m-focusPic .tabs li{ float:left;width:1rem;height:1rem;background:rgba(255,255,255,1);margin-right:.4rem;border-radius: 1rem;} 
+ .m-focusPic .tabs li:last-child{margin-right:0} 
+ .m-focusPic .tabs li.on{background:#a72126} 
+ .m_brandSub{border-bottom:1px dotted #ccc;height:36px;display:-webkit-box} 
+ .m_brandSub:last-child{border-bottom: none;} 
+ .m_brandSub span{display:block;font-size:1.2rem;line-height:36px;text-align:center} 
+ .m_brandSub span.tit{height:20px;line-height:20px;margin:8px 0 0 3px;color:#FFF;background:#000;border-radius:2px;padding:0 18px 0 5px;font-size:1.2rem;position:relative;display:block;} 
+ .m_brandSub span.tit:before{content:'';display:block;width:12px;height:12px;background:#FFF;border-radius:12px;position:absolute;top:4px;right:4px;} 
+ .m_brandSub span.tit:after{content: '';border-right:2px solid #000;border-bottom:2px solid #000;height:4px;width:4px;position:absolute;-webkit-transform:rotate(-45deg);top:7px;right:7px;} 
+ .m_brandSub span.filter{-webkit-box-flex:1;display:-webkit-box;} 
+ .m_brandSub span.filter a{-webkit-box-flex:1;color:#666;display:block;text-align:center} 
+ .zhuanji_wrap{padding:.5rem 1rem 1rem;} 
+ .zhuanji_wrap img{width: 100%;} 
+ .zhuanji_hd{height:12px;margin-bottom:2rem;border-bottom:1px dotted #ccc;text-align:center;} 
+ .zhuanji_hd span{font-size: 1.2rem; color: #bebebe;background-color: #f0f0f0;} 
+ .zhuanji{display:-webkit-box;} 
+ .zhuanji li{width:32.4%;margin-bottom: .3rem;} 
+ .zhuanji li:nth-child(2){-webkit-box-flex:1;margin-left:.5rem} 
+ .zhuanji a{display: block;} 
+ .zhuanji li:nth-child(2) a{margin-bottom:.5rem;} 
+ .series{display:-webkit-box;} 
+ .series a{display: block;width:100%;-webkit-box-flex:1;} 
+ .series img,.seriesa img{width:100%;} 
+ .seriesa:after{content:"";display:block;clear:both;overflow:hidden;height:0} 
+ .seriesa a{width:56.875%;float:left} 
+ .seriesa a:first-child{width:43.125%} 
+#proTabs{width:98%;padding:1%;}
+ #proTabs.fixed{z-index:2;top:0;background-color:#222;} 
+  #proTabs.fixed a:hover,#proTabs.fixed .on{border:1px solid #D8D8D7;border-radius:6px;}
+
+
     </style>
 
     <script type="text/javascript">
@@ -33,7 +68,21 @@
                 imgShow(0);
                 timeInterval = setInterval(imgShow, 10000);
             });
-        })
+
+                var tabNav = $('#proTabs'),
+                tabCon=$("#cd-main-content").offset().top-tabNav.height();
+                
+                $(window).scroll(function(){
+                    tabCon=$("#cd-main-content").offset().top-tabNav.height();
+                    var wSt=$(window).scrollTop();
+                    if(wSt > tabCon) {
+                        tabNav.addClass('fixed');
+                    } else {
+                        tabNav.removeClass('fixed');
+                    }
+                });
+            });
+        
 
         var imgs = ["uplaod/cake8.png","uplaod/hp9.png","uplaod/hp11.png"];
         var index = 0;
@@ -66,31 +115,54 @@
     <div class="rel ovh">
         <img id="cakeImg" src="uplaod/cake8.png" style="width:100%;" />
     </div>
-    <div class="pointDiv tc mt5">
+    <div class="pointDiv tc mt5 mb10">
         <img src="imgs/point2.png" />
         <img src="imgs/point1.png" />
         <img src="imgs/point1.png" />
     </div>
-    <div class="box g9f f14 tc">
-        <div class="item bg2 p5 m5 br5">品牌简介</div>
-        <div class="item bg2 p5 m5 br5">购物袋</div>
-        <div class="item bg2 p5 m5 br5">我的钱包</div>
-        <div class="item bg2 p5 m5 br5">推荐有奖</div>
-    </div>
-    <div class="pct95 auto g9f f14 bbda6 pb10 mb10">
+    <div class="h48">
+        <div id="proTabs" class="box f13 tc">
+            <a href="#" class="li item g9f bg2 p5 m5 br5 on">品牌简介</a>
+            <a href="#" class="li item g9f bg2 p5 m5 br5">购物袋</a>
+            <a href="#" class="li item g9f bg2 p5 m5 br5">我的钱包</a>
+            <a href="#" class="li item g9f bg2 p5 m5 br5">推荐有奖</a>
+        </div>
+    </div>   
+    <div id="cd-main-content" class="pct95 auto g9f f14 pb10 mb10">
         <div class="p10">
-            <div class="abs bg21 mt5 ml-5 tc gcb pt2 pr5 pb2 pl5">本月主推</div>
-            <img class="" src="imgs/fuli.jpg">
-            <div class="box mt10 mb5">
+            <div class="h4 f12 mt10 mb10 bb4a"><span class="pr10 bg0">01&nbsp;Chocolate Tart&nbsp;.</span></div>
+            <div class="rel">
+                <div class="abs mt8 r8"><img width="35" src="imgs/addcart.png" /></div>
+                <img class="" src="imgs/fuli.jpg">
+            </div>
+            <div class="box mt10 mb8">
                 <div class="item lh20 tl gcb">
                     热带椰子菠萝<em class="db f12">Coconut Pinapple Mousse</em>
                 </div>
-                <div class="item lh24 tr">
+                <div class="lh24 f12 tr fix">
+                    <div class="l ml8"><em class="f20 mt">6</em>.0<img class="mt-2" src="imgs/cun.png" width="12" />￥168</div>
+                    <div class="l ml8"><em class="f20 mt">8</em>.0<img class="mt-2" src="imgs/cun.png" width="12" />￥168</div>
+                </div>
+            </div>
+            <p class="f12">椰子果茸与菠萝果茸的碰撞，包裹了椰子利酒的口感，热带风味浓郁，绵密而细腻。</p>
+        </div>
+        <div class="p10">
+            <div class="h4 f12 mt10 mb10 bb4a"><span class="pr10 bg0">01&nbsp;Chocolate Tart&nbsp;.</span></div>
+            <div class="rel">
+                <div class="abs mt8 r8"><img width="35" src="imgs/addcart.png" /></div>
+                <img class="" src="imgs/fuli.jpg">
+            </div>
+            <div class="box mt10 mb8">
+                <div class="item lh20 tl gcb">
+                    热带椰子菠萝<em class="db f12">Coconut Pinapple Mousse</em>
+                </div>
+                <div class="lh24 tr">
                     <em class="f20 mt">6</em>.0<img class="mt-2" src="imgs/cun.png" width="12" />￥168
                 </div>
             </div>
             <p class="f12">椰子果茸与菠萝果茸的碰撞，包裹了椰子利酒的口感，热带风味浓郁，绵密而细腻。</p>
         </div>
     </div>
+
 </body>
 </html>
