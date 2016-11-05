@@ -34,7 +34,7 @@
 .check .inner{width:13px;height:13px;border:1px solid #979797;background-color:#1C1C1C;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;}
 .checked .inner{background:url(imgs/checking2.png) no-repeat 0px 0 !important;background-size:100%!important;;}
 .checkTxt{color:#CBCBCB;font-size:12px;padding-right:15px;line-height:35px;}
-.delBtn{background:#ED1630 url(imgs/del1.png) no-repeat center center;height:200px;width:220px;cursor:pointer;position:absolute;display:none;right:0px;z-index:2;}
+.delBtn{background:#ED1630;height:130px;width:200px;line-height:130px;color:#FFF;font-size:16px;font-weight:700;text-align:center;cursor:pointer;position:absolute;display:none;right:0px;z-index:2;}
 #noCard{font-size:32px;color:#C8C8C8;text-align:center;margin-top:180px;}
 .noTxt{font-size:34px;color:#CBCBCB;margin-top:40px;}
 .xs{display:block;}
@@ -61,7 +61,7 @@
                     <td class="btnNumTd" onclick="cakeNum(this,1)"><img src="imgs/more.png" /></td>
                 </tr>
             </table>
-            <div class="delBtn"></div>
+            <div class="delBtn">删除</div>
         </div>
     </script>
     
@@ -151,8 +151,9 @@
                 var tag = $(this);
                 var hammertime = new Hammer(this);
                 hammertime.on("swipeleft", function (e) {
+                        console.log('huoz');
                     tag.find(".delBtn").css({
-                        height: tag.height() + 40,
+                        height: tag.height(),
                         top: tag.offset().top
                     }).show();
                 });
@@ -343,14 +344,16 @@
     
  
 <div id="noCard" class="yc">
-    <img src="imgs/cart_bg.png" />
-    <div class="noTxt">购物车是空的</div>
+    <div class="pct100 tc abs" style="top:50%;margin-top:-133px;">
+        <div class="pct15 auto"><img src="imgs/shopcartbg.png" /></div>
+        <div class="noTxt f18 g3 mt20 mb15">购物袋是空的</div>
+    </div>
 </div>
 
 <div id="cakeList">
     <div class="cakeItem weui_panel weui_panel_access">
         <div class="weui_panel_bd contentTab">
-            <div class="weui_media_box weui_media_appmsg cakeItem">
+            <div class="weui_media_box weui_media_appmsg">
                 <div class="weui_media_hd clickTd">
                     <img class="weui_media_appmsg_thumb cakeImg" src="imgs/shopcart1.jpg" onclick="window.location.href='/product/detail?id=49'"/>
                 </div>
@@ -371,7 +374,7 @@
                 </div>
             </div>
         </div>
-        <div class="delBtn"></div>
+        <div class="delBtn">删除</div>
     </div>
 </div>
 
@@ -429,7 +432,7 @@ function addproductext(id,name,price,img,product_cate) {
     html +='<div class="tr f16 g9 delImg dn"><img class="mt-2" src="imgs/del.png" height="20" />&nbsp;删除</div>';
     html +='</div>';
     html +='</div>';
-    html +='<div class="delBtn"></div>';
+    html +='<div class="delBtn">删除</div>';
     html +='</div>';
     
     $("#cakeList").append(html);
@@ -439,7 +442,7 @@ function addproductext(id,name,price,img,product_cate) {
         var hammertime = new Hammer(this);
         hammertime.on("swipeleft", function (e) {
             tag.find(".delBtn").css({
-                height: tag.height() + 40,
+                height: tag.height(),
                 top: tag.offset().top
             }).show();
         });
