@@ -66,6 +66,7 @@ input{border:none;outline:none}
 /* percent width value */
 .pct10{width:10%;}
 .pct15{width:15%;}
+.pct17{width:17%;}
 .pct20{width:20%;}
 .pct23{width:23%;}
 .pct25{width:25%;}
@@ -348,6 +349,7 @@ input{border:none;outline:none}
 .gf8{color:#F8E71C;}
 /* font-size */
 .f0{font-size:0;}
+.f8{font-size:.16rem;}
 .f12{font-size:.24rem;}
 .f13{font-size:.26rem;}
 .f14{font-size:.28rem;}
