@@ -21,8 +21,9 @@
 .btnImg{cursor:pointer;width:50px;}
 .prevLink{text-decoration:none;outline:none;}
 .prevLink img{border:none;}
-.cakeItem{background:#131313;}
-.cakeItemSel{background:#fdfce0 !important;}
+.cakeItem{background:#131313;margin-top:0}
+.cakeItem:before{border:none;}
+.cakeItemSel{background:#1C1C1C !important;}
 .cakeImg{}
 .cakeNum{height:20px;line-height:20px;color:#CBCBCB;font-size:16px;margin-left:-1px;margin-right:-1px;}
 .btnNumTd{width:24px;height:20px;line-height:20px;text-align:center;background-color:#353535;color:#CBCBCB;font-size:16px;border-radius:2px;}      
@@ -35,7 +36,7 @@
 .check{width:24px;height:27px;padding:8px 0 0 0px;cursor:pointer;}
 .check .inner{width:15px;height:15px;border:1px solid #979797;background-color:#1C1C1C;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px;}
 .checked .inner{background:url(imgs/checking2.png) no-repeat 0px 0 !important;background-size:100%!important;;}
-.checkTxt{color:#CBCBCB;font-size:16px;padding-right:15px;line-height:35px;}
+.checkTxt{color:#CBCBCB;font-size:14px;padding-right:15px;line-height:35px;}
 .delBtn{background:#ED1630 url(imgs/del1.png) no-repeat center center;height:200px;width:220px;cursor:pointer;position:absolute;display:none;right:0px;z-index:2;}
 #noCard{font-size:32px;color:#C8C8C8;text-align:center;margin-top:180px;}
 .noTxt{font-size:34px;color:#CBCBCB;margin-top:40px;}
@@ -386,7 +387,7 @@
         <div class="check" id="hcard" tid="hcard" tid="hcard" tval="56"><div class="inner"></div></div>
         <div class="checkTxt">生日贺卡</div>
     </div>
-    <div class="contentTab box bgwh lh52 f16 pct100">
+    <div class="contentTab box bgwh lh52 f14 pct100">
         <div class="item pl15 g6">总价(不含运费)：<span class="resMoney ge4 f18"></span></div>
         <div class="pr15 pl10"><a class="pt5 pr20 pb5 pl20 bg13 fw wh br5" href="javascript:void()" onclick="toorder()">结算</a></div>
     </div>
@@ -395,7 +396,7 @@
 </body>
 <script>
 var ifclick = 0;
-var resMoney = '576';
+var resMoney = '396';
 $(".resMoney").html("￥" + resMoney);
 $(".resMoney").attr("money", resMoney);
 $(".clickTd").bind("click", function () {
@@ -423,19 +424,12 @@ function addproductext(id,name,price,img,product_cate) {
     html +='<img class="weui_media_appmsg_thumb bdc cakeImg" src="'+img+'" onclick="window.location.href=\'/product/detail?id='+id+'\'">';
     html +='</div>';
     html +='<div class="weui_media_bd clickTd">';
-    html +='<div class="weui_media_title name">'+name+'</div>';
+    html +='<div class="dib btnNumTd" onclick="javascript:cakeNum(this,0);minusNum('+id+',1);">-</div><div class="dib w40 tc cakeNum">1</div><div class="dib btnNumTd" onclick="javascript:cakeNum(this,1);addNum('+id+',1);">+</div>';
+    html +='<div class="weui_media_title name gcb mt10 mb5">'+name+'</div>';
     html +='<div class="weui_media_desc norms pb5">规格：'+price+'/套</div>';
-    html +='<div class="dib btnNumTd" onclick="javascript:cakeNum(this,0);minusNum('+id+',1);">-</div><div class="dib w40 tc bd9b cakeNum">1</div><div class="dib btnNumTd" onclick="javascript:cakeNum(this,1);addNum('+id+',1);">+</div>';
+    html +='<div class="weui_media_desc norms pb5">￥'+price+'</div>';
     html +='</div>';
-    html +='<div class="tr f16 g9 delImg"><img class="mt-2" src="imgs/del.png" height="20" />&nbsp;删除</div>';
-    html +='</div>';
-    html +='<div class="weui_media_box weui_media_appmsg">';
-    html +='<div class="weui_media_bd">';
-    html +='<h4 class="weui_media_title">共<span class="cakeNum">1</span>件商品</h4>';
-    html +='</div>';
-    html +='<div class="tr">';
-    html +='<h4 class="weui_media_title ge4">小计：<span class="money" money="'+price+'">￥'+price+'</span></h4>';
-    html +='</div>';
+    html +='<div class="tr f16 g9 delImg dn"><img class="mt-2" src="imgs/del.png" height="20" />&nbsp;删除</div>';
     html +='</div>';
     html +='</div>';
     html +='<div class="delBtn"></div>';
