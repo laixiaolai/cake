@@ -350,6 +350,7 @@ input{border:none;outline:none}
 /* font-size */
 .f0{font-size:0;}
 .f8{font-size:.16rem;}
+.f10{font-size:.2rem;}
 .f12{font-size:.24rem;}
 .f13{font-size:.26rem;}
 .f14{font-size:.28rem;}
