@@ -152,6 +152,7 @@
                 var tag = $(this);
                 var hammertime = new Hammer(this);
                 hammertime.on("swipeleft", function (e) {
+                    
                     tag.find(".delBtn").css({
                         height: tag.height() + 40,
                         top: tag.offset().top
