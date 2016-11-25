@@ -23,6 +23,24 @@
         </div>
         <a class="db pct100 auto lh44 f14 bg1c1c tc fw g8e br5">已成功推荐0人，累计获得收益0元荡糕券</a>
     </div>
-
+    <div class="menBan" style="display:none;"></div>
+    <div class="dn vipDiv p10" style="width:300px;top:50%;margin-top:-63px;">
+        <div class="bd413 tc f16 p20">点击右上角&nbsp;<img src="imgs/share0.png" height="5" /><br />可获得现金奖励</div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(".item").on("click",function(){
+                $(".menBan").show();
+                $(".vipDiv").css({
+                    left: ($(window).width() - 320) / 2
+                }).show();
+            });
+            $('.menBan').on('click',function(){
+                $(".menBan").hide();
+                $(".vipDiv").hide();
+            });
+        });
+    </script>
 </body>
 </html>
