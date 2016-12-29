@@ -11,7 +11,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/hammer.min.js"></script>
     <style type="text/css">
-.pointDiv img{margin: 5px 3px;cursor: pointer;height:11px;}
+.pointDiv img{margin: 5px 13px;cursor: pointer;height:7px;}
 .line {height: 2px;background: #979797;margin: 10px 0px;}
 .gwBtn{border:1px solid #000;text-align:center;padding:10px;margin:10px 0px;cursor:pointer;} 
 
@@ -47,9 +47,7 @@
  .seriesa a:first-child{width:43.125%} 
 #proTabs{width:98%;padding:1%;}
  #proTabs.fixed{z-index:2;top:0;background-color:#222;} 
-  #proTabs.fixed a:hover,#proTabs.fixed .on{border:1px solid #D8D8D7;border-radius:6px;}
-
-
+ #proTabs.fixed a{font-size:12px;}
     </style>
 
     <script type="text/javascript">
@@ -69,22 +67,38 @@
                 timeInterval = setInterval(imgShow, 10000);
             });
 
-                var tabNav = $('#proTabs'),
+            var tabNav = $('#proTabs'),
+            tabCon=$("#cd-main-content").offset().top-tabNav.height();
+            
+            $(window).scroll(function(){
                 tabCon=$("#cd-main-content").offset().top-tabNav.height();
-                
-                $(window).scroll(function(){
-                    tabCon=$("#cd-main-content").offset().top-tabNav.height();
-                    var wSt=$(window).scrollTop();
-                    if(wSt > tabCon) {
-                        tabNav.addClass('fixed');
-                    } else {
-                        tabNav.removeClass('fixed');
-                    }
-                });
+                var wSt=$(window).scrollTop();
+                if(wSt > tabCon) {
+                    tabNav.addClass('fixed');
+                } else {
+                    tabNav.removeClass('fixed');
+                }
             });
-        
+            //添加购物车
+            $(".addcart").on("click",function(){
+                $(".menBan").show();
+                $(".vipDiv").css({
+                    left: ($(window).width() - 300) / 2
+                }).show();
+            });
+            $('.menBan').on('click',function(){
+                $(".menBan").hide();
+                $(".vipDiv").hide();
+            });
 
-        var imgs = ["uplaod/cake8.png","uplaod/hp9.png","uplaod/hp11.png"];
+
+        });
+        
+        function hidevp() {
+            $(".menBan,.vipDiv").hide();
+        }
+
+        var imgs = ["uplaod/cake8.jpg","uplaod/hp9.jpg","uplaod/hp11.jpg"];
         var index = 0;
         function imgShow(num) {
             if (num == 0) index--;
@@ -109,11 +123,11 @@
 </head>
 <body class="bg0">
     <div class="fix">
-        <div class="l pct25 p10"><a href="#"><img src="imgs/logo1.png" style="" /></a></div>
-        <div class="r pct40 p15 wh"><p>ADD</p><p>-</p><p class="ell">武汉市武昌区110社区</p></div>
+        <div class="l pct15 p15"><a href="#"><img src="imgs/logo2.png" style="" /></a></div>
+        <div class="r pct30 f8 p15 wh"><p>ADD</p><p>-</p><p class="ell">武汉市武昌区110社区</p></div>
     </div>
     <div class="rel ovh">
-        <img id="cakeImg" src="uplaod/cake8.png" style="width:100%;" />
+        <img id="cakeImg" src="uplaod/cake8.jpg" style="width:100%;" />
     </div>
     <div class="pointDiv tc mt5 mb10">
         <img src="imgs/point2.png" />
@@ -121,48 +135,56 @@
         <img src="imgs/point1.png" />
     </div>
     <div class="h48">
-        <div id="proTabs" class="box f13 tc">
+        <div id="proTabs" class="box f10 tc">
             <a href="#" class="li item g9f bg2 p5 m5 br5 on">品牌简介</a>
             <a href="#" class="li item g9f bg2 p5 m5 br5">购物袋</a>
             <a href="#" class="li item g9f bg2 p5 m5 br5">我的钱包</a>
             <a href="#" class="li item g9f bg2 p5 m5 br5">推荐有奖</a>
         </div>
     </div>   
-    <div id="cd-main-content" class="pct95 auto g9f f14 pb10 mb10">
+    <div id="cd-main-content" class="pct95 auto g9f f12 pb10 mb10">
         <div class="p10">
-            <div class="h4 f12 mt10 mb10 bb4a"><span class="pr10 bg0">01&nbsp;Chocolate Tart&nbsp;.</span></div>
+            <div class="h4 f10 mt10 mb10 bb4a"><span class="pr10 bg0">01&nbsp;Chocolate Tart&nbsp;.</span></div>
             <div class="rel">
-                <div class="abs mt8 r8"><img width="35" src="imgs/addcart.png" /></div>
+                <div class="abs mt8 r8 addcart"><img width="25" src="imgs/addcart.png" /></div>
                 <img class="" src="imgs/fuli.jpg">
             </div>
             <div class="box mt10 mb8">
-                <div class="item lh20 tl gcb">
-                    热带椰子菠萝<em class="db f12">Coconut Pinapple Mousse</em>
-                </div>
+                <div class="item lh20 tl gcb">热带椰子菠萝<em class="db f10">Coconut Pinapple Mousse</em></div>
                 <div class="lh24 f12 tr fix">
-                    <div class="l ml8"><em class="f20 mt">6</em>.0<img class="mt-2" src="imgs/cun.png" width="12" />￥168</div>
-                    <div class="l ml8"><em class="f20 mt">8</em>.0<img class="mt-2" src="imgs/cun.png" width="12" />￥168</div>
+                    <div class="l ml8"><em class="f18 mt">6</em><em class="f8">.0</em><em class="dib vt ml2 mt-2"><img class="mt-2" src="imgs/cun.png" width="10" />￥168</em></div>
+                    <div class="l ml8"><em class="f18 mt">8</em><em class="f8">.0</em><em class="dib vt ml2 mt-2"><img class="mt-2" src="imgs/cun.png" width="10" />￥168</em></div>
                 </div>
             </div>
-            <p class="f12">椰子果茸与菠萝果茸的碰撞，包裹了椰子利酒的口感，热带风味浓郁，绵密而细腻。</p>
+            <p class="f10">椰子果茸与菠萝果茸的碰撞，包裹了椰子利酒的口感，热带风味浓郁，绵密而细腻。</p>
         </div>
         <div class="p10">
-            <div class="h4 f12 mt10 mb10 bb4a"><span class="pr10 bg0">01&nbsp;Chocolate Tart&nbsp;.</span></div>
+            <div class="h4 f10 mt10 mb10 bb4a"><span class="pr10 bg0">02&nbsp;Chocolate Tart&nbsp;.</span></div>
             <div class="rel">
-                <div class="abs mt8 r8"><img width="35" src="imgs/addcart.png" /></div>
+                <div class="abs mt8 r8 addcart"><img width="25" src="imgs/addcart.png" /></div>
                 <img class="" src="imgs/fuli.jpg">
             </div>
             <div class="box mt10 mb8">
-                <div class="item lh20 tl gcb">
-                    热带椰子菠萝<em class="db f12">Coconut Pinapple Mousse</em>
-                </div>
-                <div class="lh24 tr">
-                    <em class="f20 mt">6</em>.0<img class="mt-2" src="imgs/cun.png" width="12" />￥168
+                <div class="item lh20 tl gcb">热带椰子菠萝<em class="db f10">Coconut Pinapple Mousse</em></div>
+                <div class="lh24 f12 tr fix">
+                    <div class="l ml8"><em class="f18 mt">6</em><em class="f8">.0</em><em class="dib vt ml2 mt-2"><img class="mt-2" src="imgs/cun.png" width="10" />￥168</em></div>
+                    <div class="l ml8"><em class="f18 mt">8</em><em class="f8">.0</em><em class="dib vt ml2 mt-2"><img class="mt-2" src="imgs/cun.png" width="10" />￥168</em></div>
                 </div>
             </div>
-            <p class="f12">椰子果茸与菠萝果茸的碰撞，包裹了椰子利酒的口感，热带风味浓郁，绵密而细腻。</p>
+            <p class="f10">椰子果茸与菠萝果茸的碰撞，包裹了椰子利酒的口感，热带风味浓郁，绵密而细腻。</p>
         </div>
     </div>
 
+    <div class="menBan dn"></div>
+    <div class="dn vipDiv p10" style="width:280px;top:50%;margin-top:-98px;">
+        <div class="mt30">
+            <span  class="f16">商品成功加入购物车</span>
+            <img src="imgs/car.png" style="height:16px;margin-top:-3px;" />
+        </div>
+        <div class="mt30">
+            <a class="gwBtn db bg0 wh" href="购物袋.html">去购物车</a>
+            <div class="gwBtn" onclick="hidevp()">继续购物</div>
+        </div>
+    </div>
 </body>
 </html>
