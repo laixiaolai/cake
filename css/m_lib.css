@@ -238,6 +238,7 @@ input{border:none;outline:none}
 .pb60{padding-bottom:60px;}
 .pt60{padding-top:1.2rem;}
 .pr112{padding-right:2.24rem;}
+.pl100{padding-left:2rem;}
 .p-pct3{padding:3%;}
 /* border-color name rule: border(b)-position(l/r/t/b/d)-width(null/2)-style(null/sh)-color(first one letter/first two letter) |-> All colors are safe color*/
 .bdc{border:1px solid #ccc;}
